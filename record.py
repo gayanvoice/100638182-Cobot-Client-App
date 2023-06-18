@@ -29,6 +29,8 @@ import twin_writer
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
 
+from model.base_model import BaseModel
+
 sys.path.append("..")
 
 # parameters
@@ -36,7 +38,6 @@ host = "localhost"
 port = 30004
 config = "record_configuration.xml"
 frequency = 1
-samples = 0
 
 config_file = rtde_config.ConfigFile(config)
 output_names, output_types = config_file.get_recipe("out")
@@ -63,17 +64,14 @@ twin_writer = twin_writer.TwinWriter(output_names, output_types)
 header_row = twin_writer.get_header_row()
 print("\n ".join(str(x) for x in header_row))
 
-i = 1
 keep_running = True
 while keep_running:
-    if (samples > 0) and (i >= samples):
-        keep_running = False
     try:
         state = rtde_connection.receive()
         if state is not None:
             data_row = twin_writer.get_data_row(state)
+            base_model = BaseModel.get_from_rows(header_row, data_row)
             print("\n".join(str(x) for x in data_row))
-            i += 1
 
     except KeyboardInterrupt:
         keep_running = False
@@ -81,7 +79,7 @@ while keep_running:
         rtde_connection.disconnect()
         sys.exit()
 
-sys.stdout.write("\rComplete!            \n")
+sys.stdout.write("\rComplete!\n")
 
 rtde_connection.send_pause()
 rtde_connection.disconnect()
