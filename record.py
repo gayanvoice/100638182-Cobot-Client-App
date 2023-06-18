@@ -25,118 +25,63 @@
 import argparse
 import logging
 import sys
-
-sys.path.append("..")
+import twin_writer
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
-import rtde.csv_writer as csv_writer
-import rtde.csv_binary_writer as csv_binary_writer
+
+sys.path.append("..")
 
 # parameters
-# parser = argparse.ArgumentParser()
-# parser.add_argument(
-#     "--host", default="localhost", help="name of host to connect to (localhost)"
-# )
-# parser.add_argument("--port", type=int, default=30004, help="port number (30004)")
-# parser.add_argument(
-#     "--samples", type=int, default=0, help="number of samples to record"
-# )
-# parser.add_argument(
-#     "--frequency", type=int, default=125, help="the sampling frequency in Herz"
-# )
-# parser.add_argument(
-#     "--config",
-#     default="record_configuration.xml",
-#     help="data configuration file to use (record_configuration.xml)",
-# )
-
-
-# parser.add_argument(
-#     "--output",
-#     default="robot_data.csv",
-#     help="data output file to write to (robot_data.csv)",
-# )
-# parser.add_argument("--verbose", help="increase output verbosity", action="store_true")
-# parser.add_argument(
-#     "--buffered",
-#     help="Use buffered receive which doesn't skip data",
-#     action="store_true",
-# )
-# parser.add_argument(
-#     "--binary", help="save the data in binary format", action="store_true"
-# )
-# args = parser.parse_args()
-
-# if args.verbose:
-#     logging.basicConfig(level=logging.INFO)
-
 host = "localhost"
 port = 30004
 config = "record_configuration.xml"
-output = "robot_data.csv"
-frequency = 2
+frequency = 1
 samples = 0
 
-conf = rtde_config.ConfigFile(config)
-output_names, output_types = conf.get_recipe("out")
+config_file = rtde_config.ConfigFile(config)
+output_names, output_types = config_file.get_recipe("out")
 
-con = rtde.RTDE(host, port)
-con.connect()
+rtde_connection = rtde.RTDE(host, port)
+rtde_connection.connect()
 
 # get controller version
-con.get_controller_version()
+rtde_connection.get_controller_version()
 
 # setup recipes
-if not con.send_output_setup(output_names, output_types, frequency):
+if not rtde_connection.send_output_setup(output_names, output_types, frequency):
     logging.error("Unable to configure output")
     sys.exit()
 
 # start data synchronization
-if not con.send_start():
+if not rtde_connection.send_start():
     logging.error("Unable to start synchronization")
     sys.exit()
 
-writeModes = "w"
-with open(output, writeModes) as csvfile:
-    writer = None
 
-    # if args.binary:
-    #     writer = csv_binary_writer.CSVBinaryWriter(csvfile, output_names, output_types)
-    # else:
-    writer = csv_writer.CSVWriter(csvfile, output_names, output_types)
-    writer.writeheader()
+twin_writer = twin_writer.TwinWriter(output_names, output_types)
 
-    i = 1
-    keep_running = True
-    while keep_running:
+header_row = twin_writer.get_header_row()
+print("\n ".join(str(x) for x in header_row))
 
-        if i % frequency == 0:
-            if samples > 0:
-                sys.stdout.write("\r")
-                sys.stdout.write("{:.2%} done.".format(float(i) / float(samples)))
-                sys.stdout.flush()
-            else:
-                sys.stdout.write("\r")
-                sys.stdout.write("{:3d} samples.".format(i))
-                sys.stdout.flush()
-        if (samples > 0) and (i >= samples):
-            keep_running = False
-        try:
-            # if args.buffered:
-            #     state = con.receive_buffered(args.binary)
-            # else:
-            state = con.receive()
-            if state is not None:
-                writer.writerow(state)
-                i += 1
+i = 1
+keep_running = True
+while keep_running:
+    if (samples > 0) and (i >= samples):
+        keep_running = False
+    try:
+        state = rtde_connection.receive()
+        if state is not None:
+            data_row = twin_writer.get_data_row(state)
+            print("\n".join(str(x) for x in data_row))
+            i += 1
 
-        except KeyboardInterrupt:
-            keep_running = False
-        except rtde.RTDEException:
-            con.disconnect()
-            sys.exit()
+    except KeyboardInterrupt:
+        keep_running = False
+    except rtde.RTDEException:
+        rtde_connection.disconnect()
+        sys.exit()
 
 sys.stdout.write("\rComplete!            \n")
 
-con.send_pause()
-con.disconnect()
+rtde_connection.send_pause()
+rtde_connection.disconnect()

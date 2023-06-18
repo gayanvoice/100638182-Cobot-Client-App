@@ -1,4 +1,4 @@
-from joint_load_model import JointLoadModel
+from model.joint_load_model import JointLoadModel
 
 
 class BaseModel(JointLoadModel):
