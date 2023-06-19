@@ -3,6 +3,7 @@ import sys
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
 from model.base_model import BaseModel
+from model.rtdl_model import RtdlModel
 from twin_writer import TwinWriter
 from ui.dashboard import Dashboard
 from PySide6.QtWidgets import QApplication
@@ -46,8 +47,11 @@ def run_robot(host, port, config, frequency):
             state = rtde_connection.receive()
             if state is not None:
                 data_row = twin_writer.get_data_row(state)
-                base_model = BaseModel.get_from_rows(header_row, data_row)
-                print("\n".join(str(x) for x in data_row))
+                rtdl_model = RtdlModel.get_from_rows(header_row, data_row)
+                base_model = BaseModel.get_from_rtdl_model(rtdl_model)
+
+                # print("\n".join(str(x) for x in data_row))
+                print("".join(str(base_model.position)))
 
         except KeyboardInterrupt:
             keep_running = False
@@ -62,5 +66,5 @@ def run_robot(host, port, config, frequency):
 
 
 if __name__ == '__main__':
-    # run_robot("localhost", 30004, "configuration.xml", 1)
-    run_dashboard()
+    run_robot("localhost", 30004, "configuration.xml", 2)
+    # run_dashboard()
