@@ -8,6 +8,7 @@
 		<field name="actual_q" type="VECTOR6D"/>
 		<field name="actual_current" type="VECTOR6D"/>
 		<field name="joint_temperatures" type="VECTOR6D"/>
+		<field name="elbow_position" type="VECTOR3D"/>
 		<field name="tool_temperature" type="DOUBLE"/>
 		<field name="tool_output_voltage" type="INT32"/>
 		<field name="actual_TCP_pose" type="VECTOR6D"/>

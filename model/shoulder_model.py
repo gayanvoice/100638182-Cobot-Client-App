@@ -1,11 +1,8 @@
-class BaseModel:
+class ShoulderModel:
     def __init__(self):
         self._position = None
         self._temperature = None
         self._voltage = None
-        self._x = None
-        self._y = None
-        self._z = None
 
     @property
     def position(self):
@@ -19,18 +16,6 @@ class BaseModel:
     def voltage(self):
         return self._voltage
 
-    @property
-    def x(self):
-        return self._x
-
-    @property
-    def y(self):
-        return self._y
-
-    @property
-    def z(self):
-        return self._z
-
     @position.setter
     def position(self, value):
         self._position = value
@@ -43,23 +28,10 @@ class BaseModel:
     def voltage(self, value):
         self._voltage = value
 
-    @x.setter
-    def x(self, value):
-        self._x = value
-
-    @x.setter
-    def y(self, value):
-        self._y = value
-
-    @x.setter
-    def z(self, value):
-        self._z = value
-
     @staticmethod
-    def get_from_rows(header_row, data_row):
-        join_load_model = JointLoadModel()
-        join_load_model.temperature = data_row[header_row.index("timestamp")]
-        join_load_model.load = data_row[header_row.index("timestamp")]
-        join_load_model.status = data_row[header_row.index("timestamp")]
-        join_load_model.voltage = data_row[header_row.index("timestamp")]
-        return join_load_model
+    def get_from_rtdl_model(rtdl_model):
+        shoulder_model = ShoulderModel()
+        shoulder_model.position = rtdl_model.data_row[rtdl_model.header_row.index("actual_q_1")]
+        shoulder_model.temperature = rtdl_model.data_row[rtdl_model.header_row.index("joint_temperatures_1")]
+        shoulder_model.voltage = rtdl_model.data_row[rtdl_model.header_row.index("actual_current_1")]
+        return shoulder_model
