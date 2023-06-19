@@ -1,16 +1,66 @@
-# This is a sample Python script.
+import logging
+import sys
+import rtde.rtde as rtde
+import rtde.rtde_config as rtde_config
+from model.base_model import BaseModel
+from twin_writer import TwinWriter
+from ui.dashboard import Dashboard
+from PySide6.QtWidgets import QApplication
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+def run_dashboard():
+    app = QApplication(sys.argv)
+    widget = Dashboard()
+    widget.show()
+    sys.exit(app.exec())
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def run_robot(host, port, config, frequency):
+    config_file = rtde_config.ConfigFile(config)
+    output_names, output_types = config_file.get_recipe("out")
+
+    rtde_connection = rtde.RTDE(host, port)
+    rtde_connection.connect()
+
+    # get controller version
+    rtde_connection.get_controller_version()
+
+    # setup recipes
+    if not rtde_connection.send_output_setup(output_names, output_types, frequency):
+        logging.error("Unable to configure output")
+        sys.exit()
+
+    # start data synchronization
+    if not rtde_connection.send_start():
+        logging.error("Unable to start synchronization")
+        sys.exit()
+
+    twin_writer = TwinWriter(output_names, output_types)
+
+    header_row = twin_writer.get_header_row()
+    print("\n ".join(str(x) for x in header_row))
+
+    keep_running = True
+    while keep_running:
+        try:
+            state = rtde_connection.receive()
+            if state is not None:
+                data_row = twin_writer.get_data_row(state)
+                base_model = BaseModel.get_from_rows(header_row, data_row)
+                print("\n".join(str(x) for x in data_row))
+
+        except KeyboardInterrupt:
+            keep_running = False
+        except rtde.RTDEException:
+            rtde_connection.disconnect()
+            sys.exit()
+
+    sys.stdout.write("\rComplete!\n")
+
+    rtde_connection.send_pause()
+    rtde_connection.disconnect()
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # run_robot("localhost", 30004, "configuration.xml", 1)
+    run_dashboard()

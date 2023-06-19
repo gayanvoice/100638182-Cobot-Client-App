@@ -1,7 +1,4 @@
-import sys
 from rtde import serialize
-
-sys.path.append("..")
 
 
 class TwinWriter(object):
