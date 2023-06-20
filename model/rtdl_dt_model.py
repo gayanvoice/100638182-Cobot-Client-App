@@ -1,13 +1,13 @@
-from model.base_model import BaseModel
-from model.cobot_model import CobotModel
-from model.control_box_model import ControlBoxModel
-from model.elbow_model import ElbowModel
-from model.payload_model import PayloadModel
-from model.shoulder_model import ShoulderModel
-from model.tool_model import ToolModel
-from model.wrist1_model import Wrist1Model
-from model.wrist2_model import Wrist2Model
-from model.wrist3_model import Wrist3Model
+from model.rtdl.base_model import BaseModel
+from model.rtdl.cobot_model import CobotModel
+from model.rtdl.control_box_model import ControlBoxModel
+from model.rtdl.elbow_model import ElbowModel
+from model.rtdl.payload_model import PayloadModel
+from model.rtdl.shoulder_model import ShoulderModel
+from model.rtdl.tool_model import ToolModel
+from model.rtdl.wrist1_model import Wrist1Model
+from model.rtdl.wrist2_model import Wrist2Model
+from model.rtdl.wrist3_model import Wrist3Model
 
 
 class RtdlDtModel(object):
