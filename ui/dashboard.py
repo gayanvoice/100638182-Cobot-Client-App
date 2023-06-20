@@ -1,9 +1,5 @@
-import json
 import logging
 import sys
-import time
-import random
-
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
 from model.rtdl_dt_model import RtdlDtModel
@@ -11,7 +7,7 @@ from model.rtdl_model import RtdlModel
 from twin_writer import TwinWriter
 from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect, QSize, Qt, QThreadPool, QRunnable)
 from PySide6.QtGui import (QFont, QIcon)
-from PySide6.QtWidgets import (QLabel, QListView, QPushButton, QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QLabel, QPushButton, QSizePolicy, QWidget, QListWidget)
 
 
 class Runnable(QRunnable):
@@ -66,6 +62,7 @@ class Runnable(QRunnable):
                     self.dashboard.update_label_wrist2_param(rtdl_dt_model.wrist2_model)
                     self.dashboard.update_label_wrist3_param(rtdl_dt_model.wrist3_model)
                     self.dashboard.update_label_tool_param(rtdl_dt_model.tool_model)
+                    self.dashboard.update_list_widget_log_param(rtdl_dt_model)
 
             except rtde.RTDEException:
                 rtde_connection.disconnect()
@@ -80,6 +77,25 @@ class Runnable(QRunnable):
 class Dashboard(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.label_tool = None
+        self.label_tool_param = None
+        self.listWidget_Log = None
+        self.label_wrist3_param = None
+        self.label_wrist3 = None
+        self.label_wrist2_param = None
+        self.label_wrist2 = None
+        self.label_wrist1_param = None
+        self.label_wrist1 = None
+        self.label_elbow_param = None
+        self.label_elbow = None
+        self.label_shoulder_param = None
+        self.label_base_param = None
+        self.label_shoulder = None
+        self.label_base = None
+        self.label_payload_param = None
+        self.label_control_box_param = None
+        self.label_cobot_param = None
+        self.label_payload = None
         self.label_joint_load = None
         self.label_control_box = None
         self.label_cobot = None
@@ -192,9 +208,9 @@ class Dashboard(QWidget):
         self.label_wrist3_param.setObjectName(u"label_wrist3_param")
         self.label_wrist3_param.setGeometry(QRect(420, 320, 160, 150))
         self.label_wrist3_param.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignTop)
-        self.listView_Log = QListView(self)
-        self.listView_Log.setObjectName(u"listView_Log")
-        self.listView_Log.setGeometry(QRect(10, 470, 780, 120))
+        self.listWidget_Log = QListWidget(self)
+        self.listWidget_Log.setObjectName(u"listWidget_Log")
+        self.listWidget_Log.setGeometry(QRect(10, 470, 780, 120))
         self.label_tool_param = QLabel(self)
         self.label_tool_param.setObjectName(u"label_tool_param")
         self.label_tool_param.setGeometry(QRect(600, 320, 160, 150))
@@ -295,6 +311,9 @@ class Dashboard(QWidget):
             tool_model.rx) + "\n"
                              "RY " + str(tool_model.ry) + "\n"
                                                           "RZ " + str(tool_model.rz))
+
+    def update_list_widget_log_param(self, rtdl_dt_model):
+        self.listWidget_Log.addItem(str(rtdl_dt_model.cobot_model.__dict__) + str(rtdl_dt_model.elbow_model.__dict__))
 
     def load_ui(self):
         self.setWindowTitle(QCoreApplication.translate("Dashboard", u"Dashboard", None))
