@@ -1,10 +1,13 @@
 import sys
+
+from cloud import cobot
 from ui.dashboard import Dashboard
 from PySide6.QtWidgets import QApplication
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    widget = Dashboard()
-    widget.show()
-    sys.exit(app.exec())
+    # app = QApplication(sys.argv)
+    # widget = Dashboard()
+    # widget.show()
+    # sys.exit(app.exec())
+    cobot.run()

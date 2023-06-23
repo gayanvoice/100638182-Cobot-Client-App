@@ -1,0 +1,12 @@
+az iot hub connection-string show -n 100638182IotHub --key primary --query connectionString
+az iot dps show --name 100638182Dps --query properties.idScope
+az iot dps enrollment create --attestation-type symmetrickey --dps-name 100638182Dps --resource-group IotHubResourceGroup --enrollment-id Cobot --device-id Cobot --query '{registrationID:registrationId,primaryKey:attestation.symmetricKey.primaryKey}'
+
+
+IOTHUB_DEVICE_SECURITY_TYPE=DPS
+IOTHUB_DEVICE_DPS_ID_SCOPE=0ne00A685D0
+IOTHUB_DEVICE_DPS_DEVICE_ID=Cobot
+IOTHUB_DEVICE_DPS_DEVICE_KEY=GQXiRV7rtQVOFCKZuSnHfj85arpbeQqAyhbov8zk7vNbaG/4mcXa06ETfH+C1Mr/IGPOCDawrqmfCR6lG0IyKA==
+IOTHUB_DEVICE_DPS_ENDPOINT=global.azure-devices-provisioning.net
+IOTHUB_CONNECTION_STRING=HostName=100638182IotHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=O/fpHPDkS+5/oU/Ob5v7fx8YahD0oUeesLTmLIXLkGw=
+IOTHUB_DEVICE_ID=Cobot
