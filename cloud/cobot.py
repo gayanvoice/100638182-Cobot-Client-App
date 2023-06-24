@@ -72,7 +72,7 @@ async def main():
 
     await device.iot_hub_device_client.patch_twin_reported_properties({"maxTempSinceLastReboot": 10.96})
 
-    listeners = asyncio.gather(
+    command_listeners = asyncio.gather(
         device.execute_command_listener(
             method_name="getMaxMinReport",
             user_command_handler=max_min_handler,
@@ -88,10 +88,10 @@ async def main():
 
     await user_finished
 
-    if not listeners.done():
-        listeners.set_result("DONE")
+    if not command_listeners.done():
+        command_listeners.set_result(["Cobot Done"])
 
-    listeners.cancel()
+    command_listeners.cancel()
 
     send_telemetry_task.cancel()
 
@@ -99,7 +99,7 @@ async def main():
 
 
 async def send_telemetry(iot_hub_device_client):
-    print("Sending telemetry for temperature")
+    print("Sending telemetry for elapsed time")
 
     while True:
         telemetry = {"elapsedTime": time.time()}

@@ -10,21 +10,20 @@ from azure.iot.hub import IoTHubRegistryManager
 from azure.iot.hub.models import Twin, TwinProperties
 from azure.iot.hub.models import CloudToDeviceMethod
 
-iothub_connection_str = "HostName=100638182IotHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=O/fpHPDkS+5/oU/Ob5v7fx8YahD0oUeesLTmLIXLkGw="
+iothub_connection_str = "HostName=100638182IotHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=O" \
+                        "/fpHPDkS+5/oU/Ob5v7fx8YahD0oUeesLTmLIXLkGw="
 device_id = "Cobot"
 method_name = "getMaxMinReport"
 method_payload = "hello world"
 
 # This sample shows how to use the IoT Hub Registry Manager for a PnP device using a "thermostat" example
 
-# This sample creates and uses device with SAS authentication
-# For other authentication types use the appropriate create and update APIs:
-#   X509:
-#       new_device = iothub_registry_manager.create_device_with_x509(device_id, primary_thumbprint, secondary_thumbprint, status)
-#       device_updated = iothub_registry_manager.update_device_with_X509(device_id, etag, primary_thumbprint, secondary_thumbprint, status)
-#   Certificate authority:
-#       new_device = iothub_registry_manager.create_device_with_certificate_authority(device_id, status)
-#       device_updated = iothub_registry_manager.update_device_with_certificate_authority(self, device_id, etag, status):
+# This sample creates and uses device with SAS authentication For other authentication types use the appropriate
+# create and update APIs: X509: new_device = iothub_registry_manager.create_device_with_x509(device_id,
+# primary_thumbprint, secondary_thumbprint, status) device_updated = iothub_registry_manager.update_device_with_X509(
+# device_id, etag, primary_thumbprint, secondary_thumbprint, status) Certificate authority: new_device =
+# iothub_registry_manager.create_device_with_certificate_authority(device_id, status) device_updated =
+# iothub_registry_manager.update_device_with_certificate_authority(self, device_id, etag, status):
 try:
     # Create IoTHubRegistryManager
     iothub_registry_manager = IoTHubRegistryManager.from_connection_string(iothub_connection_str)
