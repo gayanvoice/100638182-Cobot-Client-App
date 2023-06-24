@@ -61,6 +61,29 @@
           ]
         }
       }
+    },
+    {
+      "@type": "Command",
+      "name": "startCobotControl",
+      "request": {
+        "name": "payload",
+        "displayName": "Payload",
+        "schema": "string"
+      },
+       "response": {
+        "name" : "response",
+        "displayName": "Response",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "executeTime",
+              "displayName": "Execute Time",
+              "schema": "string"
+            }
+          ]
+        }
+      }
     }
   ]
 }

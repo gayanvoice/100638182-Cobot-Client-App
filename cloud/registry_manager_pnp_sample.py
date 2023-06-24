@@ -13,8 +13,15 @@ from azure.iot.hub.models import CloudToDeviceMethod
 iothub_connection_str = "HostName=100638182IotHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=O" \
                         "/fpHPDkS+5/oU/Ob5v7fx8YahD0oUeesLTmLIXLkGw="
 device_id = "Cobot"
-method_name = "getMaxMinReport"
-method_payload = "hello world"
+method_name = "startCobotControl"
+
+set_position_1 = [-0.12, -0.43, 0.14, 0, 3.11, 0.14]
+set_position_2 = [-0.52, -0.71, 0.21, 0, 3.11, 0.24]
+set_position_3 = [-0.82, -0.81, 0.31, 0, 3.21, 0.34]
+set_position_4 = [-0.62, -0.91, 0.41, 0, 3.31, 0.54]
+set_position_array = [set_position_1, set_position_2, set_position_3, set_position_4]
+
+method_payload = set_position_array
 
 # This sample shows how to use the IoT Hub Registry Manager for a PnP device using a "thermostat" example
 
