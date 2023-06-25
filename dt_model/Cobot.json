@@ -23,7 +23,27 @@
           "@type": "Object",
           "fields": [
             {
-              "name" : "elapsed_time",
+              "name" : "start_time",
+              "schema": "dateTime"
+            }
+          ]
+        }
+      }
+    },
+   {
+      "@type": "Command",
+      "name": "stopCommand",
+      "request": {
+        "name": "payload",
+        "schema": "string"
+      },
+      "response": {
+        "name" : "report",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name" : "stop_time",
               "schema": "dateTime"
             }
           ]

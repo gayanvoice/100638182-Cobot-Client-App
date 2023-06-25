@@ -2,7 +2,7 @@ import asyncio
 import sys
 from datetime import datetime
 
-sys.path.append("..")
+sys.path.append("../..")
 import logging
 
 import rtde.rtde as rtde
@@ -81,7 +81,6 @@ async def main(set_position_array):
 
 
 async def control_cobot(rtde_connection, watchdog, set_position_array, set_position):
-
     set_position.input_double_register_0 = 0
     set_position.input_double_register_1 = 0
     set_position.input_double_register_2 = 0
@@ -97,7 +96,6 @@ async def control_cobot(rtde_connection, watchdog, set_position_array, set_posit
     while keep_running:
         if set_position_index >= len(set_position_array):
             set_position_index = 0
-
 
         current_set_position = set_position_array[set_position_index]
 
@@ -130,9 +128,15 @@ async def control_cobot(rtde_connection, watchdog, set_position_array, set_posit
         set_position_index += 1
 
 
-def run(payload):
-    print("cobot_control_async {payload}".format(payload=payload))
-
+def run():
+    # print("cobot_control_async {payload}".format(payload=payload))
+    # print(type(payload))
+    set_position_1 = [-0.12, -0.43, 0.14, 0, 3.11, 0.14]
+    set_position_2 = [-0.52, -0.71, 0.21, 0, 3.11, 0.24]
+    set_position_3 = [-0.82, -0.81, 0.31, 0, 3.21, 0.34]
+    set_position_4 = [-0.62, -0.91, 0.41, 0, 3.31, 0.54]
+    payload = [set_position_1, set_position_2, set_position_3, set_position_4]
+    print(type(payload))
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main(payload))
     loop.close()

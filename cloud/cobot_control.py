@@ -2,50 +2,57 @@ import asyncio
 import logging
 import json
 import time
-import rtde.rtde as rtde
-import rtde.rtde_config as rtde_config
 from threading import Thread
 
-from azure.iot.device.aio import IoTHubDeviceClient
-from azure.iot.device.aio import ProvisioningDeviceClient
-from datetime import timedelta, datetime
+from datetime import datetime
 
-import cobot_control_async
+from cloud import cobot_control_async
 from cloud.device import Device
 
 logging.basicConfig(level=logging.ERROR)
 
 model_id = "dtmi:com:example:Cobot;1"
 
-max_temp = None
-min_temp = None
-avg_temp_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-moving_window_size = len(avg_temp_list)
-target_temperature = None
 
-
-def callback_a():
+def callback_a(values):
     event_loop_a = asyncio.new_event_loop()
     asyncio.set_event_loop(event_loop_a)
-    asyncio.get_event_loop().call_soon(lambda: hello('a'))
+    asyncio.get_event_loop().call_soon(lambda: hello(values))
     event_loop_a.run_forever()
 
 
-def hello(thread_name):
+def hello(values):
     while True:
         time.sleep(1)
-        print('hello from thread {}!'.format(thread_name))
+        print('hello from thread {}!'.format(values))
 
 
 async def start_command_handler(values):
     if values:
-        thread_a = Thread(target=callback_a, daemon=True)
+        # cobot_control_async.run()
+        thread_a = Thread(target=callback_a, args=(values,), daemon=True)
         thread_a.start()
 
 
 def start_command_response_response(values):
     response_dict = {
-        "elapsed_time": datetime.now().isoformat()
+        "start_time": datetime.now().isoformat()
+    }
+    response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+    print(response_payload)
+    return response_payload
+
+
+async def stop_command_handler(values):
+    if values:
+        # cobot_control_async.run()
+        thread_a = Thread(target=callback_a, args=(values,), daemon=True)
+        thread_a.start()
+
+
+def stop_command_response_response(values):
+    response_dict = {
+        "stop_time": datetime.now().isoformat()
     }
     response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
     print(response_payload)
@@ -83,6 +90,11 @@ async def main():
             method_name="startCommand",
             user_command_handler=start_command_handler,
             create_user_response_handler=start_command_response_response,
+        ),
+        device.execute_command_listener(
+            method_name="stopCommand",
+            user_command_handler=stop_command_handler,
+            create_user_response_handler=stop_command_response_response,
         ),
         device.execute_property_listener(),
     )
