@@ -13,7 +13,7 @@ from azure.iot.hub.models import CloudToDeviceMethod
 iothub_connection_str = "HostName=100638182IotHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=O" \
                         "/fpHPDkS+5/oU/Ob5v7fx8YahD0oUeesLTmLIXLkGw="
 device_id = "Cobot"
-method_name = "startCobotControl"
+method_name = "startCommand"
 
 set_position_1 = [-0.12, -0.43, 0.14, 0, 3.11, 0.14]
 set_position_2 = [-0.52, -0.71, 0.21, 0, 3.11, 0.24]

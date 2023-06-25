@@ -4,6 +4,7 @@ import json
 import time
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
+from threading import Thread
 
 from azure.iot.device.aio import IoTHubDeviceClient
 from azure.iot.device.aio import ProvisioningDeviceClient
@@ -23,14 +24,28 @@ moving_window_size = len(avg_temp_list)
 target_temperature = None
 
 
-async def start_cobot_control_request(values):
+def callback_a():
+    event_loop_a = asyncio.new_event_loop()
+    asyncio.set_event_loop(event_loop_a)
+    asyncio.get_event_loop().call_soon(lambda: hello('a'))
+    event_loop_a.run_forever()
+
+
+def hello(thread_name):
+    while True:
+        time.sleep(1)
+        print('hello from thread {}!'.format(thread_name))
+
+
+async def start_command_handler(values):
     if values:
-        print("start_cobot_control_request OK " + values)
+        thread_a = Thread(target=callback_a, daemon=True)
+        thread_a.start()
 
 
-def start_cobot_control_report_response(values):
+def start_command_response_response(values):
     response_dict = {
-        "executeTime": str(datetime.now().isoformat()),
+        "elapsed_time": datetime.now().isoformat()
     }
     response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
     print(response_payload)
@@ -38,9 +53,6 @@ def start_cobot_control_report_response(values):
 
 
 def stdin_listener():
-    """
-    Listener for quitting the sample
-    """
     while True:
         selection = input("Press Q to quit\n")
         if selection == "Q" or selection == "q":
@@ -68,9 +80,9 @@ async def main():
 
     command_listeners = asyncio.gather(
         device.execute_command_listener(
-            method_name="startCobotControl",
-            user_command_handler=start_cobot_control_request,
-            create_user_response_handler=start_cobot_control_report_response,
+            method_name="startCommand",
+            user_command_handler=start_command_handler,
+            create_user_response_handler=start_command_response_response,
         ),
         device.execute_property_listener(),
     )
@@ -96,7 +108,7 @@ async def send_telemetry(iot_hub_device_client):
     print("Sending telemetry for elapsed time")
 
     while True:
-        telemetry = {"elapsedTime": time.time()}
+        telemetry = {"elapsed_time": time.time()}
         await iot_hub_device_client.send_telemetry(telemetry)
         await asyncio.sleep(8)
 
