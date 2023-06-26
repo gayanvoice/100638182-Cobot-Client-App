@@ -1,7 +1,13 @@
+import json
 import logging
 import sys
+import time
+
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
+
+from model.rtdl_dt_model import RtdlDtModel
+from model.rtdl_model import RtdlModel
 from twin_writer import TwinWriter
 
 
@@ -17,7 +23,6 @@ class CobotIotTask:
 
     def terminate(self):
         self.__running = False
-
 
     async def connect(self):
         print("connect")
@@ -44,13 +49,16 @@ class CobotIotTask:
         twin_writer = TwinWriter(output_names, output_types)
 
         header_row = twin_writer.get_header_row()
-        print("\n ".join(str(x) for x in header_row))
 
         while self.__running:
             try:
                 state = self.__rtde_connection.receive()
                 if state is not None:
                     data_row = twin_writer.get_data_row(state)
+                    rtdl_model = RtdlModel.get_from_rows(header_row, data_row)
+                    rtdl_dt_model = RtdlDtModel.get_from_rtdl_model(rtdl_model)
+                    print(str(rtdl_dt_model.cobot_model.elapsed_time))
+
             except rtde.RTDEException:
                 self.__rtde_connection.disconnect()
                 sys.exit()

@@ -12,7 +12,7 @@
     },
     {
       "@type": "Command",
-      "name": "startCommand",
+      "name": "startCobotCommand",
       "request": {
         "name": "payload",
         "schema": "string"
@@ -30,9 +30,49 @@
         }
       }
     },
-   {
+    {
       "@type": "Command",
-      "name": "stopCommand",
+      "name": "stopCobotCommand",
+      "request": {
+        "name": "payload",
+        "schema": "string"
+      },
+      "response": {
+        "name" : "report",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name" : "stop_time",
+              "schema": "dateTime"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Command",
+      "name": "startIotCommand",
+      "request": {
+        "name": "payload",
+        "schema": "string"
+      },
+      "response": {
+        "name" : "report",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name" : "start_time",
+              "schema": "dateTime"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@type": "Command",
+      "name": "stopIotCommand",
       "request": {
         "name": "payload",
         "schema": "string"
