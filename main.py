@@ -12,5 +12,6 @@ if __name__ == '__main__':
 
     cobot = Cobot(cobot_model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     loop = asyncio.get_event_loop()
+
     loop.run_until_complete(cobot.connect_azure_iot())
     loop.close()

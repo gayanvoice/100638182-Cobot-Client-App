@@ -7,6 +7,7 @@ from threading import Thread
 from datetime import datetime
 
 from cloud.cobot_control_task import CobotControlTask
+from cloud.cobot_iot_task import CobotIotTask
 from cloud.device import Device
 
 logging.basicConfig(level=logging.ERROR)
@@ -20,6 +21,7 @@ class Cobot(object):
         self.__registration_id = registration_id
         self.__symmetric_key = symmetric_key
         self.__cobot_control_task = None
+        self.__cobot_iot_task = None
         self.__thread = None
 
     def stdin_listener(self):
@@ -35,11 +37,15 @@ class Cobot(object):
 
         host = "localhost"
         port = 30004
-        config = "control_configuration.xml"
+        control_config = "control_configuration.xml"
+        iot_config = "iot_configuration.xml"
+        frequency = 1
 
-
-        self.__cobot_control_task = CobotControlTask(host=host, port=port, config=config, set_position_array=values)
-        loop.run_until_complete(self.__cobot_control_task.connect())
+        self.__cobot_control_task = CobotControlTask(host=host, port=port, config=control_config,
+                                                     set_position_array=values)
+        self.__cobot_iot_task = CobotIotTask(host=host, port=port, config=iot_config, frequency=frequency)
+        # loop.run_until_complete(self.__cobot_control_task.connect())
+        loop.run_until_complete(self.__cobot_iot_task.connect())
         loop.close()
 
     async def start_command_handler(self, values):
