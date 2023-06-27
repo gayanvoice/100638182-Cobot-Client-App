@@ -55,6 +55,8 @@ class CobotIotTask:
                 state = self.__rtde_connection.receive()
                 if state is not None:
                     data_row = twin_writer.get_data_row(state)
+
+
                     rtdl_model = RtdlModel.get_from_rows(header_row, data_row)
                     rtdl_dt_model = RtdlDtModel.get_from_rtdl_model(rtdl_model)
                     print(str(rtdl_dt_model.cobot_model.elapsed_time))
