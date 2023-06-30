@@ -3,14 +3,10 @@ import logging
 import json
 import time
 from threading import Thread
-
 from datetime import datetime
-
 from cloud.cobot_control_task import CobotControlTask
 from cloud.cobot_iot_task import CobotIotTask
 from cloud.device import Device
-
-logging.basicConfig(level=logging.INFO)
 
 
 class Cobot(object):
@@ -24,6 +20,8 @@ class Cobot(object):
         self.__cobot_iot_task = None
         self.__cobot_control_thread = None
         self.__cobot_iot_thread = None
+        self.__cobot_control_lock = True
+        self.__cobot_iot_lock = True
 
     def stdin_listener(self):
         while True:
@@ -33,32 +31,46 @@ class Cobot(object):
                 break
 
     def cobot_control_task_callback(self, values):
-        host = "localhost"
-        port = 30004
-        control_config = "control_configuration.xml"
+        if self.__cobot_control_lock:
+            self.__cobot_control_lock = False
+            host = "localhost"
+            port = 30004
+            control_config = "control_configuration.xml"
 
-        self.__cobot_control_task = CobotControlTask(host=host, port=port, config=control_config,
-                                                     set_position_array=values)
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        loop.run_until_complete(self.__cobot_control_task.connect())
-        loop.close()
+            self.__cobot_control_task = CobotControlTask(host=host, port=port, config=control_config,
+                                                         set_position_array=values)
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(self.__cobot_control_task.connect())
+            loop.close()
+        else:
+            logging.error("cobot.cobot_control_task_callback:__cobot_control_lock={cobot_control_lock}"
+                          .format(cobot_control_lock=self.__cobot_control_lock))
 
     def cobot_iot_task_callback(self, values):
-        host = "localhost"
-        port = 30004
-        iot_config = "iot_configuration.xml"
-        frequency = 1
+        if self.__cobot_iot_lock:
+            logging.info("cobot.cobot_iot_task_callback:__cobot_iot_lock={cobot_iot_lock}"
+                         .format(cobot_iot_lock=self.__cobot_iot_lock))
+            self.__cobot_iot_lock = False
+            host = "localhost"
+            port = 30004
+            iot_config = "iot_configuration.xml"
+            frequency = 1
 
-        self.__cobot_iot_task = CobotIotTask(host=host, port=port, config=iot_config, frequency=frequency)
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        loop.run_until_complete(self.__cobot_iot_task.connect())
-        loop.close()
+            self.__cobot_iot_task = CobotIotTask(host=host, port=port, config=iot_config, frequency=frequency)
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(self.__cobot_iot_task.connect())
+            loop.close()
 
+        else:
+            logging.error("cobot.cobot_iot_task_callback:__cobot_iot_lock={cobot_iot_lock}"
+                          .format(cobot_iot_lock=self.__cobot_iot_lock))
 
     async def start_cobot_control_command_handler(self, values):
         if values:
+            logging.info("cobot.start_cobot_control_command_handler:values={values} type={type}"
+                         .format(values=values, type=str(type(values))))
             self.__cobot_control_thread = Thread(target=self.cobot_control_task_callback, args=(values,))
             self.__cobot_control_thread.start()
 
@@ -67,12 +79,13 @@ class Cobot(object):
             "start_time": datetime.now().isoformat()
         }
         response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
-        print(response_payload)
         return response_payload
 
     async def stop_cobot_control_command_handler(self, values):
         if values:
-            print("stop command")
+            self.__cobot_control_lock = True
+            logging.info("cobot.stop_cobot_control_command_handler:values={values} type={type}"
+                         .format(values=values, type=str(type(values))))
             self.__cobot_control_task.terminate()
             self.__cobot_control_thread.join()
 
@@ -81,11 +94,12 @@ class Cobot(object):
             "stop_time": datetime.now().isoformat()
         }
         response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
-        print(response_payload)
         return response_payload
 
     async def start_cobot_iot_command_handler(self, values):
         if values:
+            logging.info("cobot.start_cobot_iot_command_handler:values={values} type={type}"
+                         .format(values=values, type=str(type(values))))
             self.__cobot_iot_thread = Thread(target=self.cobot_iot_task_callback, args=(values,))
             self.__cobot_iot_thread.start()
 
@@ -94,12 +108,13 @@ class Cobot(object):
             "start_time": datetime.now().isoformat()
         }
         response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
-        print(response_payload)
         return response_payload
 
     async def stop_cobot_iot_command_handler(self, values):
         if values:
-            print("stop command")
+            self.__cobot_iot_lock = True
+            logging.info("cobot.stop_cobot_iot_command_handler:values={values} type={type}"
+                         .format(values=values, type=str(type(values))))
             self.__cobot_iot_task.terminate()
             self.__cobot_iot_thread.join()
 
@@ -108,7 +123,6 @@ class Cobot(object):
             "stop_time": datetime.now().isoformat()
         }
         response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
-        print(response_payload)
         return response_payload
 
     async def connect_azure_iot(self):
@@ -121,8 +135,6 @@ class Cobot(object):
         await device.create_iot_hub_device_client()
 
         await device.iot_hub_device_client.connect()
-
-        await device.iot_hub_device_client.patch_twin_reported_properties({"maxTempSinceLastReboot": 10.96})
 
         command_listeners = asyncio.gather(
             device.execute_command_listener(
@@ -171,4 +183,3 @@ class Cobot(object):
             telemetry = {"elapsed_time": time.time()}
             await iot_hub_device_client.send_telemetry(telemetry)
             await asyncio.sleep(8)
-

@@ -2,6 +2,7 @@ import json
 from azure.iot.device import Message, MethodResponse
 from azure.iot.device.aio import IoTHubDeviceClient
 from azure.iot.device.aio import ProvisioningDeviceClient
+import logging
 
 
 class Device:
@@ -19,9 +20,13 @@ class Device:
         self.registration_result = await self.register_provisioning_device_client()
 
         if self.registration_result.status == "assigned":
-            print(self.registration_result.status)
-            print(self.registration_result.registration_state.assigned_hub)
-            print(self.registration_result.registration_state.device_id)
+            logging.info("device.create_iot_hub_device_client:registration_result.status={status} "
+                         "registration_result.registration_state.assigned_hub={registration_state_assigned_hub} "
+                         "self.registration_result.registration_state.device_id={registration_state_device_id}"
+                         .format(status=self.registration_result.status,
+                                 registration_state_assigned_hub=self
+                                 .registration_result.registration_state.assigned_hub,
+                                 registration_state_device_id=self.registration_result.registration_state.device_id))
 
             self.iot_hub_device_client = IoTHubDeviceClient.create_from_symmetric_key(
                 symmetric_key=self.symmetric_key,
@@ -31,7 +36,8 @@ class Device:
             )
             return self.iot_hub_device_client
         else:
-            raise RuntimeError("Could not provision device. Aborting Plug and Play device connection.")
+            logging.error("device.create_iot_hub_device_client:Could not provision device. Aborting Plug and Play "
+                          "device connection.")
 
     async def register_provisioning_device_client(self):
         provisioning_device_client = ProvisioningDeviceClient.create_from_symmetric_key(
@@ -51,12 +57,12 @@ class Device:
                 command_name = None
 
             command_request = await self.iot_hub_device_client.receive_method_request(command_name)
-            print("Command request received with payload")
-            print(command_request.payload)
+            logging.info("device.create_iot_hub_device_client:payload={payload}"
+                         .format(payload=command_request.payload))
 
             values = {}
             if not command_request.payload:
-                print("Payload was empty.")
+                logging.info("device.create_iot_hub_device_client:No payload")
             else:
                 values = command_request.payload
 
@@ -71,15 +77,18 @@ class Device:
 
             try:
                 await self.iot_hub_device_client.send_method_response(command_response)
-            except Exception:
-                print("responding to the {command} command failed".format(command=method_name))
+            except Exception as ex:
+                logging.error("device.create_iot_hub_device_client:Responding to the {command} command failed "
+                              "error={error}"
+                              .format(command=method_name, error=ex))
 
     async def execute_property_listener(self):
         ignore_keys = ["__t", "$version"]
         while True:
             patch = await self.iot_hub_device_client.receive_twin_desired_properties_patch()
 
-            print("the data in the desired properties patch was: {}".format(patch))
+            logging.info("device.create_iot_hub_device_client:Desired properties patch was {patch}"
+                         .format(patch=patch))
 
             version = patch["$version"]
             prop_dict = {}
@@ -101,5 +110,6 @@ class Device:
         message = Message(json.dumps(telemetry))
         message.content_encoding = "utf-8"
         message.content_type = "application/json"
-        print("Sent message")
+        logging.info("device.send_telemetry:telemetry={telemetry}"
+                     .format(telemetry=telemetry))
         await self.iot_hub_device_client.send_message(message)
