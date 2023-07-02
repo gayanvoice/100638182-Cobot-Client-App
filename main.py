@@ -17,7 +17,7 @@ logging.basicConfig(filename="cobot-log.log",
 if __name__ == '__main__':
     current_working_directory = os.getcwd()
 
-    cobot_model_id = "dtmi:com:example:Cobot;1"
+    cobot_model_id = "dtmi:com:Cobot:Cobot;1"
     provisioning_host = "global.azure-devices-provisioning.net"
     id_scope = "0ne00A685D0"
     registration_id = "Cobot"

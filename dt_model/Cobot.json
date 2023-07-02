@@ -1,14 +1,13 @@
 {
   "@context": "dtmi:dtdl:context;2",
-  "@id": "dtmi:com:example:Cobot;1",
+  "@id": "dtmi:com:Cobot:Cobot;1",
   "@type": "Interface",
-  "displayName": "Cobot",
-  "description": "Reports elapsed time of the Cobot.",
   "contents": [
     {
-      "@type": "Telemetry",
-      "name": "elapsed_time",
-      "schema": "double"
+      "@type": "Property",
+      "name": "ElapsedTime",
+      "schema": "double",
+      "writable": true
     },
     {
       "@type": "Command",

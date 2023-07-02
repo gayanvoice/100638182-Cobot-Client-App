@@ -23,7 +23,7 @@ class CobotControlTask:
 
 
     async def connect(self):
-        print("connect")
+        logging.info("cobot_control_task.connect:Starting")
         logging.getLogger().setLevel(logging.INFO)
 
         config_file = rtde_config.ConfigFile(self.__config)
@@ -81,19 +81,30 @@ class CobotControlTask:
                 start_time = datetime.now()
                 move_completed = False
                 await self.list_to_setp(set_position, current_set_position)
-                print(str(set_position_index) + "/" + str(len(self.__set_position_array)) + ": " + str(start_time) + " New pose = "
-                      + str(current_set_position))
+                logging.info(str(set_position_index)
+                             + "/"
+                             + str(len(self.__set_position_array))
+                             + ": "
+                             + str(start_time)
+                             + " New pose = "
+                             + str(current_set_position))
                 self.__rtde_connection.send(set_position)
                 watchdog.input_int_register_0 = 1
             elif not move_completed and state.output_int_register_0 == 0:
                 end_time = datetime.now()
                 elapsed_time = self.calculate_time_difference(start_time, end_time)
-                print(str(set_position_index) + "/" + str(len(self.__set_position_array)) + ": " + str(start_time) + "Move to "
-                                                                                                              "confirmed "
-                                                                                                              "pose = " +
-                      str(state.target_q))
-                print(str(set_position_index) + "/" + str(len(self.__set_position_array)) + ": " + "Time Elapsed = "
-                      + str(elapsed_time))
+                logging.info(str(set_position_index)
+                             + "/"
+                             + str(len(self.__set_position_array)) + ": "
+                             + str(start_time)
+                             + "Move to confirmed pose = "
+                             + str(state.target_q))
+                logging.info(str(set_position_index)
+                             + "/"
+                             + str(len(self.__set_position_array))
+                             + ": "
+                             + "Time Elapsed = "
+                             + str(elapsed_time))
                 move_completed = True
                 watchdog.input_int_register_0 = 0
                 time.sleep(1)

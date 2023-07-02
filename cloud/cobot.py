@@ -16,6 +16,7 @@ class Cobot(object):
         self.__id_scope = id_scope
         self.__registration_id = registration_id
         self.__symmetric_key = symmetric_key
+        self.__device = None
         self.__cobot_control_task = None
         self.__cobot_iot_task = None
         self.__cobot_control_thread = None
@@ -57,7 +58,11 @@ class Cobot(object):
             iot_config = "iot_configuration.xml"
             frequency = 1
 
-            self.__cobot_iot_task = CobotIotTask(host=host, port=port, config=iot_config, frequency=frequency)
+            self.__cobot_iot_task = CobotIotTask(host=host,
+                                                 port=port,
+                                                 config=iot_config,
+                                                 frequency=frequency,
+                                                 device=self.__device)
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             loop.run_until_complete(self.__cobot_iot_task.connect())
@@ -126,38 +131,38 @@ class Cobot(object):
         return response_payload
 
     async def connect_azure_iot(self):
-        device = Device(model_id=self.__cobot_model_id,
+        self.__device = Device(model_id=self.__cobot_model_id,
                         provisioning_host=self.__provisioning_host,
                         id_scope=self.__id_scope,
                         registration_id=self.__registration_id,
                         symmetric_key=self.__symmetric_key)
 
-        await device.create_iot_hub_device_client()
+        await self.__device.create_iot_hub_device_client()
 
-        await device.iot_hub_device_client.connect()
+        await self.__device.iot_hub_device_client.connect()
 
         command_listeners = asyncio.gather(
-            device.execute_command_listener(
+            self.__device.execute_command_listener(
                 method_name="startCobotCommand",
                 user_command_handler=self.start_cobot_control_command_handler,
                 create_user_response_handler=self.start_cobot_control_command_response_handler,
             ),
-            device.execute_command_listener(
+            self.__device.execute_command_listener(
                 method_name="stopCobotCommand",
                 user_command_handler=self.stop_cobot_control_command_handler,
                 create_user_response_handler=self.stop_cobot_control_command_response_handler,
             ),
-            device.execute_command_listener(
+            self.__device.execute_command_listener(
                 method_name="startIotCommand",
                 user_command_handler=self.start_cobot_iot_command_handler,
                 create_user_response_handler=self.start_cobot_iot_command_response_handler,
             ),
-            device.execute_command_listener(
+            self.__device.execute_command_listener(
                 method_name="stopIotCommand",
                 user_command_handler=self.stop_cobot_iot_command_handler,
                 create_user_response_handler=self.stop_cobot_iot_command_response_handler,
             ),
-            device.execute_property_listener(),
+            self.__device.execute_property_listener(),
         )
 
         # send_telemetry_task = asyncio.create_task(self.send_telemetry(device))
@@ -174,7 +179,7 @@ class Cobot(object):
 
         # send_telemetry_task.cancel()
 
-        await device.iot_hub_device_client.shutdown()
+        await self.__device.iot_hub_device_client.shutdown()
 
     async def send_telemetry(self, iot_hub_device_client):
         print("Sending telemetry for elapsed time")

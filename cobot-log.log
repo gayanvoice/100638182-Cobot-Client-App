@@ -8,13 +8,479 @@ INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected ca
 INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
 INFO:azure.iot.device.common.mqtt_transport:suback received for 1
 INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=486c253b-d1f3-4f71-ac09-cf88e3c7f208
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=8b6be1e7-335b-40da-b4d5-db6fe5ef9d82
 INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=486c253b-d1f3-4f71-ac09-cf88e3c7f208&retry-after=3
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=8b6be1e7-335b-40da-b4d5-db6fe5ef9d82&retry-after=3
 INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=38d13b6a-6e50-4d74-a116-4bdfe60f5c7a&operationId=5.2acdc2877f637bec.d4b78431-9e1b-4711-baf2-439353a02f0f
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=a45249a6-3e29-48c2-a2e4-b12a5df98bbd&operationId=5.2acdc2877f637bec.d43c98ba-9d8c-476d-823a-415a33c627b0
 INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=38d13b6a-6e50-4d74-a116-4bdfe60f5c7a
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=a45249a6-3e29-48c2-a2e4-b12a5df98bbd
+INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
+INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 2
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 3
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 4
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 5
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 6
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 152.67}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 152.67}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 7
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 157.67}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 157.67}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 8
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 161.67}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 161.67}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 9
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 167.67}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 167.67}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 10
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 171.67}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 171.67}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 11
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 176.67}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 176.67}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 12
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 181.67}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 181.67}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 13
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
+INFO:azure.iot.device.common.mqtt_transport:payload published for 14
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=3
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=3
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 15
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 255.44799999999998}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 255.44799999999998}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 16
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 260.448}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 260.448}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 17
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 265.448}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 265.448}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 18
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 270.448}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 270.448}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 19
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 275.448}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 275.448}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 20
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=4
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=4
+INFO:azure.iot.device.common.mqtt_transport:payload published for 21
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=5
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=5
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 22
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 511.212}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 511.212}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 23
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 515.212}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 515.212}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 24
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 520.212}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 520.212}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 25
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 525.212}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 525.212}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 26
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 530.212}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 530.212}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 27
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 535.212}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 535.212}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 28
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 540.212}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 540.212}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 29
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 545.212}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 545.212}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 30
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=6
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=6
+INFO:azure.iot.device.common.mqtt_transport:payload published for 31
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=7
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=7
+INFO:root:cobot_iot_task.connect:Starting
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+INFO:azure.iot.device.common.mqtt_transport:payload published for 32
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 1810.196}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 1810.196}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 33
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 1815.196}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 1815.196}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 34
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 1820.196}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 1820.196}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 35
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 1825.196}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 1825.196}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 36
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 1830.196}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 1830.196}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 37
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 1835.196}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 1835.196}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 38
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 1840.196}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 1840.196}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 39
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 1845.196}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 1845.196}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 40
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=8
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 41
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=9
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=9
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 42
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 1997.788}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 1997.788}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 43
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 2002.788}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 2002.788}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 44
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 2007.788}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 2007.788}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 45
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 2012.788}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 2012.788}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 46
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 2017.788}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 2017.788}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 47
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 2022.788}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 2022.788}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 48
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=10
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=10
+INFO:azure.iot.device.common.mqtt_transport:payload published for 49
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=11
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=11
+INFO:root:cobot_iot_task.connect:Starting
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+INFO:azure.iot.device.common.mqtt_transport:payload published for 50
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 2123.2019999999998}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 2123.2019999999998}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 51
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:{'elapsed_time': 2127.2019999999998}
+INFO:root:device.send_telemetry:telemetry={'elapsed_time': 2127.2019999999998}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 52
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=12
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=12
+INFO:azure.iot.device.common.mqtt_transport:payload published for 53
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=96d2f6aa-1044-4057-9115-ddafbd0f48d0
+INFO:azure.iot.device.common.mqtt_transport:payload published for 2
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=96d2f6aa-1044-4057-9115-ddafbd0f48d0&retry-after=3
+INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=f9b7ab18-e50e-4477-b03e-91bf92039613&operationId=5.2acdc2877f637bec.853d6d44-c79f-46cc-97ae-48f58046bcac
+INFO:azure.iot.device.common.mqtt_transport:payload published for 3
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=f9b7ab18-e50e-4477-b03e-91bf92039613
 INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
 INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
 INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
@@ -50,6 +516,58 @@ INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
 INFO:azure.iot.device.common.mqtt_transport:suback received for 5
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
 INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
+INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=d09363fc-4c3e-4de8-b683-972d08bb8f45
+INFO:azure.iot.device.common.mqtt_transport:payload published for 2
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=d09363fc-4c3e-4de8-b683-972d08bb8f45&retry-after=3
+INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=6cd651e4-a265-43d7-83bb-b0fe05d5e6df&operationId=5.2acdc2877f637bec.373489b1-d87e-437e-a8a0-fa7291965666
+INFO:azure.iot.device.common.mqtt_transport:payload published for 3
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=6cd651e4-a265-43d7-83bb-b0fe05d5e6df
+INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
+INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 2
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 3
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 4
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 5
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
 INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
 INFO:azure.iot.device.iothub.aio.async_clients:Received method request
 INFO:root:device.create_iot_hub_device_client:payload=payload
@@ -57,636 +575,968 @@ INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'
 INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
 INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
 INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-ERROR:root:cobot_iot_task.connect:Starting
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 6
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
 INFO:rtde:Controller version: 5.13.1.0
 INFO:root:cobot_iot_task.connect:Successfully configured output
 INFO:rtde:RTDE synchronization started
 INFO:root:cobot_iot_task.connect:Successfully started synchronization
 INFO:root:cobot_iot_task.connect:header_row
-INFO:azure.iot.device.common.mqtt_transport:payload published for 6
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
 WARNING:rtde:no data received in last 1 seconds 
 INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 3726.044}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 3726.044}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 7
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
 INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 3731.044}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 3731.044}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 8
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
 INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 3736.044}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 3736.044}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 9
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
 INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 3741.044}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 3741.044}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 10
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
 INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 3746.044}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 3746.044}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 11
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
 INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 3751.044}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 3751.044}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 12
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
 INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 3756.044}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 3756.044}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 13
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
 INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 3761.044}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 3761.044}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 14
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
 INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 3766.044}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 3766.044}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 15
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
 INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
 INFO:azure.iot.device.iothub.aio.async_clients:Received method request
 INFO:root:device.create_iot_hub_device_client:payload=payload
 INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
-WARNING:rtde:no data received in last 1 seconds 
 INFO:rtde:RTDE synchronization paused
 INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
 INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
-INFO:azure.iot.device.common.mqtt_transport:payload published for 7
+INFO:azure.iot.device.common.mqtt_transport:payload published for 16
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
 INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.iothub.aio.async_clients:Initiating client shutdown
-INFO:azure.iot.device.iothub.aio.async_clients:Disconnecting from Hub...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=3
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=3
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 17
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 4454.204}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 4454.204}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 18
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 4459.204}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 4459.204}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 19
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 4464.204}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 4464.204}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 20
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 4468.204}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 4468.204}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 21
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 4473.204}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 4473.204}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 22
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 4478.204}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 4478.204}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 23
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 4483.204}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 4483.204}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 24
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 4488.204}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 4488.204}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 25
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=4
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=4
+INFO:azure.iot.device.common.mqtt_transport:payload published for 26
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=771ecc93-ee7a-4fb8-9ec5-13ba2ec07873
+INFO:azure.iot.device.common.mqtt_transport:payload published for 2
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=771ecc93-ee7a-4fb8-9ec5-13ba2ec07873&retry-after=3
+INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=1b796937-30c4-4810-a5be-ad5cec9b8586&operationId=5.2acdc2877f637bec.4ebcccec-9d91-470c-b236-af8c83f6f6e5
+INFO:azure.iot.device.common.mqtt_transport:payload published for 3
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=1b796937-30c4-4810-a5be-ad5cec9b8586
+INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
+INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 2
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 3
+INFO:azure.iot.device.common.mqtt_transport:suback received for 4
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 5
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 6
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5463.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5463.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 7
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5468.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5468.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 8
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5473.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5473.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 9
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5478.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5478.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 10
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5483.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5483.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 11
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5488.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5488.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 12
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5492.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5492.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 13
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5497.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5497.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 14
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5502.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5502.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 15
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5507.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5507.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 16
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5512.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5512.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 17
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5517.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5517.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 18
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5522.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5522.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 19
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5527.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5527.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 20
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5533.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5533.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 21
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5538.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5538.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 22
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5543.188}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5543.188}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 23
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
+INFO:azure.iot.device.common.mqtt_transport:payload published for 24
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=3
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=3
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 25
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 5999.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 5999.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 26
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6004.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6004.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 27
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6009.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6009.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 28
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6014.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6014.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 29
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6019.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6019.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 30
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6023.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6023.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 31
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6028.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6028.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 32
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6033.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6033.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 33
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6038.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6038.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 34
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6043.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6043.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 35
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6048.3279999999995}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6048.3279999999995}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 36
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=4
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=4
+INFO:azure.iot.device.common.mqtt_transport:payload published for 37
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=5
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=5
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 38
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6066.09}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6066.09}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 39
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6071.09}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6071.09}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 40
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6076.09}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6076.09}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 41
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6081.09}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6081.09}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 42
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=6
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=6
+INFO:azure.iot.device.common.mqtt_transport:payload published for 43
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=7
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=7
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 44
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6507.487999999999}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6507.487999999999}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 45
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6512.487999999999}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6512.487999999999}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 46
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6517.487999999999}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6517.487999999999}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 47
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6522.487999999999}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6522.487999999999}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 48
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6527.487999999999}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6527.487999999999}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 49
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6532.487999999999}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6532.487999999999}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 50
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6537.487999999999}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6537.487999999999}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 51
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6542.487999999999}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6542.487999999999}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 52
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=8
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 53
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=9
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=9
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 54
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:cobot_iot_task.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:cobot_iot_task.connect:Successfully started synchronization
+INFO:root:cobot_iot_task.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6633.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6633.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 55
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6638.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6638.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 56
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6643.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6643.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 57
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6648.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6648.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 58
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6653.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6653.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 59
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6658.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6658.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 60
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6663.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6663.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 61
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6668.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6668.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 62
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6673.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6673.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 63
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6678.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6678.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 64
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6683.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6683.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 65
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6688.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6688.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 66
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6693.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6693.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 67
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6698.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6698.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 68
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6703.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6703.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 69
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6708.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6708.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 70
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6712.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6712.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 71
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6717.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6717.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 72
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6722.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6722.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 73
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6727.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6727.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 74
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6732.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6732.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 75
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6737.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6737.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 76
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6742.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6742.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 77
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6747.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6747.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 78
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6752.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6752.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 79
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6758.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6758.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 80
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6763.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6763.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 81
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6768.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6768.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 82
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6773.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6773.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 83
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6778.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6778.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 84
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6783.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6783.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 85
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6788.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6788.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 86
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6793.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6793.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 87
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6798.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6798.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 88
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6803.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6803.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 89
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot_iot_task.connect:data_row
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 6808.08}
+INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 6808.08}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 90
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=10
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:rtde:RTDE synchronization paused
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=10
+INFO:azure.iot.device.common.mqtt_transport:payload published for 91
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.pipeline.pipeline_stages_base:SasTokenStage: Renewing SAS Token...
+INFO:azure.iot.device.common.pipeline.pipeline_stages_base:SasTokenStage: Starting reauthorization process for new SAS token
 INFO:azure.iot.device.common.mqtt_transport:disconnecting MQTT client
 INFO:azure.iot.device.common.mqtt_transport:disconnected with result code: 0
 INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: _on_mqtt_disconnect called
 INFO:azure.iot.device.iothub.abstract_clients:Connection State - Disconnected
 INFO:azure.iot.device.iothub.abstract_clients:Cleared all pending method requests due to disconnect
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully disconnected from Hub
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:azure.iot.device.iothub.aio.async_clients:Client shutdown complete
-ERROR:asyncio:Task was destroyed but it is pending!
-task: <Task pending name='Task-13' coro=<_AsyncQueueProxy.get() done, defined at C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp\venv\Lib\site-packages\janus\__init__.py:533> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\asyncio\futures.py:394]>
-ERROR:asyncio:Task was destroyed but it is pending!
-task: <Task pending name='Task-15' coro=<_AsyncQueueProxy.get() done, defined at C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp\venv\Lib\site-packages\janus\__init__.py:533> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\asyncio\futures.py:394]>
-ERROR:asyncio:Task was destroyed but it is pending!
-task: <Task pending name='Task-20' coro=<_AsyncQueueProxy.get() done, defined at C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp\venv\Lib\site-packages\janus\__init__.py:533> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\asyncio\futures.py:394]>
-ERROR:asyncio:Task was destroyed but it is pending!
-task: <Task pending name='Task-23' coro=<_AsyncQueueProxy.get() done, defined at C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp\venv\Lib\site-packages\janus\__init__.py:533> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\asyncio\futures.py:394]>
-ERROR:asyncio:Task was destroyed but it is pending!
-task: <Task pending name='Task-25' coro=<_AsyncQueueProxy.get() done, defined at C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp\venv\Lib\site-packages\janus\__init__.py:533> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\asyncio\futures.py:394]>
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
 INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
 INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
 INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=53e91bfe-efb0-4899-a3c5-61d9f3cf85dd
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=53e91bfe-efb0-4899-a3c5-61d9f3cf85dd&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=71c050a9-fcb3-4cee-8734-7405304ee115&operationId=5.2acdc2877f637bec.43f3d933-92a5-455d-8c71-58f42fdf4703
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=71c050a9-fcb3-4cee-8734-7405304ee115
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.pipeline.pipeline_stages_iothub:EnsureDesiredPropertiesStage: Reconnected.  Getting twin
+INFO:azure.iot.device.iothub.pipeline.pipeline_stages_iothub:EnsureDesiredPropertiesStage: sending twin GET to ensure freshness
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/twin/GET/?$rid=2649dd52-5eb9-4f2c-97fd-f9877f77025a
+INFO:azure.iot.device.common.pipeline.pipeline_stages_base:SasTokenStage: Connection reauthorization successful
 INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 4
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 5
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/twin/res/200/?$rid=2649dd52-5eb9-4f2c-97fd-f9877f77025a
+INFO:azure.iot.device.common.mqtt_transport:payload published for 92
+INFO:azure.iot.device.iothub.aio.async_clients:twin patch received
+INFO:root:device.create_iot_hub_device_client:Desired properties patch was {'$version': 194, 'targetTemperature': 42}
+INFO:azure.iot.device.iothub.aio.async_clients:Patching twin reported properties
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/res/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 93
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/twin/PATCH/properties/reported/?$rid=9edc387b-78b3-462c-ba37-da1db9bdb9e3
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/twin/res/204/?$rid=9edc387b-78b3-462c-ba37-da1db9bdb9e3&$version=409
+INFO:azure.iot.device.common.mqtt_transport:payload published for 94
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent twin patch
 INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-ERROR:root:cobot_iot_task.connect:Starting
-INFO:azure.iot.device.common.mqtt_transport:payload published for 6
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:cobot_iot_task.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:cobot_iot_task.connect:Successfully started synchronization
-INFO:root:cobot_iot_task.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
-WARNING:rtde:no data received in last 1 seconds 
-INFO:rtde:RTDE synchronization paused
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
-INFO:azure.iot.device.common.mqtt_transport:payload published for 7
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=3
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=3
-INFO:azure.iot.device.common.mqtt_transport:payload published for 8
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=4
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=4
-INFO:azure.iot.device.common.mqtt_transport:payload published for 9
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=5
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=5
-INFO:azure.iot.device.common.mqtt_transport:payload published for 10
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=6
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=6
-ERROR:root:cobot_iot_task.connect:Starting
-INFO:azure.iot.device.common.mqtt_transport:payload published for 11
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:cobot_iot_task.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:cobot_iot_task.connect:Successfully started synchronization
-INFO:root:cobot_iot_task.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=7
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
-WARNING:rtde:no data received in last 1 seconds 
-INFO:rtde:RTDE synchronization paused
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=7
-INFO:azure.iot.device.common.mqtt_transport:payload published for 12
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=ea6ac010-d025-40b2-917c-7f1d3cdaccf4
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=ea6ac010-d025-40b2-917c-7f1d3cdaccf4&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=7048ca6e-bb58-4dd9-a0ea-b04801421c16&operationId=5.2acdc2877f637bec.36eb9ad1-bfc7-4f84-ae6e-4a53290f46f5
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=7048ca6e-bb58-4dd9-a0ea-b04801421c16
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+INFO:azure.iot.device.common.mqtt_transport:disconnected with result code: 7
 INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: _on_mqtt_disconnect called: The connection was lost.
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: Unexpected disconnect (no pending connection op)
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Disconnected
+INFO:azure.iot.device.iothub.abstract_clients:Cleared all pending method requests due to disconnect
+WARNING:azure.iot.device.common.handle_exceptions:Exception caught in background thread.  Unable to handle.
+WARNING:azure.iot.device.common.handle_exceptions:['azure.iot.device.common.transport_exceptions.ConnectionDroppedError: Unexpected disconnection\n']
 INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
 INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
 INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.pipeline.pipeline_stages_iothub:EnsureDesiredPropertiesStage: Reconnected.  Getting twin
+INFO:azure.iot.device.iothub.pipeline.pipeline_stages_iothub:EnsureDesiredPropertiesStage: sending twin GET to ensure freshness
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/twin/GET/?$rid=8516e542-1d27-445b-aea0-2dadcc0f509d
 INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 4
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 5
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-ERROR:root:cobot_iot_task.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:azure.iot.device.common.mqtt_transport:payload published for 6
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:root:cobot_iot_task.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:cobot_iot_task.connect:Successfully started synchronization
-INFO:root:cobot_iot_task.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=2
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
-ERROR:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=False
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
-INFO:azure.iot.device.common.mqtt_transport:payload published for 7
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=3
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=3
-INFO:azure.iot.device.common.mqtt_transport:payload published for 8
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-WARNING:rtde:no data received in last 1 seconds 
-INFO:rtde:RTDE synchronization paused
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startCobotCommand/?$rid=4
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=[[-0.12, -0.43, 0.14, 0, 3.11, 0.14], [-0.22, -0.71, 0.21, 0, 3.11, 0.24], [-0.82, -0.81, 0.31, 0, 3.21, 0.34], [-0.62, -0.91, 0.41, 0, 3.31, 0.54]]
-INFO:root:cobot.start_cobot_control_command_handler:values=[[-0.12, -0.43, 0.14, 0, 3.11, 0.14], [-0.22, -0.71, 0.21, 0, 3.11, 0.24], [-0.82, -0.81, 0.31, 0, 3.21, 0.34], [-0.62, -0.91, 0.41, 0, 3.31, 0.54]] type=<class 'list'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=4
-INFO:azure.iot.device.common.mqtt_transport:payload published for 9
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:rtde:Controller version: 5.13.1.0
-INFO:rtde:RTDE synchronization started
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/STOPCobotCommand/?$rid=5
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/STOPCobotCommand/?$rid=6
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopCobotCommand/?$rid=7
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_control_command_handler:values=payload type=<class 'str'>
-INFO:rtde:RTDE synchronization paused
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=7
-INFO:azure.iot.device.common.mqtt_transport:payload published for 10
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopCobotCommand/?$rid=8
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_control_command_handler:values=payload type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 11
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopCobotCommand/?$rid=9
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_control_command_handler:values=payload type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=9
-INFO:azure.iot.device.common.mqtt_transport:payload published for 12
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startCobotCommand/?$rid=10
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=[[-0.12, -0.43, 0.14, 0, 3.11, 0.14], [-0.22, -0.71, 0.21, 0, 3.11, 0.24], [-0.82, -0.81, 0.31, 0, 3.21, 0.34], [-0.62, -0.91, 0.41, 0, 3.31, 0.54]]
-INFO:root:cobot.start_cobot_control_command_handler:values=[[-0.12, -0.43, 0.14, 0, 3.11, 0.14], [-0.22, -0.71, 0.21, 0, 3.11, 0.24], [-0.82, -0.81, 0.31, 0, 3.21, 0.34], [-0.62, -0.91, 0.41, 0, 3.31, 0.54]] type=<class 'list'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=10
-INFO:azure.iot.device.common.mqtt_transport:payload published for 13
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:rtde:Controller version: 5.13.1.0
-INFO:rtde:RTDE synchronization started
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startCobotCommand/?$rid=11
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.start_cobot_control_command_handler:values=payload type=<class 'str'>
-ERROR:root:cobot.cobot_control_task_callback:__cobot_control_lock=False
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=11
-INFO:azure.iot.device.common.mqtt_transport:payload published for 14
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopCobotCommand/?$rid=12
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_control_command_handler:values=payload type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=12
-INFO:rtde:RTDE synchronization paused
-INFO:azure.iot.device.common.mqtt_transport:payload published for 15
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/twin/res/200/?$rid=8516e542-1d27-445b-aea0-2dadcc0f509d
+INFO:azure.iot.device.common.mqtt_transport:payload published for 95
+INFO:azure.iot.device.common.pipeline.pipeline_stages_base:SasTokenStage: Renewing SAS Token...
+INFO:azure.iot.device.common.pipeline.pipeline_stages_base:SasTokenStage: Starting reauthorization process for new SAS token
+INFO:azure.iot.device.common.mqtt_transport:disconnecting MQTT client
+INFO:azure.iot.device.common.mqtt_transport:disconnected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: _on_mqtt_disconnect called
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Disconnected
+INFO:azure.iot.device.iothub.abstract_clients:Cleared all pending method requests due to disconnect
 INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
 INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
 INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=c009b986-4adc-43b2-8a8c-27ede7178f52
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=c009b986-4adc-43b2-8a8c-27ede7178f52&retry-after=3
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=eb880b9d-454a-4751-9230-d466966ff0c4
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=eb880b9d-454a-4751-9230-d466966ff0c4&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=68c52cd6-fee2-443d-9a05-721067a2fb1c&operationId=5.2acdc2877f637bec.de6012bc-3611-4170-8daf-bad164097500
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=68c52cd6-fee2-443d-9a05-721067a2fb1c
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+INFO:azure.iot.device.iothub.pipeline.pipeline_stages_iothub:EnsureDesiredPropertiesStage: Reconnected.  Getting twin
+INFO:azure.iot.device.iothub.pipeline.pipeline_stages_iothub:EnsureDesiredPropertiesStage: sending twin GET to ensure freshness
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/twin/GET/?$rid=1987d3fc-670e-45ad-a10b-a5d6f6e1bc86
+INFO:azure.iot.device.common.pipeline.pipeline_stages_base:SasTokenStage: Connection reauthorization successful
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/twin/res/200/?$rid=1987d3fc-670e-45ad-a10b-a5d6f6e1bc86
+INFO:azure.iot.device.common.mqtt_transport:payload published for 96
+INFO:azure.iot.device.common.mqtt_transport:disconnected with result code: 7
 INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: _on_mqtt_disconnect called: The connection was lost.
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: Unexpected disconnect (no pending connection op)
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Disconnected
+INFO:azure.iot.device.iothub.abstract_clients:Cleared all pending method requests due to disconnect
+WARNING:azure.iot.device.common.handle_exceptions:Exception caught in background thread.  Unable to handle.
+WARNING:azure.iot.device.common.handle_exceptions:['azure.iot.device.common.transport_exceptions.ConnectionDroppedError: Unexpected disconnection\n']
 INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
 INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
 INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.pipeline.pipeline_stages_iothub:EnsureDesiredPropertiesStage: Reconnected.  Getting twin
+INFO:azure.iot.device.iothub.pipeline.pipeline_stages_iothub:EnsureDesiredPropertiesStage: sending twin GET to ensure freshness
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/twin/GET/?$rid=d8913e2b-a3a9-4ebe-863a-d3a1ac2eef65
 INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 4
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 5
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-ERROR:root:cobot_iot_task.connect:Starting
-INFO:azure.iot.device.common.mqtt_transport:payload published for 6
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:cobot_iot_task.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:cobot_iot_task.connect:Successfully started synchronization
-INFO:root:cobot_iot_task.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=bef993ce-2ce3-413a-854f-f9f6d29745b8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=bef993ce-2ce3-413a-854f-f9f6d29745b8&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=3dd675a1-ce77-4571-a74d-27fc6e1b8fb1&operationId=5.2acdc2877f637bec.e349b621-ac98-42f9-9e02-f2685a4d0486
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=3dd675a1-ce77-4571-a74d-27fc6e1b8fb1
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 4
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 5
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-ERROR:root:cobot_iot_task.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:cobot_iot_task.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:cobot_iot_task.connect:Successfully started synchronization
-INFO:root:cobot_iot_task.connect:header_row
-INFO:azure.iot.device.common.mqtt_transport:payload published for 6
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:cobot_iot_task.connect:data_row
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/twin/res/200/?$rid=d8913e2b-a3a9-4ebe-863a-d3a1ac2eef65
+INFO:azure.iot.device.common.mqtt_transport:payload published for 97
