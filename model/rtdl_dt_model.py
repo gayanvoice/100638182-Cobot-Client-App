@@ -1,3 +1,5 @@
+import json
+
 from model.rtdl.base_model import BaseModel
 from model.rtdl.cobot_model import CobotModel
 from model.rtdl.control_box_model import ControlBoxModel
@@ -121,3 +123,20 @@ class RtdlDtModel(object):
         rtdl_dt_model._wrist3_model = Wrist3Model.get_from_rtdl_model(rtdl_model)
         rtdl_dt_model._tool_model = ToolModel.get_from_rtdl_model(rtdl_model)
         return rtdl_dt_model
+
+    def get_json(self):
+        rtdl_dt_model = {
+            "cobot_model": self._cobot_model.__dict__,
+            "control_box_model": self._control_box_model.__dict__,
+            "payload_model": self._payload_model.__dict__,
+            "base_model": self._base_model.__dict__,
+            "shoulder_model": self._shoulder_model.__dict__,
+            "elbow_model": self._elbow_model.__dict__,
+            "wrist1_model": self._wrist1_model.__dict__,
+            "wrist2_model": self._wrist2_model.__dict__,
+            "wrist3_model": self._wrist3_model.__dict__,
+            "tool_model": self._tool_model.__dict__,
+        }
+        return rtdl_dt_model
+
+
