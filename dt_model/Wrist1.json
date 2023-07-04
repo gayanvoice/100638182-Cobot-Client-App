@@ -1,5 +1,5 @@
 {
-  "@id": "dtmi:com:Cobot:JointLoad:Wrist1w;1",
+  "@id": "dtmi:com:Cobot:JointLoad:Wrist1;1",
   "@type": "Interface",
   "@context": "dtmi:dtdl:context;2",
  	"contents": [

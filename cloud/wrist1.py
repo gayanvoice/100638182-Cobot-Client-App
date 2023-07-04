@@ -4,10 +4,11 @@ import json
 from threading import Thread
 from datetime import datetime
 from cloud.device import Device
-from cloud.iot_task.wrist1w_iot_task import Wrist1wIotTask
+from cloud.iot_task.wrist1_iot_task import Wrist1IotTask
+from cloud.iot_task.wrist2_iot_task import Wrist2IotTask
 
 
-class Wrist1w(object):
+class Wrist1(object):
     def __init__(self, model_id, provisioning_host, id_scope, registration_id, symmetric_key):
         self.__model_id = model_id
         self.__provisioning_host = provisioning_host
@@ -22,29 +23,29 @@ class Wrist1w(object):
     @staticmethod
     def stdin_listener():
         while True:
-            selection = input("Press C to quit Wrist1w\n")
+            selection = input("Press C to quit Wrist1\n")
             if selection == "C" or selection == "c":
-                print("Quitting Wrist1w...")
+                print("Quitting Wrist1...")
                 break
 
     def iot_task_callback(self, values):
         if self.__iot_lock:
-            logging.info("wrist1w.iot_task_callback:__iot_lock={iot_lock}"
+            logging.info("wrist1.iot_task_callback:__iot_lock={iot_lock}"
                          .format(iot_lock=self.__iot_lock))
             self.__iot_lock = False
-            self.__iot_task = Wrist1wIotTask(self.__device)
+            self.__iot_task = Wrist1IotTask(self.__device)
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             loop.run_until_complete(self.__iot_task.connect())
             loop.close()
 
         else:
-            logging.error("wrist1w.iot_task_callback:__iot_lock={iot_lock}"
+            logging.error("wrist1.iot_task_callback:__iot_lock={iot_lock}"
                           .format(iot_lock=self.__iot_lock))
 
     async def start_iot_command_handler(self, values):
         if values:
-            logging.info("wrist1w.start_iot_command_handler:values={values} type={type}"
+            logging.info("wrist1.start_iot_command_handler:values={values} type={type}"
                          .format(values=values, type=str(type(values))))
             self.__iot_thread = Thread(target=self.iot_task_callback, args=(values,))
             self.__iot_thread.start()
@@ -60,7 +61,7 @@ class Wrist1w(object):
     async def stop_iot_command_handler(self, values):
         if values:
             self.__iot_lock = True
-            logging.info("wrist1w.stop_iot_command_handler:values={values} type={type}"
+            logging.info("wrist1.stop_iot_command_handler:values={values} type={type}"
                          .format(values=values, type=str(type(values))))
             self.__iot_task.terminate()
             self.__iot_thread.join()
@@ -104,10 +105,10 @@ class Wrist1w(object):
         await user_finished
 
         if not command_listeners.done():
-            command_listeners.set_result(["Wrist1w done"])
+            command_listeners.set_result(["Wrist1 done"])
 
         command_listeners.cancel()
 
         await self.__device.iot_hub_device_client.shutdown()
-        logging.info("wrist1w.connect_azure_iot:queue.put")
+        logging.info("wrist1.connect_azure_iot:queue.put")
         await queue.put(None)

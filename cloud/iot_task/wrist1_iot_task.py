@@ -3,7 +3,7 @@ import asyncio
 import json
 
 
-class Wrist1wIotTask:
+class Wrist1IotTask:
 
     def __init__(self, device):
         self.__device = device
@@ -14,24 +14,24 @@ class Wrist1wIotTask:
         self.__running = False
 
     async def connect(self):
-        logging.info("wrist1w_iot_task.connect:starting")
+        logging.info("wrist1_iot_task.connect:starting")
 
         while self.__running:
             try:
                 cache_json_file = open('cache.json')
                 data_object = json.load(cache_json_file)
                 cache_json_file.close()
-                telemetry = {"position": data_object['wrist1_model']['_position'],
-                             "temperature": data_object['wrist1_model']['_temperature'],
-                             "voltage": data_object['wrist1_model']['_voltage']}
-                logging.info("wrist1w_iot_task.connect:" + str(telemetry))
+                telemetry = {"position": data_object['base_model']['_position'],
+                             "temperature": data_object['base_model']['_temperature'],
+                             "voltage": data_object['base_model']['_voltage']}
+                logging.info("wrist1_iot_task.connect:" + str(telemetry))
                 await self.__device.send_telemetry(telemetry)
                 await asyncio.sleep(5)
 
             except Exception as ex:
                 await asyncio.sleep(5)
-                logging.error("wrist1w_iot_task.connect.while:error={error}".format(error=str(ex)))
+                logging.error("wrist1_iot_task.connect.while:error={error}".format(error=str(ex)))
 
-        logging.debug("wrist1w_iot_task.connect:complete")
+        logging.debug("wrist1_iot_task.connect:complete")
 
 
