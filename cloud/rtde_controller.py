@@ -80,6 +80,8 @@ class RtdeController:
                         rtdl_model = RtdlModel.get_from_rows(header_row, data_row)
                         rtdl_dt_model = RtdlDtModel.get_from_rtdl_model(rtdl_model)
                         self.create_json(rtdl_dt_model.get_json())
+                        logging.info("rtde_controller.connect:json_object={json_object}"
+                                     .format(json_object=rtdl_dt_model.get_json()))
                         await asyncio.sleep(5)
 
                 except rtde.RTDEException as ex:

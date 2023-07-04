@@ -3,8 +3,8 @@ import logging
 import json
 from threading import Thread
 from datetime import datetime
-from cloud.control_box_iot_task import ControlBoxIotTask
 from cloud.device import Device
+from cloud.elbow_iot_task import ElbowIotTask
 
 
 class Elbow(object):
@@ -24,27 +24,27 @@ class Elbow(object):
         while True:
             selection = input("Press C to quit Elbow\n")
             if selection == "C" or selection == "c":
-                print("Quitting Cobot...")
+                print("Quitting Elbow...")
                 break
 
     def iot_task_callback(self, values):
         if self.__iot_lock:
-            logging.info("control_box.cobot_iot_task_callback:__cobot_iot_lock={cobot_iot_lock}"
-                         .format(cobot_iot_lock=self.__iot_lock))
+            logging.info("elbow.iot_task_callback:__iot_lock={iot_lock}"
+                         .format(iot_lock=self.__iot_lock))
             self.__iot_lock = False
-            self.__iot_task = ControlBoxIotTask(self.__device)
+            self.__iot_task = ElbowIotTask(self.__device)
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             loop.run_until_complete(self.__iot_task.connect())
             loop.close()
 
         else:
-            logging.error("control_box.iot_task_callback:__cobot_iot_lock={cobot_iot_lock}"
-                          .format(cobot_iot_lock=self.__iot_lock))
+            logging.error("elbow.iot_task_callback:__iot_lock={iot_lock}"
+                          .format(iot_lock=self.__iot_lock))
 
     async def start_iot_command_handler(self, values):
         if values:
-            logging.info("control_box.start_iot_command_handler:values={values} type={type}"
+            logging.info("elbow.start_iot_command_handler:values={values} type={type}"
                          .format(values=values, type=str(type(values))))
             self.__iot_thread = Thread(target=self.iot_task_callback, args=(values,))
             self.__iot_thread.start()
@@ -60,7 +60,7 @@ class Elbow(object):
     async def stop_iot_command_handler(self, values):
         if values:
             self.__iot_lock = True
-            logging.info("control_box.stop_iot_command_handler:values={values} type={type}"
+            logging.info("elbow.stop_iot_command_handler:values={values} type={type}"
                          .format(values=values, type=str(type(values))))
             self.__iot_task.terminate()
             self.__iot_thread.join()
@@ -104,10 +104,10 @@ class Elbow(object):
         await user_finished
 
         if not command_listeners.done():
-            command_listeners.set_result(["Cobot done"])
+            command_listeners.set_result(["Elbow done"])
 
         command_listeners.cancel()
 
         await self.__device.iot_hub_device_client.shutdown()
-        logging.info("control_box.connect_azure_iot:queue.put")
+        logging.info("elbow.connect_azure_iot:queue.put")
         await queue.put(None)

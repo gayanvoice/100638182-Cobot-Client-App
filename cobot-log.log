@@ -1382,3 +1382,168 @@ INFO:root:rtde_controller.connect:data_row
 INFO:root:rtde_controller.create_json:cache.json saved
 INFO:root:rtde_controller.connect:data_row
 INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
+INFO:root:rtde_controller.connect:Starting
+ERROR:root:rtde_controller.connect:exception=timed out
+INFO:root:rtde_controller.connect:queue.put
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=23d74726-abd7-449a-a637-70119f2d961f
+INFO:azure.iot.device.common.mqtt_transport:payload published for 2
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=23d74726-abd7-449a-a637-70119f2d961f&retry-after=3
+INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=617f3387-c275-480c-a7d3-4dea94090936&operationId=5.9016b01e04376943.2d485de7-a7f2-4707-b6e0-7c04c0b935a9
+INFO:azure.iot.device.common.mqtt_transport:payload published for 3
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=617f3387-c275-480c-a7d3-4dea94090936
+INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
+INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Elbow
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 2
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 3
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=hello world
+INFO:root:elbow.start_iot_command_handler:values=hello world type=<class 'str'>
+INFO:root:elbow.iot_task_callback:__iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
+INFO:root:elbow_iot_task.connect:starting
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:payload published for 4
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:payload published for 5
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 6
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 7
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 8
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 9
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 10
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 11
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 12
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 13
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 14
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 15
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 16
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 17
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 18
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=hello world
+INFO:root:elbow.stop_iot_command_handler:values=hello world type=<class 'str'>
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
+INFO:azure.iot.device.common.mqtt_transport:payload published for 19
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
