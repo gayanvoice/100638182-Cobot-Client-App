@@ -11,6 +11,7 @@ from cloud.elbow import Elbow
 from cloud.payload import Payload
 from cloud.rtde_controller import RtdeController
 from cloud.base import Base
+from cloud.shoulder import Shoulder
 
 # Get-Content ".\cobot-log.log" -Wait
 
@@ -88,12 +89,26 @@ async def base(queue):
     await base_device.connect_azure_iot(queue)
 
 
+async def shoulder(queue):
+    model_id = "dtmi:com:Cobot:JointLoad:Shoulder;1"
+    provisioning_host = "global.azure-devices-provisioning.net"
+    id_scope = "0ne00A685D0"
+    registration_id = "Shoulder"
+    symmetric_key = "X+LqHs7T67/h3iZNp3KQ3hqLUobJNB4fBU3fSUx5iEG90raxoPGfl2A2McxyQsFkPz6KUeRH7v0Em+Rnpg1mWA=="
+
+    shoulder_device = Shoulder(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    await shoulder_device.connect_azure_iot(queue)
+
+
 async def main():
     queue = asyncio.Queue()
     # await asyncio.gather(rtde_controller(queue),
     #                      cobot(queue),
-    #                      control_box(queue))
-    await asyncio.gather(rtde_controller(queue), base(queue))
+    #                      control_box(queue),
+    #                      elbow(queue),
+    #                      payload(queue),
+    #                      base(queue))
+    await asyncio.gather(rtde_controller(queue), shoulder(queue))
 
 
 if __name__ == '__main__':
