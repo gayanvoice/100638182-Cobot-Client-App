@@ -1,17 +1,15 @@
 import asyncio
 import logging
-import random
-import time
-
-from cloud.cobot import Cobot
 import os
 
+from cloud.cobot import Cobot
 from cloud.control_box import ControlBox
 from cloud.elbow import Elbow
 from cloud.payload import Payload
 from cloud.rtde_controller import RtdeController
 from cloud.base import Base
 from cloud.shoulder import Shoulder
+from cloud.wrist1w import Wrist1w
 
 # Get-Content ".\cobot-log.log" -Wait
 
@@ -100,6 +98,17 @@ async def shoulder(queue):
     await shoulder_device.connect_azure_iot(queue)
 
 
+async def wrist1w(queue):
+    model_id = "dtmi:com:Cobot:JointLoad:Wrist1w;1"
+    provisioning_host = "global.azure-devices-provisioning.net"
+    id_scope = "0ne00A685D0"
+    registration_id = "Wrist1w"
+    symmetric_key = "YTbbDTY4Br5XnKjLJiCLi/fghSWQvD33jKHcK5uoWK8GaD4+UaASrINI93oMu6uinnjsLbbrszmaEyc7jJcvhA=="
+
+    wrist1w_device = Wrist1w(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    await wrist1w_device.connect_azure_iot(queue)
+
+
 async def main():
     queue = asyncio.Queue()
     # await asyncio.gather(rtde_controller(queue),
@@ -108,7 +117,7 @@ async def main():
     #                      elbow(queue),
     #                      payload(queue),
     #                      base(queue))
-    await asyncio.gather(rtde_controller(queue), shoulder(queue))
+    await asyncio.gather(rtde_controller(queue), wrist1w(queue))
 
 
 if __name__ == '__main__':
