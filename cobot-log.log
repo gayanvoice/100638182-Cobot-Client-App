@@ -1,1406 +1,6 @@
 INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
 INFO:root:rtde_controller.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:rtde_controller.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:rtde_controller.connect:Successfully started synchronization
-INFO:root:rtde_controller.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=73e6e203-33ef-4dcf-ae68-1874e7440b61
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/401/?$rid=73e6e203-33ef-4dcf-ae68-1874e7440b61
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): Received error with status code 401 for register request operation
-INFO:azure.iot.device.common.async_adapter:Callback completed with error register request returned a service error status code 401
-INFO:azure.iot.device.common.async_adapter:['azure.iot.device.exceptions.ServiceError: register request returned a service error status code 401\n']
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:root:rtde_controller.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:rtde_controller.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:rtde_controller.connect:Successfully started synchronization
-INFO:root:rtde_controller.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=3763fb95-db67-41bb-b763-4b6e8713694f
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/401/?$rid=3763fb95-db67-41bb-b763-4b6e8713694f
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): Received error with status code 401 for register request operation
-INFO:azure.iot.device.common.async_adapter:Callback completed with error register request returned a service error status code 401
-INFO:azure.iot.device.common.async_adapter:['azure.iot.device.exceptions.ServiceError: register request returned a service error status code 401\n']
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:root:rtde_controller.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:rtde_controller.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:rtde_controller.connect:Successfully started synchronization
-INFO:root:rtde_controller.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=ac399408-2800-41ed-8bf9-23b3ad6d7024
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=ac399408-2800-41ed-8bf9-23b3ad6d7024&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=75e6909d-08d8-4878-9a89-6b616fbff333&operationId=5.2acdc2877f637bec.63988424-082d-409a-a8dc-0161a77ead1e
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=75e6909d-08d8-4878-9a89-6b616fbff333
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 4
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 5
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-INFO:root:cobot_iot_task.connect:Starting
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11240.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11240.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:payload published for 6
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:payload published for 7
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11244.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11244.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 8
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11249.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11249.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 9
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11254.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11254.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 10
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11259.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11259.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 11
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11264.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11264.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 12
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11269.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11269.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 13
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11274.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11274.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 14
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11278.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11278.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 15
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11283.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11283.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 16
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11288.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11288.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 17
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11293.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11293.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 18
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11298.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11298.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 19
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 11303.508}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 11303.508}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 20
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
-INFO:azure.iot.device.common.mqtt_transport:payload published for 21
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:root:rtde_controller.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:rtde_controller.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:rtde_controller.connect:Successfully started synchronization
-INFO:root:rtde_controller.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=80182ba0-3b57-4b4d-bdbc-6032c979e9c7
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=80182ba0-3b57-4b4d-bdbc-6032c979e9c7&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=457437ad-bf12-40b0-9455-2604be2ecdc9&operationId=5.6dba61e63df59f73.8ba2a50f-1ac6-45e0-917e-8694984257d1
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=457437ad-bf12-40b0-9455-2604be2ecdc9
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=ControlBox
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:root:rtde_controller.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:rtde_controller.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:rtde_controller.connect:Successfully started synchronization
-INFO:root:rtde_controller.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=8ecdd9d5-667e-444e-a971-68371fd1ceef
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=8ecdd9d5-667e-444e-a971-68371fd1ceef&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=80103ff7-3ede-45cf-926b-44df149812c5&operationId=5.6dba61e63df59f73.fc43c56d-4691-4e9f-9492-e4e431c099b1
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=80103ff7-3ede-45cf-926b-44df149812c5
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=ControlBox
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:root:rtde_controller.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:rtde_controller.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:rtde_controller.connect:Successfully started synchronization
-INFO:root:rtde_controller.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=0d06133d-2948-409f-952c-6782dec196a1
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=0d06133d-2948-409f-952c-6782dec196a1&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=2edc7a65-0e17-4d53-9dc7-9c53a5ea5ee2&operationId=5.6dba61e63df59f73.2f8d506d-e43c-41dc-9451-02a57a381b30
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=2edc7a65-0e17-4d53-9dc7-9c53a5ea5ee2
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=ControlBox
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=hello world
-INFO:root:control_box.start_iot_command_handler:values=hello world type=<class 'str'>
-INFO:root:control_box.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-INFO:root:control_box_iot_task.connect:starting
-INFO:azure.iot.device.common.mqtt_transport:payload published for 4
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=hello world
-INFO:root:control_box.stop_iot_command_handler:values=hello world type=<class 'str'>
-ERROR:root:control_box_iot_task.connect.while:error='cobot_box_model'
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:root:rtde_controller.connect:data_row
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:payload published for 5
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:root:rtde_controller.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:rtde_controller.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:rtde_controller.connect:Successfully started synchronization
-INFO:root:rtde_controller.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=0474e954-cde5-4548-8fbc-598afecc1fa7
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=0474e954-cde5-4548-8fbc-598afecc1fa7&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=a1dcaf41-0ed5-4d10-92fd-f79d3dfa331d&operationId=5.6dba61e63df59f73.d44274bc-1857-48b1-b490-0ef09b42efee
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=a1dcaf41-0ed5-4d10-92fd-f79d3dfa331d
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=ControlBox
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=hello world
-INFO:root:control_box.start_iot_command_handler:values=hello world type=<class 'str'>
-INFO:root:control_box.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-INFO:root:control_box_iot_task.connect:starting
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 4
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:payload published for 5
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 6
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 7
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 8
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 9
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 10
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 11
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 12
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:root:rtde_controller.connect:Starting
-INFO:rtde:Controller version: 5.13.1.0
-INFO:root:rtde_controller.connect:Successfully configured output
-INFO:rtde:RTDE synchronization started
-INFO:root:rtde_controller.connect:Successfully started synchronization
-INFO:root:rtde_controller.connect:header_row
-WARNING:rtde:no data received in last 1 seconds 
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=78ddb7ba-bcfe-4533-8c03-85c2b2b4f096
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=84bbb5e5-3ff7-40cc-bd2e-2a0fe221b5eb
-INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=84bbb5e5-3ff7-40cc-bd2e-2a0fe221b5eb&retry-after=3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=78ddb7ba-bcfe-4533-8c03-85c2b2b4f096&retry-after=3
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=a6b1ad18-033a-4d37-9559-ef066f9a89e8&operationId=5.6dba61e63df59f73.58e47ad9-f05b-4aa8-9de1-4fc690d763f0
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=a6b1ad18-033a-4d37-9559-ef066f9a89e8
-INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=2457af37-e695-47c1-ab77-b39a67e482fc&operationId=5.2acdc2877f637bec.04b36379-b6c7-41f3-8837-f8eb6a3fd0e9
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=ControlBox
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=2457af37-e695-47c1-ab77-b39a67e482fc
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
-INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
-INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
-INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
-INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
-INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
-INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 3
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 4
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:suback received for 5
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=hello world
-INFO:root:control_box.start_iot_command_handler:values=hello world type=<class 'str'>
-INFO:root:control_box.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-INFO:root:control_box_iot_task.connect:starting
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 4
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:payload published for 5
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 6
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 7
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 8
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 9
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-INFO:root:cobot_iot_task.connect:Starting
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 12537.17}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 12537.17}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 6
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:azure.iot.device.common.mqtt_transport:payload published for 7
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 10
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 12542.17}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 12542.17}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 8
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 11
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 12547.17}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 12547.17}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 9
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 12
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 12552.17}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 12552.17}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 10
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:control_box_iot_task.connect:{'Voltage': 48.0}
-INFO:root:device.send_telemetry:telemetry={'Voltage': 48.0}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/ControlBox/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 13
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 12557.17}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 12557.17}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 11
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=hello world
-INFO:root:control_box.stop_iot_command_handler:values=hello world type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:root:rtde_controller.connect:data_row
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:payload published for 14
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 12565.17}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 12565.17}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 12
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 12570.17}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 12570.17}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 13
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 12574.17}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 12574.17}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 14
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:cobot_iot_task.connect:{'ElapsedTime': 12579.17}
-INFO:root:device.send_telemetry:telemetry={'ElapsedTime': 12579.17}
-INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
-INFO:azure.iot.device.common.mqtt_transport:payload published for 15
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
-INFO:azure.iot.device.iothub.aio.async_clients:Received method request
-INFO:root:device.create_iot_hub_device_client:payload=payload
-INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
-INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:azure.iot.device.common.mqtt_transport:payload published for 16
-INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
-INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:rtde_controller.connect:data_row
-INFO:root:rtde_controller.create_json:cache.json saved
-INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
-INFO:root:rtde_controller.connect:Starting
-ERROR:root:rtde_controller.connect:exception=timed out
+ERROR:root:rtde_controller.connect:exception=[WinError 10054] An existing connection was forcibly closed by the remote host
 INFO:root:rtde_controller.connect:queue.put
 INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
 INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
@@ -1411,13 +11,13 @@ INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected ca
 INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
 INFO:azure.iot.device.common.mqtt_transport:suback received for 1
 INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=23d74726-abd7-449a-a637-70119f2d961f
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=8bdb82ad-67b6-4669-b820-631ef6ed5381
 INFO:azure.iot.device.common.mqtt_transport:payload published for 2
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=23d74726-abd7-449a-a637-70119f2d961f&retry-after=3
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=8bdb82ad-67b6-4669-b820-631ef6ed5381&retry-after=3
 INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
-INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=617f3387-c275-480c-a7d3-4dea94090936&operationId=5.9016b01e04376943.2d485de7-a7f2-4707-b6e0-7c04c0b935a9
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=c6b09248-c178-41e8-ba05-1a499d1843d3&operationId=5.9016b01e04376943.befcae79-8266-47f7-8889-d9df3f98fb9e
 INFO:azure.iot.device.common.mqtt_transport:payload published for 3
-INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=617f3387-c275-480c-a7d3-4dea94090936
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=c6b09248-c178-41e8-ba05-1a499d1843d3
 INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
 INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
 INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Elbow
@@ -1430,14 +30,59 @@ INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
 INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
 INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 2
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 3
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
+INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
+INFO:root:rtde_controller.connect:Starting
+ERROR:root:rtde_controller.connect:exception=[WinError 10054] An existing connection was forcibly closed by the remote host
+INFO:root:rtde_controller.connect:queue.put
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=b9af1099-9811-4508-8b00-0cf95fb91a4f
+INFO:azure.iot.device.common.mqtt_transport:payload published for 2
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=b9af1099-9811-4508-8b00-0cf95fb91a4f&retry-after=3
+INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=147ce9af-9e14-4a14-8735-0a730e819446&operationId=5.66e70446602ea55a.7e122154-1a13-4555-836c-03e2ee0b763a
+INFO:azure.iot.device.common.mqtt_transport:payload published for 3
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=147ce9af-9e14-4a14-8735-0a730e819446
+INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
+INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Payload
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
 INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
 INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
 INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
 INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
 INFO:azure.iot.device.common.mqtt_transport:suback received for 1
-INFO:azure.iot.device.common.mqtt_transport:suback received for 2
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
 INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 2
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
 INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
 INFO:azure.iot.device.common.mqtt_transport:suback received for 3
@@ -1446,104 +91,330 @@ INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
 INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
 INFO:azure.iot.device.iothub.aio.async_clients:Received method request
 INFO:root:device.create_iot_hub_device_client:payload=hello world
-INFO:root:elbow.start_iot_command_handler:values=hello world type=<class 'str'>
-INFO:root:elbow.iot_task_callback:__iot_lock=True
+INFO:root:payload.start_iot_command_handler:values=hello world type=<class 'str'>
+INFO:root:payload.iot_task_callback:__iot_lock=True
 INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
 INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
-INFO:root:elbow_iot_task.connect:starting
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:starting
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 4
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
 INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
 INFO:azure.iot.device.common.mqtt_transport:payload published for 5
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 6
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 7
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 8
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 9
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 10
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 11
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 12
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 13
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 14
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 15
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 16
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 17
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
-INFO:root:elbow_iot_task.connect:{'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
-INFO:root:device.send_telemetry:telemetry={'position': -2.2029999999999994, 'temperature': 24.5, 'voltage': 5.690795741838779, 'x': -0.12279807157171456, 'y': -0.09174724324388771, 'z': 0.7859308377597881}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
 INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
-INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Elbow/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
 INFO:azure.iot.device.common.mqtt_transport:payload published for 18
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 19
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 20
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 21
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 22
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 23
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 24
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
+INFO:root:rtde_controller.connect:Starting
+WARNING:rtde:b'URControl': b'SafetySetup has not been confirmed yet, therefore no data will be send yet'
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:rtde_controller.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:rtde_controller.connect:Successfully started synchronization
+INFO:root:rtde_controller.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 9.347999999999999}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=766c6a05-0bba-42b9-be60-49a2aa6eb9e0
+INFO:azure.iot.device.common.mqtt_transport:payload published for 2
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=766c6a05-0bba-42b9-be60-49a2aa6eb9e0&retry-after=3
+INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=5f5e1483-0bdc-4bc5-9dce-703619677e0e&operationId=5.66e70446602ea55a.82fc5bff-d1be-4f81-b37c-0eee329e9356
+INFO:azure.iot.device.common.mqtt_transport:payload published for 3
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=5f5e1483-0bdc-4bc5-9dce-703619677e0e
+INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
+INFO:root:device.create_iot_hub_device_client:registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Payload
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 2
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 3
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 12.347999999999999}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/startIotCommand/?$rid=1
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:payload=hello world
+INFO:root:payload.start_iot_command_handler:values=hello world type=<class 'str'>
+INFO:root:payload.iot_task_callback:__iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
+INFO:root:payload_iot_task.connect:starting
+INFO:root:payload_iot_task.connect:{'mass': 0.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 0.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 4
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:payload published for 5
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 15.347999999999999}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 0.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 0.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 6
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 20.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 7
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 25.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 8
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 29.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 9
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 34.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 10
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 39.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 11
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 44.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 12
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 48.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 13
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 53.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 14
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 58.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 15
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 63.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:payload_iot_task.connect:{'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:root:device.send_telemetry:telemetry={'mass': 5.0, 'cogx': 0.0, 'cogy': 0.0, 'cogz': 0.0}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Payload/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 16
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 68.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
 INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/stopIotCommand/?$rid=2
 INFO:azure.iot.device.iothub.aio.async_clients:Received method request
 INFO:root:device.create_iot_hub_device_client:payload=hello world
-INFO:root:elbow.stop_iot_command_handler:values=hello world type=<class 'str'>
+INFO:root:payload.stop_iot_command_handler:values=hello world type=<class 'str'>
 INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
 INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
-INFO:azure.iot.device.common.mqtt_transport:payload published for 19
+INFO:azure.iot.device.common.mqtt_transport:payload published for 17
 INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
 INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 72.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 77.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 82.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 87.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 92.348}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 5.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': -8.885421444264158e-17}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 6.119588948658669}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 5.690795741838779, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.8285217324486299}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.014802505738866106}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}

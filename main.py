@@ -8,6 +8,7 @@ import os
 
 from cloud.control_box import ControlBox
 from cloud.elbow import Elbow
+from cloud.payload import Payload
 from cloud.rtde_controller import RtdeController
 
 # Get-Content ".\cobot-log.log" -Wait
@@ -64,12 +65,23 @@ async def elbow(queue):
     await elbow_device.connect_azure_iot(queue)
 
 
+async def payload(queue):
+    model_id = "dtmi:com:Cobot:Payload;1"
+    provisioning_host = "global.azure-devices-provisioning.net"
+    id_scope = "0ne00A685D0"
+    registration_id = "Payload"
+    symmetric_key = "yKEbtMdipsxgsqajuUp/4oQtu0nEXxxrM1wbOvWZheiJKn3AQqa/fDyTxCp9yXyK3VUrHDZ8SV7HQyUy97hUXQ=="
+
+    payload_device = Payload(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    await payload_device.connect_azure_iot(queue)
+
+
 async def main():
     queue = asyncio.Queue()
     # await asyncio.gather(rtde_controller(queue),
     #                      cobot(queue),
     #                      control_box(queue))
-    await asyncio.gather(rtde_controller(queue), elbow(queue))
+    await asyncio.gather(rtde_controller(queue), payload(queue))
 
 
 if __name__ == '__main__':

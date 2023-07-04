@@ -1,44 +1,32 @@
 {
-  "@id": "dtmi:com:Cobot:JointLoad:Elbow;1",
+  "@id": "dtmi:com:Cobot:Payload;1",
   "@type": "Interface",
   "@context": "dtmi:dtdl:context;2",
  	"contents": [
     	{
-      		"@type": "Property",
-      		"name": "position",
-      		"schema": "double",
-      		"writable": true
-    	},
-		{
-      		"@type": "Property",
-      		"name": "temperature",
-      		"schema": "double",
-      		"writable": true
-    	},
-		{
-      		"@type": "Property",
-      		"name": "voltage",
-      		"schema": "double",
-      		"writable": true
-    	},
-		{
-      		"@type": "Property",
-      		"name": "x",
-      		"schema": "double",
-      		"writable": true
-    	},
-		{
-      		"@type": "Property",
-      		"name": "y",
-      		"schema": "double",
-      		"writable": true
-    	},
-		{
-      		"@type": "Property",
-      		"name": "z",
-      		"schema": "double",
-      		"writable": true
-    	},
+      "@type": "Property",
+      "name": "mass",
+      "schema": "double",
+      "writable": true
+    },
+    {
+      "@type": "Property",
+      "name": "cogx",
+      "schema": "double",
+      "writable": true
+    },
+    {
+      "@type": "Property",
+      "name": "cogy",
+      "schema": "double",
+      "writable": true
+    },
+    {
+      "@type": "Property",
+      "name": "cogz",
+      "schema": "double",
+      "writable": true
+    },
 		{
       "@type": "Command",
       "name": "startIotCommand",
