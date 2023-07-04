@@ -3,8 +3,8 @@ import logging
 import json
 from threading import Thread
 from datetime import datetime
-from cloud.cobot_control_task import CobotControlTask
-from cloud.cobot_iot_task import CobotIotTask
+from cloud.control_task.cobot_control_task import CobotControlTask
+from cloud.iot_task.cobot_iot_task import CobotIotTask
 from cloud.device import Device
 
 

@@ -4,9 +4,9 @@ from azure.iot.hub import IoTHubRegistryManager
 from azure.iot.hub.models import CloudToDeviceMethod
 
 iothub_connection_str = "HostName=100638182IotHub.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey=lvHQWwVYdyhxjOpxKzwp39EDJnQyWmklEd73eMCcG8U="
-device_id = "Payload"
-# method_name = "startIotCommand"
+device_id = "Base"
 method_name = "stopIotCommand"
+# method_name = "stopIotCommand"
 method_payload = "hello world"
 
 try:

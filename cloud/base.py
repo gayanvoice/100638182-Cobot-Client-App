@@ -3,13 +3,13 @@ import logging
 import json
 from threading import Thread
 from datetime import datetime
-from cloud.iot_task.control_box_iot_task import ControlBoxIotTask
 from cloud.device import Device
+from cloud.iot_task.base_iot_task import BaseIotTask
 
 
-class ControlBox(object):
-    def __init__(self, control_box_model_id, provisioning_host, id_scope, registration_id, symmetric_key):
-        self.__model_id = control_box_model_id
+class Base(object):
+    def __init__(self, model_id, provisioning_host, id_scope, registration_id, symmetric_key):
+        self.__model_id = model_id
         self.__provisioning_host = provisioning_host
         self.__id_scope = id_scope
         self.__registration_id = registration_id
@@ -22,29 +22,29 @@ class ControlBox(object):
     @staticmethod
     def stdin_listener():
         while True:
-            selection = input("Press C to quit Cobot\n")
+            selection = input("Press C to quit Base\n")
             if selection == "C" or selection == "c":
-                print("Quitting Cobot...")
+                print("Quitting Base...")
                 break
 
     def iot_task_callback(self, values):
         if self.__iot_lock:
-            logging.info("control_box.cobot_iot_task_callback:__cobot_iot_lock={cobot_iot_lock}"
-                         .format(cobot_iot_lock=self.__iot_lock))
+            logging.info("base.iot_task_callback:__iot_lock={iot_lock}"
+                         .format(iot_lock=self.__iot_lock))
             self.__iot_lock = False
-            self.__iot_task = ControlBoxIotTask(self.__device)
+            self.__iot_task = BaseIotTask(self.__device)
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             loop.run_until_complete(self.__iot_task.connect())
             loop.close()
 
         else:
-            logging.error("control_box.iot_task_callback:__cobot_iot_lock={cobot_iot_lock}"
-                          .format(cobot_iot_lock=self.__iot_lock))
+            logging.error("base.iot_task_callback:__iot_lock={iot_lock}"
+                          .format(iot_lock=self.__iot_lock))
 
     async def start_iot_command_handler(self, values):
         if values:
-            logging.info("control_box.start_iot_command_handler:values={values} type={type}"
+            logging.info("base.start_iot_command_handler:values={values} type={type}"
                          .format(values=values, type=str(type(values))))
             self.__iot_thread = Thread(target=self.iot_task_callback, args=(values,))
             self.__iot_thread.start()
@@ -60,7 +60,7 @@ class ControlBox(object):
     async def stop_iot_command_handler(self, values):
         if values:
             self.__iot_lock = True
-            logging.info("control_box.stop_iot_command_handler:values={values} type={type}"
+            logging.info("base.stop_iot_command_handler:values={values} type={type}"
                          .format(values=values, type=str(type(values))))
             self.__iot_task.terminate()
             self.__iot_thread.join()
@@ -104,10 +104,10 @@ class ControlBox(object):
         await user_finished
 
         if not command_listeners.done():
-            command_listeners.set_result(["Cobot done"])
+            command_listeners.set_result(["Base done"])
 
         command_listeners.cancel()
 
         await self.__device.iot_hub_device_client.shutdown()
-        logging.info("control_box.connect_azure_iot:queue.put")
+        logging.info("base.connect_azure_iot:queue.put")
         await queue.put(None)

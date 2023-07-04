@@ -4,7 +4,7 @@ import json
 from threading import Thread
 from datetime import datetime
 from cloud.device import Device
-from cloud.elbow_iot_task import ElbowIotTask
+from cloud.iot_task.elbow_iot_task import ElbowIotTask
 
 
 class Elbow(object):

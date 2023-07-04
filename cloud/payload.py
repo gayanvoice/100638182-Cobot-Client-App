@@ -4,7 +4,7 @@ import json
 from threading import Thread
 from datetime import datetime
 from cloud.device import Device
-from cloud.payload_iot_task import PayloadIotTask
+from cloud.iot_task.payload_iot_task import PayloadIotTask
 
 
 class Payload(object):
