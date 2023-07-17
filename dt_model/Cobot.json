@@ -1,28 +1,45 @@
 {
-  "@context": "dtmi:dtdl:context;2",
   "@id": "dtmi:com:Cobot:Cobot;1",
+  "@context": "dtmi:dtdl:context;2",
   "@type": "Interface",
   "contents": [
     {
       "@type": "Property",
       "name": "ElapsedTime",
-      "schema": "double",
-      "writable": true
+      "schema": "double"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:com:Cobot:Cobot:contains_control_box;1",
+      "name": "ContainsControlBox",
+      "target": "dtmi:com:Cobot:ControlBox;1"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:com:Cobot:Cobot:contains_joint_load;1",
+      "name": "ContainsJointLoad",
+      "target": "dtmi:com:Cobot:JointLoad;1"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:com:Cobot:Cobot:contains_payload;1",
+      "name": "ContainsPayload",
+      "target": "dtmi:com:Cobot:Payload;1"
     },
     {
       "@type": "Command",
-      "name": "startCobotCommand",
+      "name": "StartCobotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "start_time",
+              "name": "StartTime",
               "schema": "dateTime"
             }
           ]
@@ -31,18 +48,18 @@
     },
     {
       "@type": "Command",
-      "name": "stopCobotCommand",
+      "name": "StopCobotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "stop_time",
+              "name": "StopTime",
               "schema": "dateTime"
             }
           ]
@@ -51,18 +68,18 @@
     },
     {
       "@type": "Command",
-      "name": "startIotCommand",
+      "name": "StartIotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "start_time",
+              "name": "StartTime",
               "schema": "dateTime"
             }
           ]
@@ -71,18 +88,18 @@
     },
     {
       "@type": "Command",
-      "name": "stopIotCommand",
+      "name": "StopIotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "stop_time",
+              "name": "StopTime",
               "schema": "dateTime"
             }
           ]

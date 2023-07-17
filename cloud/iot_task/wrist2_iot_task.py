@@ -21,9 +21,9 @@ class Wrist2IotTask:
                 cache_json_file = open('cache.json')
                 data_object = json.load(cache_json_file)
                 cache_json_file.close()
-                telemetry = {"position": data_object['base_model']['_position'],
-                             "temperature": data_object['base_model']['_temperature'],
-                             "voltage": data_object['base_model']['_voltage']}
+                telemetry = {"Position": data_object['base_model']['_position'],
+                             "Temperature": data_object['base_model']['_temperature'],
+                             "Voltage": data_object['base_model']['_voltage']}
                 logging.info("wrist2_iot_task.connect:" + str(telemetry))
                 await self.__device.send_telemetry(telemetry)
                 await asyncio.sleep(5)

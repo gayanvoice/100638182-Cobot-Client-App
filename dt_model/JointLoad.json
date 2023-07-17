@@ -1,0 +1,49 @@
+{
+  "@id": "dtmi:com:Cobot:JointLoad;1",
+  "@context": "dtmi:dtdl:context;2",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:Cobot:JointLoad:contains_base;1",
+      "name": "ContainsBase",
+      "target": "dtmi:com:Cobot:JointLoad:Base;1"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:com:Cobot:JointLoad:contains_shoulder;1",
+      "name": "ContainsShoulder",
+      "target": "dtmi:com:Cobot:JointLoad:Shoulder;1"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:com:Cobot:JointLoad:contains_elbow;1",
+      "name": "ContainsElbow",
+      "target": "dtmi:com:Cobot:JointLoad:Elbow;1"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:com:Cobot:JointLoad:contains_wrist1;1",
+      "name": "ContainsWrist1",
+      "target": "dtmi:com:Cobot:JointLoad:Wrist1;1"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:com:Cobot:JointLoad:contains_wrist2;1",
+      "name": "ContainsWrist2",
+      "target": "dtmi:com:Cobot:JointLoad:Wrist2;1"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:com:Cobot:JointLoad:contains_wrist3;1",
+      "name": "ContainsWrist3",
+      "target": "dtmi:com:Cobot:JointLoad:Wrist3;1"
+    },
+    {
+      "@type": "Relationship",
+      "@id": "dtmi:com:Cobot:JointLoad:contains_tool;1",
+      "name": "ContainsTool",
+      "target": "dtmi:com:Cobot:JointLoad:Tool;1"
+    }
+  ]
+}

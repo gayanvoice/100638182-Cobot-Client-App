@@ -21,10 +21,10 @@ class PayloadIotTask:
                 cache_json_file = open('cache.json')
                 data_object = json.load(cache_json_file)
                 cache_json_file.close()
-                telemetry = {"mass": data_object['payload_model']['_mass'],
-                             "cogx": data_object['payload_model']['_cogx'],
-                             "cogy": data_object['payload_model']['_cogy'],
-                             "cogz": data_object['payload_model']['_cogz']}
+                telemetry = {"Mass": data_object['payload_model']['_mass'],
+                             "CogX": data_object['payload_model']['_cogx'],
+                             "CogY": data_object['payload_model']['_cogy'],
+                             "CogZ": data_object['payload_model']['_cogz']}
                 logging.info("payload_iot_task.connect:" + str(telemetry))
                 await self.__device.send_telemetry(telemetry)
                 await asyncio.sleep(5)

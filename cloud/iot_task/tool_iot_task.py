@@ -21,14 +21,14 @@ class ToolIotTask:
                 cache_json_file = open('cache.json')
                 data_object = json.load(cache_json_file)
                 cache_json_file.close()
-                telemetry = {"temperature": data_object['tool_model']['_temperature'],
-                             "voltage": data_object['tool_model']['_voltage'],
-                             "x": data_object['tool_model']['_x'],
-                             "y": data_object['tool_model']['_y'],
-                             "z": data_object['tool_model']['_z'],
-                             "rx": data_object['tool_model']['_rx'],
-                             "ry": data_object['tool_model']['_ry'],
-                             "rz": data_object['tool_model']['_rz']
+                telemetry = {"Temperature": data_object['tool_model']['_temperature'],
+                             "Voltage": data_object['tool_model']['_voltage'],
+                             "X": data_object['tool_model']['_x'],
+                             "Y": data_object['tool_model']['_y'],
+                             "Z": data_object['tool_model']['_z'],
+                             "Rx": data_object['tool_model']['_rx'],
+                             "Ry": data_object['tool_model']['_ry'],
+                             "Rz": data_object['tool_model']['_rz']
                              }
                 logging.info("tool_iot_task.connect:" + str(telemetry))
                 await self.__device.send_telemetry(telemetry)

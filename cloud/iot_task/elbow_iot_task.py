@@ -21,12 +21,12 @@ class ElbowIotTask:
                 cache_json_file = open('cache.json')
                 data_object = json.load(cache_json_file)
                 cache_json_file.close()
-                telemetry = {"position": data_object['elbow_model']['_position'],
-                             "temperature": data_object['elbow_model']['_temperature'],
-                             "voltage": data_object['elbow_model']['_voltage'],
-                             "x": data_object['elbow_model']['_x'],
-                             "y": data_object['elbow_model']['_y'],
-                             "z": data_object['elbow_model']['_z']}
+                telemetry = {"Position": data_object['elbow_model']['_position'],
+                             "Temperature": data_object['elbow_model']['_temperature'],
+                             "Voltage": data_object['elbow_model']['_voltage'],
+                             "X": data_object['elbow_model']['_x'],
+                             "Y": data_object['elbow_model']['_y'],
+                             "Z": data_object['elbow_model']['_z']}
                 logging.info("elbow_iot_task.connect:" + str(telemetry))
                 await self.__device.send_telemetry(telemetry)
                 await asyncio.sleep(5)

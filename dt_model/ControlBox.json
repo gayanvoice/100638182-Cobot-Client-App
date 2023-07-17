@@ -1,28 +1,27 @@
 {
-  "@context": "dtmi:dtdl:context;2",
   "@id": "dtmi:com:Cobot:ControlBox;1",
+  "@context": "dtmi:dtdl:context;2",
   "@type": "Interface",
   "contents": [
     {
       "@type": "Property",
       "name": "Voltage",
-      "schema": "double",
-      "writable": true
+      "schema": "double"
     },
     {
       "@type": "Command",
-      "name": "startIotCommand",
+      "name": "StartIotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "start_time",
+              "name": "StartTime",
               "schema": "dateTime"
             }
           ]
@@ -31,18 +30,18 @@
     },
     {
       "@type": "Command",
-      "name": "stopIotCommand",
+      "name": "StopIotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "stop_time",
+              "name": "StopTime",
               "schema": "dateTime"
             }
           ]

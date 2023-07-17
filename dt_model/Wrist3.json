@@ -1,40 +1,37 @@
 {
   "@id": "dtmi:com:Cobot:JointLoad:Wrist3;1",
-  "@type": "Interface",
   "@context": "dtmi:dtdl:context;2",
- 	"contents": [
-    	{
-      		"@type": "Property",
-      		"name": "position",
-      		"schema": "double",
-      		"writable": true
-    	},
-	{
-      		"@type": "Property",
-      		"name": "temperature",
-      		"schema": "double",
-      		"writable": true
-    	},
-      {
-        "@type": "Property",
-        "name": "voltage",
-        "schema": "double",
-        "writable": true
-      },
-		{
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "Position",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "Temperature",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "Voltage",
+      "schema": "double"
+    },
+    {
       "@type": "Command",
-      "name": "startIotCommand",
+      "name": "StartIotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "start_time",
+              "name": "StartTime",
               "schema": "dateTime"
             }
           ]
@@ -43,23 +40,23 @@
     },
     {
       "@type": "Command",
-      "name": "stopIotCommand",
+      "name": "StopIotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "stop_time",
+              "name": "StopTime",
               "schema": "dateTime"
             }
           ]
         }
       }
     }
-   ]
+  ]
 }

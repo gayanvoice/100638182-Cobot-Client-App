@@ -1,6 +1,9 @@
 import asyncio
 import logging
 import os
+import xml.etree.ElementTree as ET
+from asyncio import CancelledError
+from os.path import exists
 
 from cloud.cobot import Cobot
 from cloud.control_box import ControlBox
@@ -14,159 +17,250 @@ from cloud.wrist1 import Wrist1
 from cloud.wrist2 import Wrist2
 from cloud.wrist3 import Wrist3
 
-# Get-Content ".\cobot-log.log" -Wait
+cobot_iot_configuration_path = "cobot_iot_configuration.xml"
+cobot_client_configuration_path = "cobot_client_configuration.xml"
+cobot_log_path = "cobot_log.log"
 
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
 
-logging.basicConfig(filename="cobot-log.log", encoding='utf-8', level=logging.INFO)
+logging.basicConfig(filename=cobot_log_path, encoding='utf-8', level=logging.INFO)
 
 
 async def rtde_controller(queue):
-    host = "localhost"
-    port = 30004
-    iot_config = "iot_configuration.xml"
-    frequency = 1
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    rtde_configuration = config_element_tree.find('rtde')
 
-    rtde_cntr = RtdeController(host=host,
-                               port=port,
+    rtde_host = rtde_configuration.find('connection/host').text
+    rtde_port = int(rtde_configuration.find('connection/port').text)
+    iot_config = rtde_configuration.find('settings/iot_configuration_path').text
+    frequency = int(rtde_configuration.find('settings/frequency').text)
+
+    rtde_cntr = RtdeController(host=rtde_host,
+                               port=rtde_port,
                                config=iot_config,
-                               frequency=frequency)
+                               frequency=frequency,
+                               cobot_client_configuration_path=cobot_client_configuration_path)
     await rtde_cntr.connect(queue)
 
 
 async def cobot(queue):
-    cobot_model_id = "dtmi:com:Cobot:Cobot;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "Cobot"
-    symmetric_key = "GQXiRV7rtQVOFCKZuSnHfj85arpbeQqAyhbov8zk7vNbaG/4mcXa06ETfH+C1Mr/IGPOCDawrqmfCR6lG0IyKA=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    cobot_configuration = config_element_tree.find('cobot')
+    rtde_configuration = config_element_tree.find('rtde')
 
-    cobot_device = Cobot(cobot_model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    rtde_host = rtde_configuration.find('connection/host').text
+    rtde_port = int(rtde_configuration.find('connection/port').text)
+    control_configuration_path = rtde_configuration.find('settings/control_configuration_path').text
+
+    model_id = cobot_configuration.find('model_id').text
+    provisioning_host = cobot_configuration.find('provisioning_host').text
+    id_scope = cobot_configuration.find('id_scope').text
+    registration_id = cobot_configuration.find('registration_id').text
+    symmetric_key = cobot_configuration.find('symmetric_key').text
+
+    cobot_device = Cobot(rtde_host=rtde_host,
+                         rtde_port=rtde_port,
+                         control_configuration_path=control_configuration_path,
+                         cobot_client_configuration_path=cobot_client_configuration_path,
+                         model_id=model_id,
+                         provisioning_host=provisioning_host,
+                         id_scope=id_scope,
+                         registration_id=registration_id,
+                         symmetric_key=symmetric_key)
     await cobot_device.connect_azure_iot(queue)
 
 
 async def control_box(queue):
-    model_id = "dtmi:com:Cobot:ControlBox;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "ControlBox"
-    symmetric_key = "Nr/tl5bwAyi1/9MUHpBE2QrW9x3unKqgO8G7wyvWsz0jYR6lpIeZw4w6B8M5fbw61oCoaQRiz9FaGpyN8WJmvg=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    control_box_configuration = config_element_tree.find('control_box')
+
+    model_id = control_box_configuration.find('model_id').text
+    provisioning_host = control_box_configuration.find('provisioning_host').text
+    id_scope = control_box_configuration.find('id_scope').text
+    registration_id = control_box_configuration.find('registration_id').text
+    symmetric_key = control_box_configuration.find('symmetric_key').text
 
     control_box_device = ControlBox(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     await control_box_device.connect_azure_iot(queue)
 
 
 async def elbow(queue):
-    model_id = "dtmi:com:Cobot:JointLoad:Elbow;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "Elbow"
-    symmetric_key = "Mu5iJnFpJAOjU7F6LuQtpgGSLQNsNGJIDKcDM8Y9m8fCMK/o05VY+llkBd6NyhITmbWtOmz1eHpgkntv2YXriw=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    joint_load_configuration = config_element_tree.find('joint_load')
+
+    model_id = joint_load_configuration.find('model_id').text
+    provisioning_host = joint_load_configuration.find('provisioning_host').text
+    id_scope = joint_load_configuration.find('id_scope').text
+    registration_id = joint_load_configuration.find('registration_id').text
+    symmetric_key = joint_load_configuration.find('symmetric_key').text
 
     elbow_device = Elbow(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     await elbow_device.connect_azure_iot(queue)
 
 
 async def payload(queue):
-    model_id = "dtmi:com:Cobot:Payload;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "Payload"
-    symmetric_key = "yKEbtMdipsxgsqajuUp/4oQtu0nEXxxrM1wbOvWZheiJKn3AQqa/fDyTxCp9yXyK3VUrHDZ8SV7HQyUy97hUXQ=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    joint_load_configuration = config_element_tree.find('payload')
+
+    model_id = joint_load_configuration.find('model_id').text
+    provisioning_host = joint_load_configuration.find('provisioning_host').text
+    id_scope = joint_load_configuration.find('id_scope').text
+    registration_id = joint_load_configuration.find('registration_id').text
+    symmetric_key = joint_load_configuration.find('symmetric_key').text
 
     payload_device = Payload(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     await payload_device.connect_azure_iot(queue)
 
 
 async def base(queue):
-    model_id = "dtmi:com:Cobot:JointLoad:Base;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "Base"
-    symmetric_key = "LglN6zKwdTTKcoZlGwpSpEN9OP9UjV2ad0ajGLpx19gZYWVcQN2bT3OQFh/jjTuJuP4pmXsqpWDYN5S/0A6W2A=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    base_configuration = config_element_tree.find('base')
+
+    model_id = base_configuration.find('model_id').text
+    provisioning_host = base_configuration.find('provisioning_host').text
+    id_scope = base_configuration.find('id_scope').text
+    registration_id = base_configuration.find('registration_id').text
+    symmetric_key = base_configuration.find('symmetric_key').text
 
     base_device = Base(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     await base_device.connect_azure_iot(queue)
 
 
 async def shoulder(queue):
-    model_id = "dtmi:com:Cobot:JointLoad:Shoulder;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "Shoulder"
-    symmetric_key = "X+LqHs7T67/h3iZNp3KQ3hqLUobJNB4fBU3fSUx5iEG90raxoPGfl2A2McxyQsFkPz6KUeRH7v0Em+Rnpg1mWA=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    shoulder_configuration = config_element_tree.find('shoulder')
+
+    model_id = shoulder_configuration.find('model_id').text
+    provisioning_host = shoulder_configuration.find('provisioning_host').text
+    id_scope = shoulder_configuration.find('id_scope').text
+    registration_id = shoulder_configuration.find('registration_id').text
+    symmetric_key = shoulder_configuration.find('symmetric_key').text
 
     shoulder_device = Shoulder(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     await shoulder_device.connect_azure_iot(queue)
 
 
 async def tool(queue):
-    model_id = "dtmi:com:Cobot:JointLoad:Tool;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "Tool"
-    symmetric_key = "qCL1QAg9XZ9K2fx7yl0xBnRBCC47l6Bs+zTnAYgSbGVcn62yKox5OdrCJTNqd10XwcehcRRV4jejRdtBhpttRQ=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    tool_configuration = config_element_tree.find('tool')
+
+    model_id = tool_configuration.find('model_id').text
+    provisioning_host = tool_configuration.find('provisioning_host').text
+    id_scope = tool_configuration.find('id_scope').text
+    registration_id = tool_configuration.find('registration_id').text
+    symmetric_key = tool_configuration.find('symmetric_key').text
 
     tool_device = Tool(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     await tool_device.connect_azure_iot(queue)
 
 
 async def wrist1(queue):
-    model_id = "dtmi:com:Cobot:JointLoad:Wrist1;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "Wrist1"
-    symmetric_key = "NlhP/P6RonODZMde3PkRaJmSm+hDsyyu0V84gWJabMl923J7tTZkdRlBF4WBRlDj+WyiOuShZnjhy0OAjBd1RA=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    wrist1_configuration = config_element_tree.find('wrist1')
+
+    model_id = wrist1_configuration.find('model_id').text
+    provisioning_host = wrist1_configuration.find('provisioning_host').text
+    id_scope = wrist1_configuration.find('id_scope').text
+    registration_id = wrist1_configuration.find('registration_id').text
+    symmetric_key = wrist1_configuration.find('symmetric_key').text
 
     wrist1_device = Wrist1(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     await wrist1_device.connect_azure_iot(queue)
 
 
 async def wrist2(queue):
-    model_id = "dtmi:com:Cobot:JointLoad:Wrist2;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "Wrist2"
-    symmetric_key = "3r7qgEn8BND2TQRutb178cvQuIpM+GEx2M3vJvbuWaQVyzO6ZkiY/c9fXS0Zs+bMMwiGIrRuhao9y/xCCxymSg=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    wrist2_configuration = config_element_tree.find('wrist2')
+
+    model_id = wrist2_configuration.find('model_id').text
+    provisioning_host = wrist2_configuration.find('provisioning_host').text
+    id_scope = wrist2_configuration.find('id_scope').text
+    registration_id = wrist2_configuration.find('registration_id').text
+    symmetric_key = wrist2_configuration.find('symmetric_key').text
 
     wrist2_device = Wrist2(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     await wrist2_device.connect_azure_iot(queue)
 
 
 async def wrist3(queue):
-    model_id = "dtmi:com:Cobot:JointLoad:Wrist3;1"
-    provisioning_host = "global.azure-devices-provisioning.net"
-    id_scope = "0ne00A685D0"
-    registration_id = "Wrist3"
-    symmetric_key = "vTo1dkvIHtOGYPQakKv4KpmN8QTQnBZcqLW2glLb6rJP+WS2ZnCyYRYhrnGv8aOgVqXhc+/WHgtFigidDnFcTQ=="
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    wrist3_configuration = config_element_tree.find('wrist3')
+
+    model_id = wrist3_configuration.find('model_id').text
+    provisioning_host = wrist3_configuration.find('provisioning_host').text
+    id_scope = wrist3_configuration.find('id_scope').text
+    registration_id = wrist3_configuration.find('registration_id').text
+    symmetric_key = wrist3_configuration.find('symmetric_key').text
 
     wrist3_device = Wrist3(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
     await wrist3_device.connect_azure_iot(queue)
 
 
 async def main():
-    queue = asyncio.Queue()
-    await asyncio.gather(rtde_controller(queue),
-                         cobot(queue),
-                         control_box(queue),
-                         payload(queue),
-                         base(queue),
-                         shoulder(queue),
-                         elbow(queue),
-                         tool(queue),
-                         wrist1(queue),
-                         wrist2(queue),
-                         wrist3(queue))
+    config_element_tree = ET.parse(cobot_iot_configuration_path)
+    rtde_configuration = config_element_tree.find('rtde')
+
+    control_configuration_path = rtde_configuration.find('settings/control_configuration_path').text
+    iot_configuration_path = rtde_configuration.find('settings/iot_configuration_path').text
+
+    control_configuration_exists = exists(control_configuration_path)
+    iot_configuration_exists = exists(iot_configuration_path)
+
+    cobot_iot_configuration_path_exists = exists(cobot_iot_configuration_path)
+    cobot_client_configuration_path_exists = exists(cobot_client_configuration_path)
+
+    if control_configuration_exists \
+            and iot_configuration_exists \
+            and cobot_iot_configuration_path_exists \
+            and cobot_client_configuration_path_exists:
+
+        logging.info("main:Parsing cobot_client_configuration_path={cobot_client_configuration_path}"
+                     .format(cobot_client_configuration_path=cobot_client_configuration_path))
+
+        config_element = ET.Element("config")
+        cobot_sub_element = ET.SubElement(config_element, "cobot")
+        ET.SubElement(cobot_sub_element, "status").text = "True"
+        cobot_client_configuration_element_tree = ET.ElementTree(config_element)
+        cobot_client_configuration_element_tree.write(cobot_client_configuration_path)
+
+        logging.info("main:Saved cobot_client_configuration_element_tree={cobot_client_configuration_element_tree}"
+                     .format(cobot_client_configuration_element_tree=cobot_client_configuration_element_tree))
+
+        try:
+            queue = asyncio.Queue()
+            # await asyncio.gather(rtde_controller(queue),
+            #                      cobot(queue),
+            #                      control_box(queue),
+            #                      elbow(queue),
+            #                      payload(queue),
+            #                      base(queue),
+            #                      shoulder(queue),
+            #                      tool(queue),
+            #                      wrist1(queue),
+            #                      wrist2(queue),
+            #                      wrist3(queue))
+            await asyncio.gather(rtde_controller(queue), cobot(queue))
+        except asyncio.exceptions.CancelledError:
+            logging.error("main:The execution of the thread was manually stopped due to a KeyboardInterrupt signal.")
+        except SystemExit:
+            logging.error("main:Cobot client was stopped.")
+
+
+    else:
+        logging.error("main:File does not exist cobot_iot_configuration.xml={cobot_iot_configuration_path_exists} "
+                      "cobot_client_configuration.xml={cobot_client_configuration_path_exists} "
+                      "control_configuration.xml={control_configuration_exists} "
+                      "iot_configuration.xml={iot_configuration_exists}"
+                      .format(cobot_iot_configuration_path_exists=cobot_iot_configuration_path_exists,
+                              cobot_client_configuration_path_exists=cobot_client_configuration_path_exists,
+                              control_configuration_exists=control_configuration_exists,
+                              iot_configuration_exists=iot_configuration_exists))
 
 
 if __name__ == '__main__':
+    logging.info("main:Starting.")
     current_working_directory = os.getcwd()
     logging.info("main: current_working_directory={current_working_directory}"
                  .format(current_working_directory=current_working_directory))
     asyncio.run(main())
-
-    # loop = asyncio.get_event_loop()
-    # loop.run_until_complete(main())
-    # loop.run_until_complete(loop.shutdown_asyncgens())
-    # loop.close()

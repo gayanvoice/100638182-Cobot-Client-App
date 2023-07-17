@@ -86,12 +86,12 @@ class Base(object):
 
         command_listeners = asyncio.gather(
             self.__device.execute_command_listener(
-                method_name="startIotCommand",
+                method_name="StartIotCommand",
                 user_command_handler=self.start_iot_command_handler,
                 create_user_response_handler=self.start_iot_command_response_handler,
             ),
             self.__device.execute_command_listener(
-                method_name="stopIotCommand",
+                method_name="StopIotCommand",
                 user_command_handler=self.stop_iot_command_handler,
                 create_user_response_handler=self.stop_iot_command_response_handler,
             ),

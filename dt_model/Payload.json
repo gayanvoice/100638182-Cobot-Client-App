@@ -1,46 +1,42 @@
 {
   "@id": "dtmi:com:Cobot:Payload;1",
-  "@type": "Interface",
   "@context": "dtmi:dtdl:context;2",
- 	"contents": [
-    	{
+  "@type": "Interface",
+  "contents": [
+    {
       "@type": "Property",
-      "name": "mass",
-      "schema": "double",
-      "writable": true
+      "name": "Mass",
+      "schema": "double"
     },
     {
       "@type": "Property",
-      "name": "cogx",
-      "schema": "double",
-      "writable": true
+      "name": "CogX",
+      "schema": "double"
     },
     {
       "@type": "Property",
-      "name": "cogy",
-      "schema": "double",
-      "writable": true
+      "name": "CogY",
+      "schema": "double"
     },
     {
       "@type": "Property",
-      "name": "cogz",
-      "schema": "double",
-      "writable": true
+      "name": "CogZ",
+      "schema": "double"
     },
-		{
+    {
       "@type": "Command",
-      "name": "startIotCommand",
+      "name": "StartIotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "start_time",
+              "name": "StartTime",
               "schema": "dateTime"
             }
           ]
@@ -49,23 +45,23 @@
     },
     {
       "@type": "Command",
-      "name": "stopIotCommand",
+      "name": "StopIotCommand",
       "request": {
-        "name": "payload",
+        "name": "Payload",
         "schema": "string"
       },
       "response": {
-        "name" : "report",
+        "name": "Report",
         "schema": {
           "@type": "Object",
           "fields": [
             {
-              "name" : "stop_time",
+              "name": "StopTime",
               "schema": "dateTime"
             }
           ]
         }
       }
     }
-   ]
+  ]
 }

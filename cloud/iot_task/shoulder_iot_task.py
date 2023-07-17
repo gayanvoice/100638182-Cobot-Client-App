@@ -21,9 +21,9 @@ class ShoulderIotTask:
                 cache_json_file = open('cache.json')
                 data_object = json.load(cache_json_file)
                 cache_json_file.close()
-                telemetry = {"position": data_object['shoulder_model']['_position'],
-                             "temperature": data_object['shoulder_model']['_temperature'],
-                             "voltage": data_object['shoulder_model']['_voltage']}
+                telemetry = {"Position": data_object['shoulder_model']['_position'],
+                             "Temperature": data_object['shoulder_model']['_temperature'],
+                             "Voltage": data_object['shoulder_model']['_voltage']}
                 logging.info("shoulder_iot_task.connect:" + str(telemetry))
                 await self.__device.send_telemetry(telemetry)
                 await asyncio.sleep(5)

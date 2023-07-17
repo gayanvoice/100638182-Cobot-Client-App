@@ -52,7 +52,7 @@ class Payload(object):
     @staticmethod
     def start_iot_command_response_handler(values):
         response_dict = {
-            "start_time": datetime.now().isoformat()
+            "StartTime": datetime.now().isoformat()
         }
         response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
         return response_payload
@@ -68,7 +68,7 @@ class Payload(object):
     @staticmethod
     def stop_iot_command_response_handler(values):
         response_dict = {
-            "stop_time": datetime.now().isoformat()
+            "StopTime": datetime.now().isoformat()
         }
         response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
         return response_payload
@@ -86,12 +86,12 @@ class Payload(object):
 
         command_listeners = asyncio.gather(
             self.__device.execute_command_listener(
-                method_name="startIotCommand",
+                method_name="StartIotCommand",
                 user_command_handler=self.start_iot_command_handler,
                 create_user_response_handler=self.start_iot_command_response_handler,
             ),
             self.__device.execute_command_listener(
-                method_name="stopIotCommand",
+                method_name="StopIotCommand",
                 user_command_handler=self.stop_iot_command_handler,
                 create_user_response_handler=self.stop_iot_command_response_handler,
             ),
