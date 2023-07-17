@@ -5,27 +5,42 @@ from threading import Thread
 from datetime import datetime
 from cloud.device import Device
 from cloud.iot_task.payload_iot_task import PayloadIotTask
+import xml.etree.ElementTree as ET
+import time
 
 
 class Payload(object):
-    def __init__(self, model_id, provisioning_host, id_scope, registration_id, symmetric_key):
+    def __init__(self,
+                 model_id,
+                 provisioning_host,
+                 id_scope,
+                 registration_id,
+                 symmetric_key,
+                 cobot_client_configuration_path):
         self.__model_id = model_id
         self.__provisioning_host = provisioning_host
         self.__id_scope = id_scope
         self.__registration_id = registration_id
         self.__symmetric_key = symmetric_key
+        self.__cobot_client_configuration_path = cobot_client_configuration_path
         self.__device = None
         self.__iot_task = None
         self.__iot_thread = None
         self.__iot_lock = True
 
-    @staticmethod
-    def stdin_listener():
+    def stdin_listener(self):
         while True:
-            selection = input("Press C to quit Payload\n")
-            if selection == "C" or selection == "c":
-                print("Quitting Payload...")
+            config_element_tree = ET.parse(self.__cobot_client_configuration_path)
+            payload_configuration = config_element_tree.find('payload')
+            process_continue = payload_configuration.find('status').text
+            if process_continue == "False":
+                logging.info("payload.stdin_listener:break process_continue={process_continue}"
+                             .format(process_continue=process_continue))
                 break
+            else:
+                logging.info("payload.stdin_listener:sleeping process_continue={process_continue}"
+                             .format(process_continue=process_continue))
+                time.sleep(1)
 
     def iot_task_callback(self, values):
         if self.__iot_lock:
