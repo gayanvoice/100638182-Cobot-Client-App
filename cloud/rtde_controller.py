@@ -117,7 +117,26 @@ class RtdeController:
 
                 config_element = ET.Element("config")
                 cobot_sub_element = ET.SubElement(config_element, "cobot")
+                control_box_sub_element = ET.SubElement(config_element, "control_box")
+                payload_sub_element = ET.SubElement(config_element, "payload")
+                base_sub_element = ET.SubElement(config_element, "base")
+                shoulder_sub_element = ET.SubElement(config_element, "shoulder")
+                elbow_sub_element = ET.SubElement(config_element, "elbow")
+                wrist1_sub_element = ET.SubElement(config_element, "wrist1")
+                wrist2_sub_element = ET.SubElement(config_element, "wrist2")
+                wrist3_sub_element = ET.SubElement(config_element, "wrist3")
+                tool_sub_element = ET.SubElement(config_element, "tool")
                 ET.SubElement(cobot_sub_element, "status").text = "False"
+                ET.SubElement(control_box_sub_element, "status").text = "False"
+                ET.SubElement(payload_sub_element, "status").text = "False"
+                ET.SubElement(base_sub_element, "status").text = "False"
+                ET.SubElement(shoulder_sub_element, "status").text = "False"
+                ET.SubElement(elbow_sub_element, "status").text = "False"
+                ET.SubElement(elbow_sub_element, "status").text = "False"
+                ET.SubElement(wrist1_sub_element, "status").text = "False"
+                ET.SubElement(wrist2_sub_element, "status").text = "False"
+                ET.SubElement(wrist3_sub_element, "status").text = "False"
+                ET.SubElement(tool_sub_element, "status").text = "False"
                 cobot_client_configuration_element_tree = ET.ElementTree(config_element)
                 cobot_client_configuration_element_tree.write(self.__cobot_client_configuration_path)
 

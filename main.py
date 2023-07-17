@@ -81,7 +81,12 @@ async def control_box(queue):
     registration_id = control_box_configuration.find('registration_id').text
     symmetric_key = control_box_configuration.find('symmetric_key').text
 
-    control_box_device = ControlBox(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    control_box_device = ControlBox(model_id=model_id,
+                                    provisioning_host=provisioning_host,
+                                    id_scope=id_scope,
+                                    registration_id=registration_id,
+                                    symmetric_key=symmetric_key,
+                                    cobot_client_configuration_path=cobot_client_configuration_path)
     await control_box_device.connect_azure_iot(queue)
 
 
@@ -220,7 +225,26 @@ async def main():
 
         config_element = ET.Element("config")
         cobot_sub_element = ET.SubElement(config_element, "cobot")
+        control_box_sub_element = ET.SubElement(config_element, "control_box")
+        payload_sub_element = ET.SubElement(config_element, "payload")
+        base_sub_element = ET.SubElement(config_element, "base")
+        shoulder_sub_element = ET.SubElement(config_element, "shoulder")
+        elbow_sub_element = ET.SubElement(config_element, "elbow")
+        wrist1_sub_element = ET.SubElement(config_element, "wrist1")
+        wrist2_sub_element = ET.SubElement(config_element, "wrist2")
+        wrist3_sub_element = ET.SubElement(config_element, "wrist3")
+        tool_sub_element = ET.SubElement(config_element, "tool")
         ET.SubElement(cobot_sub_element, "status").text = "True"
+        ET.SubElement(control_box_sub_element, "status").text = "True"
+        ET.SubElement(payload_sub_element, "status").text = "True"
+        ET.SubElement(base_sub_element, "status").text = "True"
+        ET.SubElement(shoulder_sub_element, "status").text = "True"
+        ET.SubElement(elbow_sub_element, "status").text = "True"
+        ET.SubElement(elbow_sub_element, "status").text = "True"
+        ET.SubElement(wrist1_sub_element, "status").text = "True"
+        ET.SubElement(wrist2_sub_element, "status").text = "True"
+        ET.SubElement(wrist3_sub_element, "status").text = "True"
+        ET.SubElement(tool_sub_element, "status").text = "True"
         cobot_client_configuration_element_tree = ET.ElementTree(config_element)
         cobot_client_configuration_element_tree.write(cobot_client_configuration_path)
 
@@ -240,7 +264,7 @@ async def main():
             #                      wrist1(queue),
             #                      wrist2(queue),
             #                      wrist3(queue))
-            await asyncio.gather(rtde_controller(queue), cobot(queue))
+            await asyncio.gather(rtde_controller(queue), cobot(queue), control_box(queue))
         except asyncio.exceptions.CancelledError:
             logging.error("main:The execution of the thread was manually stopped due to a KeyboardInterrupt signal.")
         except SystemExit:
