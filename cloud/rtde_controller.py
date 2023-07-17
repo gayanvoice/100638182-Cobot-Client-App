@@ -10,14 +10,16 @@ import rtde.rtde_config as rtde_config
 from model.rtdl_dt_model import RtdlDtModel
 from model.rtdl_model import RtdlModel
 from twin_writer import TwinWriter
+import xml.etree.ElementTree as ET
 
 
 class RtdeController:
-    def __init__(self, host, port, config, frequency):
+    def __init__(self, host, port, config, frequency, cobot_client_configuration_path):
         self.__host = host
         self.__port = port
         self.__config = config
         self.__frequency = frequency
+        self.__cobot_client_configuration_path = cobot_client_configuration_path
         self.__rtde_connection = None
         self.__sync_running = True
         self.__connect_running = True
@@ -25,19 +27,6 @@ class RtdeController:
 
     def terminate(self):
         self.__sync_running = False
-
-    # async def connect(self):
-    #     loop = asyncio.get_running_loop()
-    #     user_finished = loop.run_in_executor(None, self.sync)
-    #     await user_finished
-    #
-    #     while self.__connect_running:
-    #         try:
-    #             await self.sync()
-    #         except Exception as ex:
-    #             logging.error("rtde_controller.sync:error={error}".format(error=str(ex)))
-    #             logging.info("rtde_controller.sync:retrying in 5 seconds")
-    #             time.sleep(5)
 
     async def connect(self, queue):
         logging.info("rtde_controller.connect:Starting")
@@ -88,6 +77,7 @@ class RtdeController:
                     self.__rtde_connection.disconnect()
                     logging.error("rtde_controller.connect:while={error}".format(error=str(ex)))
                     self.terminate()
+                    sys.exit()
 
             await user_finished
 
@@ -95,22 +85,33 @@ class RtdeController:
             self.__rtde_connection.send_pause()
             self.__rtde_connection.disconnect()
             logging.info("rtde_controller.connect:queue.put")
-            await queue.put(None)
+            sys.exit()
 
         except Exception as ex:
             logging.error("rtde_controller.connect:exception={error}".format(error=str(ex)))
             logging.info("rtde_controller.connect:queue.put")
-            await queue.put(None)
-
+            sys.exit()
 
     def stdin_listener(self):
         while True:
-            selection = input("Press R to quit Rtde Controller\n")
-            if selection == "R" or selection == "r":
-                print("Quitting Rtde Controller...")
+            selection = input("Press Q to quit Cobot Client\n")
+            if (selection == "Q" or selection == "q") or self.__connect_running:
+                logging.info("rtde_controller.stdin_listener:Quitting Cobot Client...")
+                logging.info("rtde_controller.stdin_listener:"
+                             "Parsing cobot_client_configuration_path={cobot_client_configuration_path}"
+                             .format(cobot_client_configuration_path=self.__cobot_client_configuration_path))
+
+                config_element = ET.Element("config")
+                cobot_sub_element = ET.SubElement(config_element, "cobot")
+                ET.SubElement(cobot_sub_element, "status").text = "False"
+                cobot_client_configuration_element_tree = ET.ElementTree(config_element)
+                cobot_client_configuration_element_tree.write(self.__cobot_client_configuration_path)
+
+                logging.info("rtde_controller.stdin_listener:"
+                             "Saved cobot_client_configuration_element_tree={cobot_client_configuration_element_tree}"
+                             .format(cobot_client_configuration_element_tree=cobot_client_configuration_element_tree))
                 self.terminate()
                 break
-
 
     def create_json(self, json_object):
         with open(self.__json_file, "w+") as f:
