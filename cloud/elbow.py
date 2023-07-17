@@ -38,8 +38,6 @@ class Elbow(object):
                              .format(process_continue=process_continue))
                 break
             else:
-                logging.info("elbow.stdin_listener:sleeping process_continue={process_continue}"
-                             .format(process_continue=process_continue))
                 time.sleep(1)
 
     def iot_task_callback(self, values):

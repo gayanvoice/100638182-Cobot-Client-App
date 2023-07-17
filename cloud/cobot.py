@@ -50,8 +50,6 @@ class Cobot(object):
                              .format(process_continue=process_continue))
                 break
             else:
-                logging.info("cobot.stdin_listener:sleeping process_continue={process_continue}"
-                             .format(process_continue=process_continue))
                 time.sleep(1)
 
     def cobot_control_task_callback(self, values):

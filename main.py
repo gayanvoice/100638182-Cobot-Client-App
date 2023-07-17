@@ -157,7 +157,12 @@ async def shoulder(queue):
     registration_id = shoulder_configuration.find('registration_id').text
     symmetric_key = shoulder_configuration.find('symmetric_key').text
 
-    shoulder_device = Shoulder(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    shoulder_device = Shoulder(model_id=model_id,
+                               provisioning_host=provisioning_host,
+                               id_scope=id_scope,
+                               registration_id=registration_id,
+                               symmetric_key=symmetric_key,
+                               cobot_client_configuration_path=cobot_client_configuration_path)
     await shoulder_device.connect_azure_iot(queue)
 
 
@@ -171,7 +176,12 @@ async def tool(queue):
     registration_id = tool_configuration.find('registration_id').text
     symmetric_key = tool_configuration.find('symmetric_key').text
 
-    tool_device = Tool(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    tool_device = Tool(model_id=model_id,
+                       provisioning_host=provisioning_host,
+                       id_scope=id_scope,
+                       registration_id=registration_id,
+                       symmetric_key=symmetric_key,
+                       cobot_client_configuration_path=cobot_client_configuration_path)
     await tool_device.connect_azure_iot(queue)
 
 
@@ -185,7 +195,12 @@ async def wrist1(queue):
     registration_id = wrist1_configuration.find('registration_id').text
     symmetric_key = wrist1_configuration.find('symmetric_key').text
 
-    wrist1_device = Wrist1(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    wrist1_device = Wrist1(model_id=model_id,
+                           provisioning_host=provisioning_host,
+                           id_scope=id_scope,
+                           registration_id=registration_id,
+                           symmetric_key=symmetric_key,
+                           cobot_client_configuration_path=cobot_client_configuration_path)
     await wrist1_device.connect_azure_iot(queue)
 
 
@@ -199,7 +214,12 @@ async def wrist2(queue):
     registration_id = wrist2_configuration.find('registration_id').text
     symmetric_key = wrist2_configuration.find('symmetric_key').text
 
-    wrist2_device = Wrist2(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    wrist2_device = Wrist2(model_id=model_id,
+                           provisioning_host=provisioning_host,
+                           id_scope=id_scope,
+                           registration_id=registration_id,
+                           symmetric_key=symmetric_key,
+                           cobot_client_configuration_path=cobot_client_configuration_path)
     await wrist2_device.connect_azure_iot(queue)
 
 
@@ -213,7 +233,12 @@ async def wrist3(queue):
     registration_id = wrist3_configuration.find('registration_id').text
     symmetric_key = wrist3_configuration.find('symmetric_key').text
 
-    wrist3_device = Wrist3(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    wrist3_device = Wrist3(model_id=model_id,
+                           provisioning_host=provisioning_host,
+                           id_scope=id_scope,
+                           registration_id=registration_id,
+                           symmetric_key=symmetric_key,
+                           cobot_client_configuration_path=cobot_client_configuration_path)
     await wrist3_device.connect_azure_iot(queue)
 
 
@@ -268,23 +293,17 @@ async def main():
 
         try:
             queue = asyncio.Queue()
-            # await asyncio.gather(rtde_controller(queue),
-            #                      cobot(queue),
-            #                      control_box(queue),
-            #                      elbow(queue),
-            #                      payload(queue),
-            #                      base(queue),
-            #                      shoulder(queue),
-            #                      tool(queue),
-            #                      wrist1(queue),
-            #                      wrist2(queue),
-            #                      wrist3(queue))
             await asyncio.gather(rtde_controller(queue),
                                  cobot(queue),
                                  control_box(queue),
                                  elbow(queue),
+                                 payload(queue),
                                  base(queue),
-                                 payload(queue))
+                                 shoulder(queue),
+                                 tool(queue),
+                                 wrist1(queue),
+                                 wrist2(queue),
+                                 wrist3(queue))
         except asyncio.exceptions.CancelledError:
             logging.error("main:The execution of the thread was manually stopped due to a KeyboardInterrupt signal.")
         except SystemExit:

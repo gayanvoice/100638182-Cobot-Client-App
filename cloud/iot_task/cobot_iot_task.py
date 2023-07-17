@@ -1,14 +1,6 @@
-import json
 import logging
-import sys
 import asyncio
 import json
-import rtde.rtde as rtde
-import rtde.rtde_config as rtde_config
-
-from model.rtdl_dt_model import RtdlDtModel
-from model.rtdl_model import RtdlModel
-from twin_writer import TwinWriter
 
 
 class CobotIotTask:

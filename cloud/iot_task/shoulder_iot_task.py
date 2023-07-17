@@ -7,31 +7,33 @@ class ShoulderIotTask:
 
     def __init__(self, device):
         self.__device = device
-        self.__json_file = None
+        self.__cache_json_path = "cache.json"
+        self.__cache_json_content = None
         self.__running = True
 
     def terminate(self):
         self.__running = False
 
-    async def connect(self):
-        logging.info("shoulder_iot_task.connect:starting")
+    def load_json_content(self):
+        cache_json_file = open(self.__cache_json_path)
+        json_content = json.load(cache_json_file)
+        cache_json_file.close()
+        return json_content
 
+    async def connect(self):
+        logging.info("shoulder_iot_task.connect:Starting")
+        self.__cache_json_content = self.load_json_content()
         while self.__running:
-            try:
-                cache_json_file = open('cache.json')
-                data_object = json.load(cache_json_file)
-                cache_json_file.close()
-                telemetry = {"Position": data_object['shoulder_model']['_position'],
-                             "Temperature": data_object['shoulder_model']['_temperature'],
-                             "Voltage": data_object['shoulder_model']['_voltage']}
+            if self.__cache_json_content != self.load_json_content():
+                telemetry = {"Position": self.__cache_json_content['shoulder_model']['_position'],
+                             "Temperature": self.__cache_json_content['shoulder_model']['_temperature'],
+                             "Voltage": self.__cache_json_content['shoulder_model']['_voltage']}
                 logging.info("shoulder_iot_task.connect:" + str(telemetry))
                 await self.__device.send_telemetry(telemetry)
-                await asyncio.sleep(5)
+                self.__cache_json_content = self.load_json_content()
+            else:
+                await asyncio.sleep(1)
 
-            except Exception as ex:
-                await asyncio.sleep(5)
-                logging.error("shoulder_iot_task.connect.while:error={error}".format(error=str(ex)))
-
-        logging.debug("shoulder_iot_task.connect:complete")
+        logging.debug("shoulder_iot_task.connect:Complete")
 
 
