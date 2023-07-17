@@ -5,27 +5,37 @@ from threading import Thread
 from datetime import datetime
 from cloud.iot_task.control_box_iot_task import ControlBoxIotTask
 from cloud.device import Device
+import xml.etree.ElementTree as ET
+import time
 
 
 class ControlBox(object):
-    def __init__(self, control_box_model_id, provisioning_host, id_scope, registration_id, symmetric_key):
-        self.__model_id = control_box_model_id
+    def __init__(self, model_id, provisioning_host, id_scope, registration_id, symmetric_key,
+                 cobot_client_configuration_path):
+        self.__model_id = model_id
         self.__provisioning_host = provisioning_host
         self.__id_scope = id_scope
         self.__registration_id = registration_id
         self.__symmetric_key = symmetric_key
+        self.__cobot_client_configuration_path = cobot_client_configuration_path
         self.__device = None
         self.__iot_task = None
         self.__iot_thread = None
         self.__iot_lock = True
 
-    @staticmethod
-    def stdin_listener():
+    def stdin_listener(self):
         while True:
-            selection = input("Press C to quit Cobot\n")
-            if selection == "C" or selection == "c":
-                print("Quitting Cobot...")
+            config_element_tree = ET.parse(self.__cobot_client_configuration_path)
+            control_box_configuration = config_element_tree.find('control_box')
+            process_continue = control_box_configuration.find('status').text
+            if process_continue == "False":
+                logging.info("control_box.stdin_listener:break process_continue={process_continue}"
+                             .format(process_continue=process_continue))
                 break
+            else:
+                logging.info("control_box.stdin_listener:sleeping process_continue={process_continue}"
+                             .format(process_continue=process_continue))
+                time.sleep(1)
 
     def iot_task_callback(self, values):
         if self.__iot_lock:
@@ -104,7 +114,7 @@ class ControlBox(object):
         await user_finished
 
         if not command_listeners.done():
-            command_listeners.set_result(["Cobot done"])
+            command_listeners.set_result(["Control Box done"])
 
         command_listeners.cancel()
 

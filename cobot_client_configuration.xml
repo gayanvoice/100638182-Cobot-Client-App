@@ -1,1 +1,1 @@
-<config><cobot><status>False</status></cobot></config>
+<config><cobot><status>False</status></cobot><control_box><status>False</status></control_box><payload><status>False</status></payload><base><status>False</status></base><shoulder><status>False</status></shoulder><elbow><status>False</status><status>False</status></elbow><wrist1><status>False</status></wrist1><wrist2><status>False</status></wrist2><wrist3><status>False</status></wrist3><tool><status>False</status></tool></config>
