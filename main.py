@@ -100,7 +100,12 @@ async def elbow(queue):
     registration_id = joint_load_configuration.find('registration_id').text
     symmetric_key = joint_load_configuration.find('symmetric_key').text
 
-    elbow_device = Elbow(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    elbow_device = Elbow(model_id=model_id,
+                         provisioning_host=provisioning_host,
+                         id_scope=id_scope,
+                         registration_id=registration_id,
+                         symmetric_key=symmetric_key,
+                         cobot_client_configuration_path=cobot_client_configuration_path)
     await elbow_device.connect_azure_iot(queue)
 
 
@@ -114,7 +119,12 @@ async def payload(queue):
     registration_id = joint_load_configuration.find('registration_id').text
     symmetric_key = joint_load_configuration.find('symmetric_key').text
 
-    payload_device = Payload(model_id, provisioning_host, id_scope, registration_id, symmetric_key)
+    payload_device = Payload(model_id=model_id,
+                             provisioning_host=provisioning_host,
+                             id_scope=id_scope,
+                             registration_id=registration_id,
+                             symmetric_key=symmetric_key,
+                             cobot_client_configuration_path=cobot_client_configuration_path)
     await payload_device.connect_azure_iot(queue)
 
 
@@ -272,7 +282,9 @@ async def main():
             await asyncio.gather(rtde_controller(queue),
                                  cobot(queue),
                                  control_box(queue),
-                                 base(queue))
+                                 elbow(queue),
+                                 base(queue),
+                                 payload(queue))
         except asyncio.exceptions.CancelledError:
             logging.error("main:The execution of the thread was manually stopped due to a KeyboardInterrupt signal.")
         except SystemExit:

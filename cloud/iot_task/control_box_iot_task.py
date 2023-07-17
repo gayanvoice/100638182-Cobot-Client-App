@@ -2,8 +2,6 @@ import logging
 import asyncio
 import json
 
-from rtde import rtde
-
 
 class ControlBoxIotTask:
 
