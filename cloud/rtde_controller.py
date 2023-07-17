@@ -23,7 +23,7 @@ class RtdeController:
         self.__rtde_connection = None
         self.__sync_running = True
         self.__connect_running = True
-        self.__json_file = "cache.json"
+        self.__cache_json_file = "cache.json"
 
     def terminate(self):
         self.__sync_running = False
@@ -60,6 +60,8 @@ class RtdeController:
             loop = asyncio.get_running_loop()
             user_finished = loop.run_in_executor(None, self.stdin_listener)
 
+            cache_json_content = self.load_json_content()
+
             while self.__sync_running:
                 try:
                     state = self.__rtde_connection.receive()
@@ -69,8 +71,13 @@ class RtdeController:
                         rtdl_model = RtdlModel.get_from_rows(header_row, data_row)
                         rtdl_dt_model = RtdlDtModel.get_from_rtdl_model(rtdl_model)
                         self.create_json(rtdl_dt_model.get_json())
-                        logging.info("rtde_controller.connect:json_object={json_object}"
-                                     .format(json_object=rtdl_dt_model.get_json()))
+                        if cache_json_content != rtdl_dt_model.get_json():
+                            logging.info("rtde_controller.connect:json_object={json_object}"
+                                         .format(json_object=rtdl_dt_model.get_json()))
+                            cache_json_content = rtdl_dt_model.get_json()
+                        else:
+                            logging.info("rtde_controller.connect:no changes in {cache_json_file}"
+                                         .format(cache_json_file=self.__cache_json_file))
                         await asyncio.sleep(5)
 
                 except rtde.RTDEException as ex:
@@ -91,6 +98,13 @@ class RtdeController:
             logging.error("rtde_controller.connect:exception={error}".format(error=str(ex)))
             logging.info("rtde_controller.connect:queue.put")
             sys.exit()
+
+    def load_json_content(self):
+        cache_json_file = open(self.__cache_json_file)
+        json_content = json.load(cache_json_file)
+        cache_json_file.close()
+        return json_content
+
 
     def stdin_listener(self):
         while True:
@@ -114,6 +128,6 @@ class RtdeController:
                 break
 
     def create_json(self, json_object):
-        with open(self.__json_file, "w+") as f:
-            logging.info("rtde_controller.create_json:{file} saved".format(file=self.__json_file))
+        with open(self.__cache_json_file, "w+") as f:
+            logging.info("rtde_controller.create_json:{file} saved".format(file=self.__cache_json_file))
             json.dump(json_object, f)

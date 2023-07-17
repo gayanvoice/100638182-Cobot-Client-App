@@ -18812,3 +18812,357 @@ INFO:root:cobot.connect_azure_iot:queue.put
 INFO:rtde:RTDE synchronization paused
 INFO:root:rtde_controller.connect:queue.put
 ERROR:root:main:The execution of the thread was manually stopped due to a KeyboardInterrupt signal.
+INFO:root:main:Starting.
+INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
+INFO:root:main:Parsing cobot_client_configuration_path=cobot_client_configuration.xml
+INFO:root:main:Saved cobot_client_configuration_element_tree=<xml.etree.ElementTree.ElementTree object at 0x0000024BC8D45110>
+INFO:root:rtde_controller.connect:Starting
+ERROR:root:rtde_controller.connect:exception=timed out
+INFO:root:rtde_controller.connect:queue.put
+ERROR:root:main:Cobot client was stopped.
+INFO:root:main:Starting.
+INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
+INFO:root:main:Parsing cobot_client_configuration_path=cobot_client_configuration.xml
+INFO:root:main:Saved cobot_client_configuration_element_tree=<xml.etree.ElementTree.ElementTree object at 0x00000270AAA951D0>
+INFO:root:rtde_controller.connect:Starting
+ERROR:root:rtde_controller.connect:exception=[WinError 10054] An existing connection was forcibly closed by the remote host
+INFO:root:rtde_controller.connect:queue.put
+ERROR:root:main:Cobot client was stopped.
+INFO:root:main:Starting.
+INFO:root:main: current_working_directory=C:\Users\admin\Desktop\Derby\Scholarship\CobotClientApp
+INFO:root:main:Parsing cobot_client_configuration_path=cobot_client_configuration.xml
+INFO:root:main:Saved cobot_client_configuration_element_tree=<xml.etree.ElementTree.ElementTree object at 0x000001D75F785150>
+INFO:root:rtde_controller.connect:Starting
+WARNING:rtde:b'URControl': b'SafetySetup has not been confirmed yet, therefore no data will be send yet'
+INFO:rtde:Controller version: 5.13.1.0
+INFO:root:rtde_controller.connect:Successfully configured output
+INFO:rtde:RTDE synchronization started
+INFO:root:rtde_controller.connect:Successfully started synchronization
+INFO:root:rtde_controller.connect:header_row
+WARNING:rtde:no data received in last 1 seconds 
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 2.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=264c5f94-c9bf-4176-b8df-cedc07b1c5fe
+INFO:azure.iot.device.common.mqtt_transport:payload published for 2
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=264c5f94-c9bf-4176-b8df-cedc07b1c5fe&retry-after=3
+INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=c8a9079c-1bc2-455a-b774-a9a36af4d270&operationId=5.2acdc2877f637bec.03a502a5-0ff5-47bf-aa8c-7f15f64f5a15
+INFO:azure.iot.device.common.mqtt_transport:payload published for 3
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=c8a9079c-1bc2-455a-b774-a9a36af4d270
+INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
+INFO:root:device.create_iot_hub_device_client:model_id=dtmi:com:Cobot:Cobot;1 registration_result.status=assigned registration_result.registration_state.assigned_hub=100638182IotHub.azure-devices.net self.registration_result.registration_state.device_id=Cobot
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:twin_patches...
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/twin/PATCH/properties/desired/# with qos 1
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 2
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 3
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 4
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:azure.iot.device.common.mqtt_transport:suback received for 5
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:twin_patches
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for twin patches...
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 5.505999999999999}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 9.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 12.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 16.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 20.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 23.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 27.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 31.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 36.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 41.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 46.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 51.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 56.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 61.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 66.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 71.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/StartIotCommand/?$rid=1
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:model_id=dtmi:com:Cobot:Cobot;1 payload=payload
+INFO:root:cobot.start_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:root:cobot.cobot_iot_task_callback:__cobot_iot_lock=True
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=1
+INFO:root:cobot_iot_task.connect:Starting
+INFO:azure.iot.device.common.mqtt_transport:payload published for 6
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 76.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 71.506}
+INFO:root:device.send_telemetry:model_id=dtmi:com:Cobot:Cobot;1 telemetry={'ElapsedTime': 71.506}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 7
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 81.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 76.506}
+INFO:root:device.send_telemetry:model_id=dtmi:com:Cobot:Cobot;1 telemetry={'ElapsedTime': 76.506}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:azure.iot.device.common.mqtt_transport:payload published for 8
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 85.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 81.506}
+INFO:root:device.send_telemetry:model_id=dtmi:com:Cobot:Cobot;1 telemetry={'ElapsedTime': 81.506}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 9
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 90.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 85.506}
+INFO:root:device.send_telemetry:model_id=dtmi:com:Cobot:Cobot;1 telemetry={'ElapsedTime': 85.506}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 10
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 95.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 90.506}
+INFO:root:device.send_telemetry:model_id=dtmi:com:Cobot:Cobot;1 telemetry={'ElapsedTime': 90.506}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 11
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 100.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot_iot_task.connect:{'ElapsedTime': 95.506}
+INFO:root:device.send_telemetry:model_id=dtmi:com:Cobot:Cobot;1 telemetry={'ElapsedTime': 95.506}
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/Cobot/messages/events/%24.ct=application%2Fjson&%24.ce=utf-8
+INFO:azure.iot.device.common.mqtt_transport:payload published for 12
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:azure.iot.device.common.mqtt_transport:message received on $iothub/methods/POST/StopIotCommand/?$rid=2
+INFO:azure.iot.device.iothub.aio.async_clients:Received method request
+INFO:root:device.create_iot_hub_device_client:model_id=dtmi:com:Cobot:Cobot;1 payload=payload
+INFO:root:cobot.stop_cobot_iot_command_handler:values=payload type=<class 'str'>
+INFO:azure.iot.device.iothub.aio.async_clients:Sending method response to Hub...
+INFO:azure.iot.device.common.mqtt_transport:publishing on $iothub/methods/res/200/?$rid=2
+INFO:azure.iot.device.common.mqtt_transport:payload published for 13
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent method response to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Waiting for method request...
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 105.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 110.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:cobot.stdin_listener:sleeping process_continue=True
+INFO:root:rtde_controller.connect:data_row
+INFO:root:rtde_controller.create_json:cache.json saved
+INFO:root:rtde_controller.connect:json_object={'cobot_model': {'_elapsed_time': 115.506}, 'control_box_model': {'_voltage': 48.0}, 'payload_model': {'_mass': 0.0, '_cogx': 0.0, '_cogy': 0.0, '_cogz': 0.0}, 'base_model': {'_position': -1.6006999999999998, '_temperature': 25.5, '_voltage': 1.208170004274665e-16}, 'shoulder_model': {'_position': -1.7271, '_temperature': 25.0, '_voltage': 3.621137313700035}, 'elbow_model': {'_position': -2.2029999999999994, '_temperature': 24.5, '_voltage': 3.121199266827123, '_x': -0.12279807157171456, '_y': -0.09174724324388771, '_z': 0.7859308377597881}, 'wrist1_model': {'_position': -0.8079999999999998, '_temperature': 24.0, '_voltage': 0.30055339469883446}, 'wrist2_model': {'_position': 1.5951, '_temperature': 23.5, '_voltage': 0.0020055341419326616}, 'wrist3_model': {'_position': -0.030999999999999694, '_temperature': 23.0, '_voltage': 0.0}, 'tool_model': {'_temperature': 0.0, '_voltage': 0, '_x': -0.18963153692348175, '_y': -0.6096838816511917, '_z': 0.26097114869435084, '_rx': -0.0012213596815925638, '_ry': 3.1162765284819756, '_rz': 0.038891915636886834}}
+INFO:root:rtde_controller.stdin_listener:Quitting Cobot Client...
+INFO:root:rtde_controller.stdin_listener:Parsing cobot_client_configuration_path=cobot_client_configuration.xml
+INFO:root:rtde_controller.stdin_listener:Saved cobot_client_configuration_element_tree=<xml.etree.ElementTree.ElementTree object at 0x000001D75FB059D0>
+INFO:root:cobot.stdin_listener:break process_continue=False
+INFO:azure.iot.device.iothub.aio.async_clients:Initiating client shutdown
+INFO:azure.iot.device.iothub.aio.async_clients:Disconnecting from Hub...
+INFO:azure.iot.device.common.mqtt_transport:disconnecting MQTT client
+INFO:azure.iot.device.common.mqtt_transport:disconnected with result code: 0
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: _on_mqtt_disconnect called
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Disconnected
+INFO:azure.iot.device.iothub.abstract_clients:Cleared all pending method requests due to disconnect
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully disconnected from Hub
+INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
+INFO:azure.iot.device.iothub.aio.async_clients:Client shutdown complete
+INFO:root:cobot.connect_azure_iot:queue.put
+INFO:rtde:RTDE synchronization paused
+INFO:root:rtde_controller.connect:queue.put
+ERROR:root:main:The execution of the thread was manually stopped due to a KeyboardInterrupt signal.
