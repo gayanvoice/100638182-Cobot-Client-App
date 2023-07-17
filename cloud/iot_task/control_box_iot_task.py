@@ -26,8 +26,7 @@ class ControlBoxIotTask:
 
     async def connect(self):
         logging.info("control_box_iot_task.connect:Starting")
-        self.__cache_json_content \
-            = self.load_json_content()
+        self.__cache_json_content = self.load_json_content()
 
         while self.__running:
             if self.__cache_json_content != self.load_json_content():

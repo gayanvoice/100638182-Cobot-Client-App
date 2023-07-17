@@ -3,7 +3,6 @@ import logging
 import json
 from threading import Thread
 from datetime import datetime
-
 from azure.iot.device.common.pipeline.pipeline_exceptions import PipelineNotRunning
 
 from cloud.control_task.cobot_control_task import CobotControlTask

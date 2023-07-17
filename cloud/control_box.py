@@ -10,7 +10,12 @@ import time
 
 
 class ControlBox(object):
-    def __init__(self, model_id, provisioning_host, id_scope, registration_id, symmetric_key,
+    def __init__(self,
+                 model_id,
+                 provisioning_host,
+                 id_scope,
+                 registration_id,
+                 symmetric_key,
                  cobot_client_configuration_path):
         self.__model_id = model_id
         self.__provisioning_host = provisioning_host
