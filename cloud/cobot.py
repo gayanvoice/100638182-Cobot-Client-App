@@ -18,6 +18,7 @@ import time
 
 from model.joint_position_model import JointPositionModel
 from model.move_j_control_model import MoveJControlModel
+from model.move_l_control_model import MoveLControlModel
 from model.move_p_control_model import MovePControlModel
 
 
@@ -84,7 +85,7 @@ class Cobot(object):
                 logging.info('cobot.move_j_control_task_callback:Thread success')
             except RuntimeError:
                 logging.error('cobot.move_j_control_task_callback:Thread failed runtime_error={runtime_error}'
-                              .format(runtime_error=RuntimeError))
+                              .format(runtime_error=RuntimeError.__dict__))
             logging.info('cobot.move_j_control_task_callback:Close')
             time.sleep(1)
             robot.close()
@@ -137,7 +138,7 @@ class Cobot(object):
                 logging.info('cobot.move_p_control_task_callback:Thread completed')
             except RuntimeError:
                 logging.error('cobot.move_p_control_task_callback:Thread failed runtime_error={runtime_error}'
-                              .format(runtime_error=RuntimeError))
+                              .format(runtime_error=RuntimeError.__dict__))
             logging.info('cobot.move_p_control_task_callback:Close')
             time.sleep(1)
             robot.close()
@@ -166,6 +167,60 @@ class Cobot(object):
         }
         response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
         logging.info("cobot.move_p_control_response_handler:Response response_payload={response_payload}"
+                     .format(response_payload=values))
+        return response_payload
+
+
+    def move_l_control_task_callback(self, move_l_control_model):
+        if not self.__cobot_control_lock:
+            logging.info("cobot.move_l_control_task_callback:__cobot_control_lock={cobot_control_lock}"
+                         .format(cobot_control_lock=self.__cobot_control_lock))
+            self.__cobot_control_lock = True
+
+            robotModel = URBasic.robotModel.RobotModel()
+            robot = URBasic.urScriptExt.UrScriptExt(host=self.__rtde_host, robotModel=robotModel)
+            robot.reset_error()
+            logging.info("cobot.move_l_control_task_callback:Robot initialised")
+            time.sleep(1)
+
+            self.__cobot_control_task = CobotControlTask(robot=robot)
+
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                loop.run_until_complete(self.__cobot_control_task.move_l(move_l_control_model=move_l_control_model))
+                logging.info('cobot.move_l_control_task_callback:Thread completed')
+            except RuntimeError:
+                logging.error('cobot.move_l_control_task_callback:Thread failed runtime_error={runtime_error}'
+                              .format(runtime_error=RuntimeError.__dict__))
+            logging.info('cobot.move_l_control_task_callback:Close')
+            time.sleep(1)
+            robot.close()
+            loop.close()
+            self.__cobot_control_lock = False
+        else:
+            logging.error("cobot.move_l_control_task_callback:__cobot_control_lock={cobot_control_lock}"
+                          .format(cobot_control_lock=self.__cobot_control_lock))
+            self.__cobot_control_lock = False
+
+    async def move_l_control_command_handler(self, values):
+        move_l_control_model = MoveLControlModel.get_move_l_model_from_values(values)
+
+        logging.info("cobot.move_l_control_command_handler:Success "
+                     "move_l_control_model={move_l_control_model} "
+                     "type={type}"
+                     .format(move_l_control_model=move_l_control_model.__dict__,
+                             type=str(type(move_l_control_model))))
+        self.__cobot_control_thread = Thread(target=self.move_l_control_task_callback, args=(move_l_control_model,))
+        self.__cobot_control_thread.start()
+
+    @staticmethod
+    def move_l_control_response_handler(values):
+        response_dict = {
+            "StartTime": datetime.now().isoformat()
+        }
+        response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+        logging.info("cobot.move_l_control_response_handler:Response response_payload={response_payload}"
                      .format(response_payload=values))
         return response_payload
 
@@ -258,6 +313,11 @@ class Cobot(object):
                 method_name="MovePControlCommand",
                 user_command_handler=self.move_p_control_command_handler,
                 create_user_response_handler=self.move_p_control_response_handler,
+            ),
+            self.__cobot_device.execute_command_listener(
+                method_name="MoveLControlCommand",
+                user_command_handler=self.move_l_control_command_handler,
+                create_user_response_handler=self.move_l_control_response_handler,
             ),
             # self.__cobot_device.execute_command_listener(
             #     method_name="StopCobotCommand",

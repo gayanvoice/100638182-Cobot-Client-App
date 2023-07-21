@@ -1,7 +1,4 @@
 import json
-import logging
-import math
-
 from model.joint_position_model import JointPositionModel
 
 
@@ -54,7 +51,7 @@ class MoveLControlModel:
         self._joint_position_model_array.append(value)
 
     @staticmethod
-    def get_move_j_model_from_values(values):
+    def get_move_l_model_from_values(values):
         data = json.loads(values)
         move_l_control_model = MoveLControlModel()
         move_l_control_model.acceleration = data["acceleration"]

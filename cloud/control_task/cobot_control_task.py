@@ -67,6 +67,36 @@ class CobotControlTask:
                                  blend_radius=move_p_control_model.blend_radius))
         logging.info("cobot_control_task.move_p:Complete")
 
+
+    async def move_l(self, move_l_control_model):
+        logging.info("cobot_control_task.move_l:Starting")
+        logging.info("cobot_control_task.move_l:Length joint_position_array_length={joint_position_array_length}"
+                     .format(joint_position_array_length=str(len(move_l_control_model.joint_position_model_array))))
+        for index, joint_position_model in enumerate(move_l_control_model.joint_position_model_array):
+            joint_position_array = JointPositionModel.get_position_array_from_joint_position_model(
+                joint_position_model=joint_position_model)
+            model_index = index + 1
+            array_length = len(move_l_control_model.joint_position_model_array)
+
+            logging.info('cobot_control_task.move_l:Execute joint_position_model {model_index}/{array_length}'
+                         .format(model_index=model_index,
+                                 array_length=array_length))
+            self.__robot.movel(pose=joint_position_array,
+                               a=move_l_control_model.acceleration,
+                               v=move_l_control_model.velocity,
+                               t=move_l_control_model.time_s,
+                               r=move_l_control_model.blend_radius)
+            logging.info('cobot_control_task.move_p:Success joint_position_model_index={joint_position_model_index}, '
+                         'joint_position_array={joint_position_array}, '
+                         'acceleration={acceleration}, velocity={velocity}, '
+                         'blend_radius={blend_radius}'
+                         .format(joint_position_model_index=model_index,
+                                 joint_position_array=joint_position_array,
+                                 acceleration=move_l_control_model.acceleration,
+                                 velocity=move_l_control_model.velocity,
+                                 blend_radius=move_l_control_model.blend_radius))
+        logging.info("cobot_control_task.move_l:Complete")
+
     # def terminate(self):
     #     self.__running = False
 
