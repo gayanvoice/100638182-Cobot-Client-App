@@ -1,10 +1,14 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
 import asyncio
 import logging
 import os
+import time
 import xml.etree.ElementTree as ET
-from asyncio import CancelledError
 from os.path import exists
-
+import pyfiglet
+import URBasic
 from cloud.cobot import Cobot
 from cloud.control_box import ControlBox
 from cloud.elbow import Elbow
@@ -242,6 +246,34 @@ async def wrist3(queue):
     await wrist3_device.connect_azure_iot(queue)
 
 
+def create_cobot_client_configuration():
+    config_element = ET.Element("config")
+    cobot_sub_element = ET.SubElement(config_element, "cobot")
+    control_box_sub_element = ET.SubElement(config_element, "control_box")
+    payload_sub_element = ET.SubElement(config_element, "payload")
+    base_sub_element = ET.SubElement(config_element, "base")
+    shoulder_sub_element = ET.SubElement(config_element, "shoulder")
+    elbow_sub_element = ET.SubElement(config_element, "elbow")
+    wrist1_sub_element = ET.SubElement(config_element, "wrist1")
+    wrist2_sub_element = ET.SubElement(config_element, "wrist2")
+    wrist3_sub_element = ET.SubElement(config_element, "wrist3")
+    tool_sub_element = ET.SubElement(config_element, "tool")
+    ET.SubElement(cobot_sub_element, "status").text = "True"
+    ET.SubElement(control_box_sub_element, "status").text = "True"
+    ET.SubElement(payload_sub_element, "status").text = "True"
+    ET.SubElement(base_sub_element, "status").text = "True"
+    ET.SubElement(shoulder_sub_element, "status").text = "True"
+    ET.SubElement(elbow_sub_element, "status").text = "True"
+    ET.SubElement(elbow_sub_element, "status").text = "True"
+    ET.SubElement(wrist1_sub_element, "status").text = "True"
+    ET.SubElement(wrist2_sub_element, "status").text = "True"
+    ET.SubElement(wrist3_sub_element, "status").text = "True"
+    ET.SubElement(tool_sub_element, "status").text = "True"
+    cobot_client_configuration_element_tree = ET.ElementTree(config_element)
+    cobot_client_configuration_element_tree.write(cobot_client_configuration_path)
+    return cobot_client_configuration_element_tree
+
+
 async def main():
     config_element_tree = ET.parse(cobot_iot_configuration_path)
     rtde_configuration = config_element_tree.find('rtde')
@@ -263,47 +295,23 @@ async def main():
         logging.info("main:Parsing cobot_client_configuration_path={cobot_client_configuration_path}"
                      .format(cobot_client_configuration_path=cobot_client_configuration_path))
 
-        config_element = ET.Element("config")
-        cobot_sub_element = ET.SubElement(config_element, "cobot")
-        control_box_sub_element = ET.SubElement(config_element, "control_box")
-        payload_sub_element = ET.SubElement(config_element, "payload")
-        base_sub_element = ET.SubElement(config_element, "base")
-        shoulder_sub_element = ET.SubElement(config_element, "shoulder")
-        elbow_sub_element = ET.SubElement(config_element, "elbow")
-        wrist1_sub_element = ET.SubElement(config_element, "wrist1")
-        wrist2_sub_element = ET.SubElement(config_element, "wrist2")
-        wrist3_sub_element = ET.SubElement(config_element, "wrist3")
-        tool_sub_element = ET.SubElement(config_element, "tool")
-        ET.SubElement(cobot_sub_element, "status").text = "True"
-        ET.SubElement(control_box_sub_element, "status").text = "True"
-        ET.SubElement(payload_sub_element, "status").text = "True"
-        ET.SubElement(base_sub_element, "status").text = "True"
-        ET.SubElement(shoulder_sub_element, "status").text = "True"
-        ET.SubElement(elbow_sub_element, "status").text = "True"
-        ET.SubElement(elbow_sub_element, "status").text = "True"
-        ET.SubElement(wrist1_sub_element, "status").text = "True"
-        ET.SubElement(wrist2_sub_element, "status").text = "True"
-        ET.SubElement(wrist3_sub_element, "status").text = "True"
-        ET.SubElement(tool_sub_element, "status").text = "True"
-        cobot_client_configuration_element_tree = ET.ElementTree(config_element)
-        cobot_client_configuration_element_tree.write(cobot_client_configuration_path)
+        cobot_client_configuration_element_tree = create_cobot_client_configuration()
 
         logging.info("main:Saved cobot_client_configuration_element_tree={cobot_client_configuration_element_tree}"
                      .format(cobot_client_configuration_element_tree=cobot_client_configuration_element_tree))
 
         try:
             queue = asyncio.Queue()
-            await asyncio.gather(rtde_controller(queue),
-                                 cobot(queue),
-                                 control_box(queue),
-                                 elbow(queue),
-                                 payload(queue),
-                                 base(queue),
-                                 shoulder(queue),
-                                 tool(queue),
-                                 wrist1(queue),
-                                 wrist2(queue),
-                                 wrist3(queue))
+            await asyncio.gather(rtde_controller(queue),cobot(queue))
+            # control_box(queue),
+            # elbow(queue),
+            # payload(queue),
+            # base(queue),
+            # shoulder(queue),
+            # tool(queue),
+            # wrist1(queue),
+            # wrist2(queue),
+            # wrist3(queue))
         except asyncio.exceptions.CancelledError:
             logging.error("main:The execution of the thread was manually stopped due to a KeyboardInterrupt signal.")
         except SystemExit:
@@ -323,7 +331,52 @@ async def main():
 
 if __name__ == '__main__':
     logging.info("main:Starting.")
+
+    result = pyfiglet.figlet_format("Cobot Client App")
+    logging.info("\n{result}".format(result=result))
+    print(result)
     current_working_directory = os.getcwd()
     logging.info("main: current_working_directory={current_working_directory}"
                  .format(current_working_directory=current_working_directory))
     asyncio.run(main())
+    # host = '127.0.0.1'
+    # acc = 0.5
+    # vel = 0.5
+    # robotModel = URBasic.robotModel.RobotModel()
+    # robot = URBasic.urScriptExt.UrScriptExt(host=host, robotModel=robotModel)
+    # robot.reset_error()
+
+    # way point 1 = 619.82, -703.87, -70.99
+    # way point 2 = 547.65, -519.12, 308.44
+    # way point 3 = 796.26, 35.60, 308.44
+    # way point 4 = 780.93, -551.28, 212.19
+    # home_position = robot.get_actual_tcp_pose()
+    # print(home_position)
+    # print('movej with joint specification')
+    # robot.movej(q=[-3.14, -1., 0.5, -1., -1.5, 0], a=acc, v=vel)
+    # print(robot.get_actual_tcp_pose())
+    # print('movej with joint specification')
+    # robot.movej(q=home_position, a=acc, v=vel)
+    # print(robot.get_actual_tcp_pose())
+    # print('movej with pose specification')
+    # robot.movej(pose=[0.3, 0.3, 0.3, 0, 3.14, 0], a=1.2, v=vel)
+    #
+    # print('movel with pose specification')
+    # robot.movel(pose=[0.3, -0.3, 0.3, 0, 3.14, 0], a=1.2, v=vel)
+    #
+    # print('forcs_mode')
+    # robot.force_mode(task_frame=[0., 0., 0., 0., 0., 0.], selection_vector=[0, 0, 1, 0, 0, 0],
+    #                  wrench=[0., 0., -20., 0., 0., 0.], f_type=2, limits=[2, 2, 1.5, 1, 1, 1])
+    # time.sleep(1)
+
+    # robot.movep(pose=[0.3, -0.3, 0.3, 0, 3.14, 0], a=1.2, v=vel, r=2)
+
+    # print('movel with pose specification')
+    # robot.movel(pose=[0.3, -0.3, 0.3, 0, 3.14, 0], a=1.2, v=vel)
+    # print('forcs_mode')
+    # time.sleep(1)
+    # robot.end_force_mode()
+    # robot.close()
+
+    # robot.close()
+

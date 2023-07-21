@@ -1,13 +1,28 @@
-import os
+import array
+import argparse
+import ast
+import json
+
 import msrest
 from azure.iot.hub import IoTHubRegistryManager
 from azure.iot.hub.models import CloudToDeviceMethod
 
-iothub_connection_str = "HostName=100638182IotHub.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey=lvHQWwVYdyhxjOpxKzwp39EDJnQyWmklEd73eMCcG8U="
-device_id = "Wrist3"
-method_name = "startIotCommand"
-# method_name = "stopIotCommand"
-method_payload = "hello world"
+# python test.py --device_id Cobot --method_name MoveJControlCommand --position_array "[-3.14, -0.5, 0.5, -.5, -.5, .5]"
+
+parser = argparse.ArgumentParser(description="Process command-line arguments.")
+
+iothub_connection_str = "HostName=100638182IotHub.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey" \
+                        "=lvHQWwVYdyhxjOpxKzwp39EDJnQyWmklEd73eMCcG8U="
+
+parser.add_argument("--device_id", type=str, help="The device ID.")
+parser.add_argument("--method_name", type=str, help="The method name.")
+parser.add_argument("--payload", type=str, help="List of positions as json object.")
+
+args = parser.parse_args()
+
+device_id = args.device_id
+method_name = args.method_name
+payload = args.payload
 
 try:
     # Create IoTHubRegistryManager
@@ -28,7 +43,7 @@ try:
         print("")
 
     # invoke device method
-    device_method = CloudToDeviceMethod(method_name=method_name, payload=method_payload)
+    device_method = CloudToDeviceMethod(method_name=method_name, payload=payload)
     iothub_registry_manager.invoke_device_method(device_id, device_method)
     print("The device method has been successfully invoked")
     print("")

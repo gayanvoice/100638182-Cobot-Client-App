@@ -3,6 +3,7 @@ import json
 import logging
 import sys
 import time
+from jsondiff import diff
 
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
@@ -72,17 +73,17 @@ class RtdeController:
                         rtdl_dt_model = RtdlDtModel.get_from_rtdl_model(rtdl_model)
                         self.create_json(rtdl_dt_model.get_json())
                         if cache_json_content != rtdl_dt_model.get_json():
-                            logging.info("rtde_controller.connect:json_object={json_object}"
-                                         .format(json_object=rtdl_dt_model.get_json()))
+                            changes = diff(cache_json_content, rtdl_dt_model.get_json())
+                            logging.info("rtde_controller.connect:Modified json_object={changes}".format(changes=changes))
                             cache_json_content = rtdl_dt_model.get_json()
                         else:
-                            logging.info("rtde_controller.connect:no changes in {cache_json_file}"
+                            logging.info("rtde_controller.connect:No changes in {cache_json_file}"
                                          .format(cache_json_file=self.__cache_json_file))
                         await asyncio.sleep(5)
 
                 except rtde.RTDEException as ex:
                     self.__rtde_connection.disconnect()
-                    logging.error("rtde_controller.connect:while={error}".format(error=str(ex)))
+                    logging.error("rtde_controller.connect:While={error}".format(error=str(ex)))
                     self.terminate()
                     sys.exit()
 
@@ -98,6 +99,7 @@ class RtdeController:
             logging.error("rtde_controller.connect:exception={error}".format(error=str(ex)))
             logging.info("rtde_controller.connect:queue.put")
             sys.exit()
+
 
     def load_json_content(self):
         cache_json_file = open(self.__cache_json_file)

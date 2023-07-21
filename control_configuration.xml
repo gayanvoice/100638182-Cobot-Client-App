@@ -6,6 +6,10 @@
 		<field name="output_int_register_0" type="INT32"/>
 	</recipe>
 
+	<recipe key="set_halt">
+		<field name="input_int_register_0" type="INT32"/>
+	</recipe>
+
 	<recipe key="setp">
 		<field name="input_double_register_0" type="DOUBLE"/>
 		<field name="input_double_register_1" type="DOUBLE"/>

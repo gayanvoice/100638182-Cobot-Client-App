@@ -1,0 +1,7 @@
+python test.py --device_id Cobot --method_name MoveJControlCommand --payload "{\"acceleration\":1.4,\"velocity\":1.05,\"time_s\":0,\"blend_radius\":0,\"joint_position_model_array\":[{\"joint_position_model\":{\"_base\":-180,\"_shoulder\":-90,\"_elbow\":0,\"_wrist1\":0,\"_wrist2\":0,\"_wrist3\":0}}]}"
+
+
+python test.py --device_id Cobot --method_name MoveJControlCommand --payload "{\"acceleration\":1.4,\"velocity\":1.05,\"time_s\":0,\"blend_radius\":0,\"joint_position_model_array\":[{\"joint_position_model\":{\"_base\":-180,\"_shoulder\":-90,\"_elbow\":0,\"_wrist1\":0,\"_wrist2\":0,\"_wrist3\":0}},{\"joint_position_model\":{\"_base\":90,\"_shoulder\":-45,\"_elbow\":90,\"_wrist1\":45,\"_wrist2\":0,\"_wrist3\":-45}}]}"
+
+
+python test.py --device_id Cobot --method_name MoveJControlCommand --payload "{\"acceleration\":1.4,\"velocity\":1.05,\"time_s\":0,\"blend_radius\":0,\"joint_position_model_array\":[{\"joint_position_model\":{\"_base\":-180,\"_shoulder\":-90,\"_elbow\":0,\"_wrist1\":0,\"_wrist2\":0,\"_wrist3\":0}},{\"joint_position_model\":{\"_base\":90,\"_shoulder\":-45,\"_elbow\":90,\"_wrist1\":45,\"_wrist2\":0,\"_wrist3\":-45}},{\"joint_position_model\":{\"_base\":-90,\"_shoulder\":-45,\"_elbow\":-90,\"_wrist1\":-45,\"_wrist2\":-50,\"_wrist3\":45}}]}"
