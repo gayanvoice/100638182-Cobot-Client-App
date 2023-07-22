@@ -75,6 +75,32 @@ class UrScriptExt(URBasic.urScript.UrScript):
         self.print_actual_joint_positions()
         self.robotConnector.close()
 
+
+    def pause(self):
+        self.robotConnector.DashboardClient.ur_pause()
+
+    def play(self):
+        self.robotConnector.DashboardClient.ur_play()
+
+    def close_safety_popup(self):
+        self.robotConnector.DashboardClient.ur_close_safety_popup()
+
+    def unlock_protective_stop(self):
+        self.robotConnector.DashboardClient.ur_unlock_protective_stop()
+
+    def open_popup(self, popup_text):
+        self.robotConnector.DashboardClient.ur_popup(popupText=popup_text)
+
+    def close_popup(self):
+        self.robotConnector.DashboardClient.ur_close_popup()
+
+    def power_on(self):
+        self.robotConnector.DashboardClient.ur_power_on()
+
+    def power_off(self):
+        self.robotConnector.DashboardClient.ur_power_off()
+
+
     def reset_error(self):
         '''
         Check if the UR controller is powered on and ready to run.

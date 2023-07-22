@@ -97,6 +97,13 @@ class CobotControlTask:
                                  blend_radius=move_l_control_model.blend_radius))
         logging.info("cobot_control_task.move_l:Complete")
 
+    # async def stop(self):
+    #     logging.info("cobot_control_task.stop_j:Starting")
+    #     self.__robot.(a=stop_j_control_model.acceleration)
+    #     logging.info('cobot_control_task.stop_j:Success acceleration={acceleration}'
+    #                  .format(acceleration=stop_j_control_model.acceleration))
+    #     logging.info("cobot_control_task.move_j:Complete")
+
     # def terminate(self):
     #     self.__running = False
 

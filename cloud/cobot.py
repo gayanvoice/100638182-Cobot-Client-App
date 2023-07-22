@@ -4,6 +4,8 @@ import asyncio
 import logging
 import json
 import math
+import warnings
+from json import JSONDecodeError
 from threading import Thread
 from datetime import datetime
 from azure.iot.device.common.pipeline.pipeline_exceptions import PipelineNotRunning
@@ -42,15 +44,19 @@ class Cobot(object):
         self.__id_scope = id_scope
         self.__registration_id = registration_id
         self.__symmetric_key = symmetric_key
+
         self.__cobot_device = None
+        self.__ur_script_ext = None
+
         self.__cobot_control_task = None
         self.__cobot_iot_task = None
+
+        self.__ur_script_ext_control_thread = None
         self.__cobot_control_thread = None
         self.__cobot_iot_thread = None
-        self.__cobot_control_lock = False
+
+        self.__cobot_control_lock = True
         self.__cobot_iot_lock = True
-        self.__robotModel = None
-        self.__robot = None
 
     def stdin_listener(self):
         while True:
@@ -70,13 +76,7 @@ class Cobot(object):
                          .format(cobot_control_lock=self.__cobot_control_lock))
             self.__cobot_control_lock = True
 
-            robotModel = URBasic.robotModel.RobotModel()
-            robot = URBasic.urScriptExt.UrScriptExt(host=self.__rtde_host, robotModel=robotModel)
-            robot.reset_error()
-            logging.info("cobot.move_j_control_task_callback:Robot initialised")
-            time.sleep(1)
-
-            self.__cobot_control_task = CobotControlTask(robot=robot)
+            self.__cobot_control_task = CobotControlTask(robot=self.__ur_script_ext)
 
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
@@ -87,8 +87,6 @@ class Cobot(object):
                 logging.error('cobot.move_j_control_task_callback:Thread failed runtime_error={runtime_error}'
                               .format(runtime_error=RuntimeError.__dict__))
             logging.info('cobot.move_j_control_task_callback:Close')
-            time.sleep(1)
-            robot.close()
             loop.close()
             self.__cobot_control_lock = False
         else:
@@ -97,15 +95,17 @@ class Cobot(object):
             self.__cobot_control_lock = False
 
     async def move_j_control_command_handler(self, values):
-        move_j_control_model = MoveJControlModel.get_move_j_model_from_values(values)
-
-        logging.info("cobot.move_j_control_command_handler:Success "
-                     "move_j_control_model={move_j_control_model} "
-                     "type={type}"
-                     .format(move_j_control_model=move_j_control_model.__dict__,
-                             type=str(type(move_j_control_model))))
-        self.__cobot_control_thread = Thread(target=self.move_j_control_task_callback, args=(move_j_control_model,))
-        self.__cobot_control_thread.start()
+        try:
+            move_j_control_model = MoveJControlModel.get_move_j_model_from_values(values)
+            logging.info("cobot.move_j_control_command_handler:Success "
+                         "move_j_control_model={move_j_control_model} "
+                         "type={type}"
+                         .format(move_j_control_model=move_j_control_model.__dict__,
+                                 type=str(type(move_j_control_model))))
+            self.__cobot_control_thread = Thread(target=self.move_j_control_task_callback, args=(move_j_control_model,))
+            self.__cobot_control_thread.start()
+        except JSONDecodeError:
+            logging.error("cobot.move_j_control_command_handler:Failed error=JSONDecodeError")
 
     @staticmethod
     def move_j_control_response_handler(values):
@@ -122,14 +122,9 @@ class Cobot(object):
             logging.info("cobot.move_p_control_task_callback:__cobot_control_lock={cobot_control_lock}"
                          .format(cobot_control_lock=self.__cobot_control_lock))
             self.__cobot_control_lock = True
-
-            robotModel = URBasic.robotModel.RobotModel()
-            robot = URBasic.urScriptExt.UrScriptExt(host=self.__rtde_host, robotModel=robotModel)
-            robot.reset_error()
             logging.info("cobot.move_p_control_task_callback:Robot initialised")
-            time.sleep(1)
 
-            self.__cobot_control_task = CobotControlTask(robot=robot)
+            self.__cobot_control_task = CobotControlTask(robot=self.__ur_script_ext)
 
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
@@ -140,8 +135,6 @@ class Cobot(object):
                 logging.error('cobot.move_p_control_task_callback:Thread failed runtime_error={runtime_error}'
                               .format(runtime_error=RuntimeError.__dict__))
             logging.info('cobot.move_p_control_task_callback:Close')
-            time.sleep(1)
-            robot.close()
             loop.close()
             self.__cobot_control_lock = False
         else:
@@ -170,20 +163,15 @@ class Cobot(object):
                      .format(response_payload=values))
         return response_payload
 
-
     def move_l_control_task_callback(self, move_l_control_model):
         if not self.__cobot_control_lock:
             logging.info("cobot.move_l_control_task_callback:__cobot_control_lock={cobot_control_lock}"
                          .format(cobot_control_lock=self.__cobot_control_lock))
             self.__cobot_control_lock = True
 
-            robotModel = URBasic.robotModel.RobotModel()
-            robot = URBasic.urScriptExt.UrScriptExt(host=self.__rtde_host, robotModel=robotModel)
-            robot.reset_error()
             logging.info("cobot.move_l_control_task_callback:Robot initialised")
-            time.sleep(1)
 
-            self.__cobot_control_task = CobotControlTask(robot=robot)
+            self.__cobot_control_task = CobotControlTask(robot=self.__ur_script_ext)
 
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
@@ -194,8 +182,7 @@ class Cobot(object):
                 logging.error('cobot.move_l_control_task_callback:Thread failed runtime_error={runtime_error}'
                               .format(runtime_error=RuntimeError.__dict__))
             logging.info('cobot.move_l_control_task_callback:Close')
-            time.sleep(1)
-            robot.close()
+
             loop.close()
             self.__cobot_control_lock = False
         else:
@@ -221,6 +208,107 @@ class Cobot(object):
         }
         response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
         logging.info("cobot.move_l_control_response_handler:Response response_payload={response_payload}"
+                     .format(response_payload=values))
+        return response_payload
+
+
+    async def enable_control_command_handler(self, values):
+        logging.info("cobot.enable_control_command_handler:Starting")
+        robotModel = URBasic.robotModel.RobotModel()
+        self.__ur_script_ext = URBasic.urScriptExt.UrScriptExt(host=self.__rtde_host, robotModel=robotModel)
+        self.__ur_script_ext.reset_error()
+        self.__cobot_control_lock = False
+        logging.info("cobot.enable_control_command_handler:Executed")
+
+    @staticmethod
+    def enable_control_response_handler(values):
+        response_dict = {
+            "StartTime": datetime.now().isoformat()
+        }
+        response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+        logging.info("cobot.enable_control_response_handler:Response response_payload={response_payload}"
+                     .format(response_payload=values))
+        return response_payload
+
+    async def disable_control_command_handler(self, values):
+        logging.info("cobot.disable_control_command_handler:Starting")
+        self.__ur_script_ext.close()
+        self.__cobot_control_lock = True
+        self.__ur_script_ext_control_thread.join()
+        logging.info("cobot.disable_control_command_handler:Executed")
+
+    @staticmethod
+    def disable_control_response_handler(values):
+        response_dict = {
+            "StartTime": datetime.now().isoformat()
+        }
+        response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+        logging.info("cobot.disable_control_response_handler:Response response_payload={response_payload}"
+                     .format(response_payload=values))
+        return response_payload
+
+    async def pause_control_command_handler(self, values):
+        logging.info("cobot.pause_control_command_handler:Starting")
+        self.__ur_script_ext.pause()
+        self.__cobot_control_lock = True
+        logging.info("cobot.pause_control_response_handler:Executed")
+
+    @staticmethod
+    def pause_control_response_handler(values):
+        response_dict = {
+            "StartTime": datetime.now().isoformat()
+        }
+        response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+        logging.info("cobot.pause_control_response_handler:Response response_payload={response_payload}"
+                     .format(response_payload=values))
+        return response_payload
+
+    async def play_control_command_handler(self, values):
+        logging.info("cobot.play_control_command_handler:Starting")
+        self.__ur_script_ext.play()
+        self.__cobot_control_lock = False
+        logging.info("cobot.play_control_command_handler:Executed")
+
+    @staticmethod
+    def play_control_response_handler(values):
+        response_dict = {
+            "StartTime": datetime.now().isoformat()
+        }
+        response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+        logging.info("cobot.play_control_command_handler:Response response_payload={response_payload}"
+                     .format(response_payload=values))
+        return response_payload
+
+    async def close_safety_popup_control_command_handler(self, values):
+        logging.info("cobot.close_safety_popup_control_command_handler:Starting")
+        self.__ur_script_ext.close_safety_popup()
+        self.__cobot_control_lock = False
+        logging.info("cobot.close_safety_popup_control_command_handler:Executed")
+
+    @staticmethod
+    def close_safety_popup_control_response_handler(values):
+        response_dict = {
+            "StartTime": datetime.now().isoformat()
+        }
+        response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+        logging.info("cobot.close_safety_popup_control_response_handler:Response response_payload={response_payload}"
+                     .format(response_payload=values))
+        return response_payload
+
+    async def unlock_protective_stop_control_command_handler(self, values):
+        logging.info("cobot.unlock_protective_stop_control_command_handler:Starting")
+        self.__ur_script_ext.unlock_protective_stop()
+        self.__cobot_control_lock = False
+        logging.info("cobot.unlock_protective_stop_control_command_handler:Executed")
+
+    @staticmethod
+    def unlock_protective_stop_control_response_handler(values):
+        response_dict = {
+            "StartTime": datetime.now().isoformat()
+        }
+        response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+        logging.info("cobot.unlock_protective_stop_control_response_handler:"
+                     "Response response_payload={response_payload}"
                      .format(response_payload=values))
         return response_payload
 
@@ -305,6 +393,16 @@ class Cobot(object):
 
         command_listeners = asyncio.gather(
             self.__cobot_device.execute_command_listener(
+                method_name="EnableControlCommand",
+                user_command_handler=self.enable_control_command_handler,
+                create_user_response_handler=self.enable_control_response_handler,
+            ),
+            self.__cobot_device.execute_command_listener(
+                method_name="DisableControlCommand",
+                user_command_handler=self.disable_control_command_handler,
+                create_user_response_handler=self.disable_control_response_handler,
+            ),
+            self.__cobot_device.execute_command_listener(
                 method_name="MoveJControlCommand",
                 user_command_handler=self.move_j_control_command_handler,
                 create_user_response_handler=self.move_j_control_response_handler,
@@ -318,6 +416,26 @@ class Cobot(object):
                 method_name="MoveLControlCommand",
                 user_command_handler=self.move_l_control_command_handler,
                 create_user_response_handler=self.move_l_control_response_handler,
+            ),
+            self.__cobot_device.execute_command_listener(
+                method_name="PauseControlCommand",
+                user_command_handler=self.pause_control_command_handler,
+                create_user_response_handler=self.pause_control_response_handler,
+            ),
+            self.__cobot_device.execute_command_listener(
+                method_name="PlayControlCommand",
+                user_command_handler=self.play_control_command_handler,
+                create_user_response_handler=self.play_control_response_handler,
+            ),
+            self.__cobot_device.execute_command_listener(
+                method_name="CloseSafetyPopupControlCommand",
+                user_command_handler=self.close_safety_popup_control_command_handler,
+                create_user_response_handler=self.close_safety_popup_control_response_handler,
+            ),
+            self.__cobot_device.execute_command_listener(
+                method_name="UnlockProtectiveStopControlCommand",
+                user_command_handler=self.unlock_protective_stop_control_command_handler,
+                create_user_response_handler=self.unlock_protective_stop_control_response_handler,
             ),
             # self.__cobot_device.execute_command_listener(
             #     method_name="StopCobotCommand",
