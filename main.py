@@ -4,6 +4,8 @@ __copyright__ = "University of Derby"
 import asyncio
 import logging
 import os
+import sys
+import threading
 import time
 import xml.etree.ElementTree as ET
 from os.path import exists
@@ -302,7 +304,9 @@ async def main():
 
         try:
             queue = asyncio.Queue()
-            await asyncio.gather(rtde_controller(queue),cobot(queue))
+            await asyncio.gather(rtde_controller(queue),
+                                 cobot(queue))
+
             # control_box(queue),
             # elbow(queue),
             # payload(queue),
@@ -379,4 +383,3 @@ if __name__ == '__main__':
     # robot.close()
 
     # robot.close()
-
