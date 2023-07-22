@@ -59,8 +59,11 @@ class Cobot(object):
             cobot_configuration = config_element_tree.find('cobot')
             process_continue = cobot_configuration.find('status').text
             if process_continue == "False":
-                self.__ur_script_ext.close()
-                self.__cobot_control_lock = True
+                try:
+                    self.__ur_script_ext.close()
+                    self.__cobot_control_lock = True
+                except AttributeError:
+                    logging.error("cobot.stdin_listener:No UR Script Ext error=AttributeError")
                 logging.info("cobot.stdin_listener:break process_continue={process_continue}"
                              .format(process_continue=process_continue))
                 break
