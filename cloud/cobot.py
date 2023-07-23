@@ -14,6 +14,7 @@ from datetime import datetime
 from cloud.control_task.cobot_control_task import CobotControlTask
 from cloud.device import Device
 from cloud.iot_task.cobot_iot_task import CobotIotTask
+from model.command_response_model import CommandResponseModel, Status
 from model.move_j_control_model import MoveJControlModel
 from model.move_l_control_model import MoveLControlModel
 from model.move_p_control_model import MovePControlModel
@@ -52,6 +53,10 @@ class Cobot(object):
 
         self.__cobot_control_lock = True
         self.__cobot_iot_lock = True
+
+        self.__start_cobot_iot_command_response_model = None
+        self.__stop_cobot_iot_command_response_model = None
+
 
     def stdin_listener(self):
         while True:
@@ -414,53 +419,65 @@ class Cobot(object):
         return response_payload
 
     def start_cobot_iot_task_callback(self, values):
-        if self.__cobot_iot_lock:
-            try:
-                logging.info("cobot.cobot_iot_task_callback:__cobot_iot_lock={cobot_iot_lock}"
-                             .format(cobot_iot_lock=self.__cobot_iot_lock))
-                self.__cobot_iot_lock = False
-                self.__cobot_iot_task = CobotIotTask(self.__cobot_device)
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                loop.run_until_complete(self.__cobot_iot_task.connect())
-                loop.close()
-            except PipelineNotRunning:
-                logging.error("cobot.cobot_iot_task_callback:PipelineNotRunning")
+        try:
+            self.__cobot_iot_lock = False
+            self.__cobot_iot_task = CobotIotTask(self.__cobot_device)
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(self.__cobot_iot_task.connect())
+            loop.close()
+        except PipelineNotRunning:
+            message = "cobot.cobot_iot_task_callback:PipelineNotRunning"
+            logging.error(message)
+            self.__start_cobot_iot_command_response_model\
+                .set_response(status=Status.COBOT_CLIENT_ERROR, message=message)
 
-
-        else:
-            logging.error("cobot.cobot_iot_task_callback:__cobot_iot_lock={cobot_iot_lock}"
-                          .format(cobot_iot_lock=self.__cobot_iot_lock))
 
     async def start_cobot_iot_command_handler(self, values):
-        if values:
-            logging.info("cobot.start_cobot_iot_command_handler:values={values} type={type}"
-                         .format(values=values, type=str(type(values))))
+        self.__start_cobot_iot_command_response_model = CommandResponseModel()
+        if self.__cobot_iot_lock:
+            message = "cobot.start_cobot_iot_command_handler:" \
+                      "__cobot_iot_lock={cobot_iot_lock}".format(cobot_iot_lock=self.__cobot_iot_lock)
+            logging.info(message)
+            self.__start_cobot_iot_command_response_model \
+                .set_response(status=Status.COBOT_CLIENT_EXECUTED, message=message)
             self.__cobot_iot_thread = Thread(target=self.start_cobot_iot_task_callback, args=(values,))
             self.__cobot_iot_thread.start()
+        else:
+            message = "cobot.start_cobot_iot_command_handler:" \
+                      "__cobot_iot_lock={cobot_iot_lock}".format(cobot_iot_lock=self.__cobot_iot_lock)
+            logging.error(message)
+            self.__start_cobot_iot_command_response_model \
+                .set_response(status=Status.COMMAND_EXECUTION_SEQUENCE_ERROR, message=message)
 
-    @staticmethod
-    def start_cobot_iot_command_response_handler(values):
-        response_dict = {
-            "StartTime": datetime.now().isoformat()
-        }
-        response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+    def start_cobot_iot_command_response_handler(self, values):
+        response_payload = json.dumps(self.__start_cobot_iot_command_response_model.get(),
+                                      default=lambda o: o.__dict__, sort_keys=True)
         return response_payload
 
     async def stop_cobot_iot_command_handler(self, values):
+        self.__stop_cobot_iot_command_response_model = CommandResponseModel()
         if not self.__cobot_iot_lock:
+            message = "cobot.stop_cobot_iot_command_handler:" \
+                      "__cobot_iot_lock={cobot_iot_lock}".format(cobot_iot_lock=self.__cobot_iot_lock)
+            logging.info(message)
+            self.__stop_cobot_iot_command_response_model.set_response(status=Status.COBOT_CLIENT_EXECUTED,
+                                                                       message=message)
             self.__cobot_iot_lock = True
-            logging.info("cobot.stop_cobot_iot_command_handler:values={values} type={type}"
-                         .format(values=values, type=str(type(values))))
             self.__cobot_iot_task.terminate()
             self.__cobot_iot_thread.join()
+        else:
+            message = "cobot.stop_cobot_iot_command_handler:" \
+                      "__cobot_iot_lock={cobot_iot_lock}".format(cobot_iot_lock=self.__cobot_iot_lock)
+            logging.error(message)
+            self.__stop_cobot_iot_command_response_model.set_response(status=Status.COMMAND_EXECUTION_SEQUENCE_ERROR,
+                                                                       message=message)
 
-    @staticmethod
-    def stop_cobot_iot_command_response_handler(values):
-        response_dict = {
-            "StopTime": datetime.now().isoformat()
-        }
-        response_payload = json.dumps(response_dict, default=lambda o: o.__dict__, sort_keys=True)
+
+
+    def stop_cobot_iot_command_response_handler(self, values):
+        response_payload = json.dumps(self.__stop_cobot_iot_command_response_model.get(),
+                                      default=lambda o: o.__dict__, sort_keys=True)
         return response_payload
 
     async def connect_azure_iot(self, queue):
