@@ -14,6 +14,7 @@ class CommandResponseModel:
     def __init__(self):
         self._status = None
         self._message = None
+        self._duration = None
         self._start_perf_counter = time.perf_counter()
         self._end_perf_counter = None
 
@@ -40,4 +41,9 @@ class CommandResponseModel:
 
     def get(self):
         self._end_perf_counter = time.perf_counter()
-        return self
+        self._duration = self._end_perf_counter - self._start_perf_counter
+        return {
+            "_status": self._status,
+            "_message": self._message,
+            "_duration": self._duration
+        }
