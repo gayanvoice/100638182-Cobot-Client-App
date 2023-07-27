@@ -1,12 +1,11 @@
 import json
-from model.joint_position_model import JointPositionModel
+from model.request.joint_position_model import JointPositionModel
 
 
-class MoveLControlModel:
+class MovePControlRequestModel:
     def __init__(self):
         self._acceleration = None
         self._velocity = None
-        self._time_s = None
         self._blend_radius = None
         self._joint_position_model_array = []
 
@@ -17,10 +16,6 @@ class MoveLControlModel:
     @property
     def velocity(self):
         return self._velocity
-
-    @property
-    def time_s(self):
-        return self._time_s
 
     @property
     def blend_radius(self):
@@ -38,9 +33,6 @@ class MoveLControlModel:
     def velocity(self, value):
         self._velocity = value
 
-    @time_s.setter
-    def time_s(self, value):
-        self._time_s = value
 
     @blend_radius.setter
     def blend_radius(self, value):
@@ -51,15 +43,14 @@ class MoveLControlModel:
         self._joint_position_model_array.append(value)
 
     @staticmethod
-    def get_move_l_model_from_values(values):
+    def get_move_p_control_request_model_from_values(values):
         data = json.loads(values)
-        move_l_control_model = MoveLControlModel()
-        move_l_control_model.acceleration = data["acceleration"]
-        move_l_control_model.velocity = data["velocity"]
-        move_l_control_model.time_s = data["time_s"]
-        move_l_control_model.blend_radius = data["blend_radius"]
+        move_p_control_request_model = MovePControlRequestModel()
+        move_p_control_request_model.acceleration = data["acceleration"]
+        move_p_control_request_model.velocity = data["velocity"]
+        move_p_control_request_model.blend_radius = data["blend_radius"]
         for joint_position_model_array_object in data["joint_position_model_array"]:
             joint_position_model = JointPositionModel.get_joint_position_model_from_joint_position_model_object(
                 joint_position_model_array_object["joint_position_model"])
-            move_l_control_model.joint_position_model_array = joint_position_model
-        return move_l_control_model
+            move_p_control_request_model.joint_position_model_array = joint_position_model
+        return move_p_control_request_model

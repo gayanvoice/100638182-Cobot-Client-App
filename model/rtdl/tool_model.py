@@ -85,3 +85,16 @@ class ToolModel:
         tool_model.ry = rtdl_model.data_row[rtdl_model.header_row.index("actual_TCP_pose_4")]
         tool_model.rz = rtdl_model.data_row[rtdl_model.header_row.index("actual_TCP_pose_5")]
         return tool_model
+
+    @staticmethod
+    def get_from_parsed_data(parsed_data):
+        tool_model = ToolModel()
+        tool_model.temperature = parsed_data["tool_model"]["_temperature"]
+        tool_model.voltage = parsed_data["tool_model"]["_voltage"]
+        tool_model.x = parsed_data["tool_model"]["_x"]
+        tool_model.y = parsed_data["tool_model"]["_y"]
+        tool_model.z = parsed_data["tool_model"]["_z"]
+        tool_model.rx = parsed_data["tool_model"]["_rx"]
+        tool_model.ry = parsed_data["tool_model"]["_ry"]
+        tool_model.rz = parsed_data["tool_model"]["_rz"]
+        return tool_model

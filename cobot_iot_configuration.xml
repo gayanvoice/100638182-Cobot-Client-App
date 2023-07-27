@@ -7,6 +7,7 @@
   <settings>
     <control_configuration_path>control_configuration.xml</control_configuration_path>
     <iot_configuration_path>iot_configuration.xml</iot_configuration_path>
+    <cache_json_path>cache.json</cache_json_path>
     <frequency>1</frequency>
   </settings>
 </rtde>

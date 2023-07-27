@@ -22,6 +22,7 @@ in advertising or otherwise to promote the sale, use or other dealings in this S
 without prior written authorization from "Rope Robotics ApS".
 '''
 import ctypes
+
 __author__ = "Martin Huus Bjerge"
 __copyright__ = "Copyright 2017, Rope Robotics ApS, Denmark"
 __license__ = "MIT License"
@@ -31,6 +32,7 @@ import logging
 import URBasic
 import numpy as np
 import time
+
 
 class UrScript(object):
     '''
@@ -56,31 +58,31 @@ class UrScript(object):
     self.close_rtc()
     '''
 
-
     def __init__(self, host, robotModel, hasForceTorque=False):
         '''
         Constructor see class description for more info.
         '''
-        logger = URBasic.dataLogging.DataLogging()        
-        name = logger.AddEventLogging(__name__)        
+        logger = URBasic.dataLogging.DataLogging()
+        name = logger.AddEventLogging(__name__)
         self.__logger = logger.__dict__[name]
         self.robotConnector = URBasic.robotConnector.RobotConnector(robotModel, host, hasForceTorque)
-        #time.sleep(200)
-        while(self.robotConnector.RobotModel.ActualTCPPose() is None):      ## check paa om vi er startet
+        # time.sleep(200)
+        while (self.robotConnector.RobotModel.ActualTCPPose() is None):  ## check paa om vi er startet
             logging.info("waiting for everything to be ready")
             time.sleep(1)
         logging.info('Init done')
-#############   Module motion   ###############
+
+    #############   Module motion   ###############
 
     def waitRobotIdleOrStopFlag(self):
-    
-        while(self.robotConnector.RobotModel.RuntimeState() and not self.robotConnector.RobotModel.StopRunningFlag()):
+
+        while (self.robotConnector.RobotModel.RuntimeState() and not self.robotConnector.RobotModel.StopRunningFlag()):
             time.sleep(0.002)
 
         if self.robotConnector.RobotModel.rtcProgramExecutionError:
             raise RuntimeError('Robot program execution error!!!')
-        
-    def movej(self, q=None, a=1.4, v =1.05, t =0, r =0, wait=True, pose=None):
+
+    def movej(self, q=None, a=1.4, v=1.05, t=0, r=0, wait=True, pose=None):
         '''
         Move to position (linear in joint-space) When using this command, the
         robot must be at standstill or come from a movej og movel with a
@@ -101,19 +103,19 @@ class UrScript(object):
         wait: function return when movement is finished
         pose: target pose
         '''
-        prg =  '''def move_j():
+        prg = '''def move_j():
 {movestr}
 end
 '''
         movestr = self._move(movetype='j', pose=pose, a=a, v=v, t=t, r=r, wait=wait, q=q)
-        
+
         programString = prg.format(**locals())
 
         self.robotConnector.RealTimeClient.SendProgram(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
-        
-    def movel(self, pose=None, a=1.2, v =0.25, t =0, r =0, wait=True, q=None):
+
+    def movel(self, pose=None, a=1.2, v=0.25, t=0, r=0, wait=True, q=None):
         '''
         Move to position (linear in tool-space)
         See movej.
@@ -127,22 +129,20 @@ end
         q:    joint position
         '''
 
-        prg =  '''def move_l():
+        prg = '''def move_l():
 {movestr}
 end
 '''
         movestr = self._move(movetype='l', pose=pose, a=a, v=v, t=t, r=r, wait=wait, q=q)
-        
-        programString = prg.format(**locals())
-        
-        self.robotConnector.RealTimeClient.SendProgram(programString)
-        #time.sleep(0.5)
-        if(wait):
-            self.waitRobotIdleOrStopFlag()
-        
-        
 
-    def movep(self, pose=None, a=1.2, v =0.25, r =0, wait=True, q=None):
+        programString = prg.format(**locals())
+
+        self.robotConnector.RealTimeClient.SendProgram(programString)
+        # time.sleep(0.5)
+        if (wait):
+            self.waitRobotIdleOrStopFlag()
+
+    def movep(self, pose=None, a=1.2, v=0.25, r=0, wait=True, q=None):
         '''
         Move Process
         
@@ -158,19 +158,18 @@ end
         q:    list of target joint positions  
         '''
 
-        prg =  '''def move_p():
+        prg = '''def move_p():
 {movestr}
 end
 '''
         movestr = self._move(movetype='p', pose=pose, a=a, v=v, t=0, r=r, wait=wait, q=q)
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.SendProgram(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
-        
-        
-    def movec(self, pose_via=None, pose_to=None, a=1.2, v =0.25, r =0, wait=True, q_via=None, q_to=None):
+
+    def movec(self, pose_via=None, pose_to=None, a=1.2, v=0.25, r=0, wait=True, q_via=None, q_to=None):
         '''
         Move Circular: Move to position (circular in tool-space)
 
@@ -190,20 +189,19 @@ end
         q_to:     list of target joint positions
         '''
 
-        prg =  '''def move_p():
+        prg = '''def move_p():
 {movestr}
 end
 '''
-        movestr = self._move(movetype='p', pose=pose_to, a=a, v=v, t=0, r=r, wait=wait, q=q_to,pose_via=pose_via, q_via=q_via)
-        
+        movestr = self._move(movetype='p', pose=pose_to, a=a, v=v, t=0, r=r, wait=wait, q=q_to, pose_via=pose_via,
+                             q_via=q_via)
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.SendProgram(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
-        
-        
- 
+
     def _move(self, movetype, pose=None, a=1.2, v=0.25, t=0, r=0, wait=True, q=None, pose_via=None, q_via=None):
         '''
         General move Process
@@ -221,58 +219,59 @@ end
         q:    list of target joint positions  
         '''
 
-        prefix="p"
-        t_val=''
-        pose_via_val=''
+        prefix = "p"
+        t_val = ''
+        pose_via_val = ''
         if pose is None:
-            prefix=""
-            pose=q
+            prefix = ""
+            pose = q
         pose = np.array(pose)
         if movetype == 'j' or movetype == 'l':
-            tval='t={t},'.format(**locals())
-        
-        if movetype =='c':
+            tval = 't={t},'.format(**locals())
+
+        if movetype == 'c':
             if pose_via is None:
-                prefix_via=""
-                pose_via=q_via
+                prefix_via = ""
+                pose_via = q_via
             else:
-                prefix_via="p"
-            
+                prefix_via = "p"
+
             pose_via = np.array(pose_via)
-            
-            #Check if pose and pose_via have same shape 
+
+            # Check if pose and pose_via have same shape
             if (pose.shape != pose_via.shape):
                 return False
-        
+
         movestr = ''
-        if np.size(pose.shape)==2:
+        if np.size(pose.shape) == 2:
             for idx in range(np.size(pose, 0)):
                 posex = np.round(pose[idx], 4)
                 posex = posex.tolist()
-                if movetype =='c':
+                if movetype == 'c':
                     pose_via_x = np.round(pose_via[idx], 4)
                     pose_via_x = pose_via_x.tolist()
-                    pose_via_val='{prefix_via}{pose_via_x},'
-                    
-                if (np.size(pose, 0)-1)==idx:
-                    r=0
-                movestr +=  '    move{movetype}({pose_via_val} {prefix}{posex}, a={a}, v={v}, {t_val} r={r})\n'.format(**locals())
-                
-            movestr +=  '    stopl({a})\n'.format(**locals())
+                    pose_via_val = '{prefix_via}{pose_via_x},'
+
+                if (np.size(pose, 0) - 1) == idx:
+                    r = 0
+                movestr += '    move{movetype}({pose_via_val} {prefix}{posex}, a={a}, v={v}, {t_val} r={r})\n'.format(
+                    **locals())
+
+            movestr += '    stopl({a})\n'.format(**locals())
         else:
             posex = np.round(pose, 4)
             posex = posex.tolist()
-            if movetype =='c':
+            if movetype == 'c':
                 pose_via_x = np.round(pose_via, 4)
                 pose_via_x = pose_via_x.tolist()
-                pose_via_val='{prefix_via}{pose_via_x},'
-            movestr +=  '    move{movetype}({pose_via_val} {prefix}{posex}, a={a}, v={v}, {t_val} r={r})\n'.format(**locals())
-            
+                pose_via_val = '{prefix_via}{pose_via_x},'
+            movestr += '    move{movetype}({pose_via_val} {prefix}{posex}, a={a}, v={v}, {t_val} r={r})\n'.format(
+                **locals())
 
-        
         return movestr
- 
-    def force_mode(self, task_frame=[0.,0.,0., 0.,0.,0.], selection_vector=[0,0,1,0,0,0], wrench=[0.,0.,0., 0.,0.,0.], f_type=2, limits=[2, 2, 1.5, 1, 1, 1], wait=False, timeout=60):
+
+    def force_mode(self, task_frame=[0., 0., 0., 0., 0., 0.], selection_vector=[0, 0, 1, 0, 0, 0],
+                   wrench=[0., 0., 0., 0., 0., 0.], f_type=2, limits=[2, 2, 1.5, 1, 1, 1], wait=False, timeout=60):
         '''
         Set robot to be controlled in force mode
         
@@ -314,27 +313,27 @@ end
         end
 end
 '''
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.SendProgram(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
- 
+
     def end_force_mode(self, wait=False):
         '''
         Resets the robot mode from force mode to normal operation.
         This is also done when a program stops.
         '''
-        prg = 'end_force_mode()\n'        
+        prg = 'end_force_mode()\n'
         programString = prg.format(**locals())
-        
-        self.robotConnector.RealTimeClient.Send(programString)                      ##### ToDo - check if send or sendprogram
-        if(wait):
+
+        self.robotConnector.RealTimeClient.Send(programString)  ##### ToDo - check if send or sendprogram
+        if (wait):
             self.waitRobotIdleOrStopFlag()
         time.sleep(0.05)
-        
-    def servoc(self, pose, a=1.2, v =0.25, r =0, wait=True):
+
+    def servoc(self, pose, a=1.2, v=0.25, r=0, wait=True):
         '''
         Servo Circular
         Servo to position (circular in tool-space). Accelerates to and moves with constant tool speed v.
@@ -346,14 +345,14 @@ end
         r:    blend radius (of target pose) [m]
         '''
         prg = 'servoc(p{pose}, {a}, {v}, {r})\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
-    def servoj(self, q, t =0.008, lookahead_time=0.1, gain=100, wait=True):
+    def servoj(self, q, t=0.008, lookahead_time=0.1, gain=100, wait=True):
         '''
         Servo to position (linear in joint-space)
         Servo function used for online control of the robot. The lookahead time
@@ -370,12 +369,12 @@ end
         '''
         prg = 'servoj({q}, 0.5, 0.5, {t}, {lookahead_time}, {gain})\n'
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
-    def speedj(self, qd, a, t , wait=True):
+    def speedj(self, qd, a, t, wait=True):
         '''
         Joint speed
         Accelerate linearly in joint space and continue with constant joint
@@ -389,9 +388,9 @@ end
         '''
         prg = 'speedj({qd}, {a}, {t})\n'
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
     def stopj(self, a, wait=True):
@@ -403,11 +402,11 @@ end
         '''
         prg = 'stopj({a})\n'
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
-            self.waitRobotIdleOrStopFlag()    
-        
+        if (wait):
+            self.waitRobotIdleOrStopFlag()
+
     def speedl(self, xd, a=1.4, t=0, aRot=None, wait=True):
         '''
         Tool speed
@@ -422,7 +421,7 @@ end
         aRot: tool acceleration [rad/s^2] (optional), if not defined a, position acceleration, is used
         '''
         if aRot is None:
-            aRot=a
+            aRot = a
         prg = '''def ur_speedl():
     while(True):
         speedl({xd}, {a}, {t}, {aRot})
@@ -430,13 +429,13 @@ end
 end
 '''
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.SendProgram(programString)
-#         prg = 'speedl({xd}, {a}, {t}, {aRot})\n'
-#         programString = prg.format(**locals())
-#         
-#         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        #         prg = 'speedl({xd}, {a}, {t}, {aRot})\n'
+        #         programString = prg.format(**locals())
+        #
+        #         self.robotConnector.RealTimeClient.Send(programString)
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
     def stopl(self, a=0.5, wait=True):
@@ -448,9 +447,9 @@ end
         '''
         prg = 'stopl({a})\n'
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
     def freedrive_mode(self, wait=False):
@@ -467,23 +466,23 @@ end
 end
 '''
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.SendProgram(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
-            
+
     def end_freedrive_mode(self, wait=True):
         '''
         Set robot back in normal position control mode after freedrive mode.
         '''
-        prg = 'end_freedrive_mode()\n'        
+        prg = 'end_freedrive_mode()\n'
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
         time.sleep(0.05)
-        
+
     def teach_mode(self, wait=True):
         '''
         Set robot in freedrive mode. In this mode the robot can be moved
@@ -497,23 +496,23 @@ end
 end
 '''
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.SendProgram(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
     def end_teach_mode(self, wait=True):
         '''
         Set robot back in normal position control mode after freedrive mode.
         '''
-        prg = 'end_teach_mode()\n'        
+        prg = 'end_teach_mode()\n'
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
         time.sleep(0.05)
-        
+
     def conveyor_pulse_decode(self, in_type, A, B, wait=True):
         '''
         Tells the robot controller to treat digital inputs number A and B as pulses 
@@ -544,14 +543,14 @@ end
             A: Encoder input A, values of 0-3 are the digital inputs 0-3.
             B: Encoder input B, values of 0-3 are the digital inputs 0-3.
         '''
-        
-        prg = 'conveyor_pulse_decode({in_type}, {A}, {B})\n'        
+
+        prg = 'conveyor_pulse_decode({in_type}, {A}, {B})\n'
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
-        
+
     def set_conveyor_tick_count(self, tick_count, absolute_encoder_resolution=0, wait=True):
         '''
         Tells the robot controller the tick count of the encoder. This function is
@@ -571,11 +570,11 @@ end
         '''
         prg = 'set_conveyor_tick_count({tick_count}, {absolute_encoder_resolution})\n'
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
-                
+
     def get_conveyor_tick_count(self):
         '''
         Tells the tick count of the encoder, note that the controller interpolates tick counts to get 
@@ -584,18 +583,18 @@ end
         Return Value:
             The conveyor encoder tick count
         '''
-        
+
         prg = '''def ur_get_conveyor_tick_count():
     write_output_float_register(0, get_conveyor_tick_count())
 end
 '''
         programString = prg.format(**locals())
-    
+
         self.robotConnector.RealTimeClient.SendProgram(programString)
         self.waitRobotIdleOrStopFlag()
         return self.robotConnector.RobotModel.outputDoubleRegister[0]
 
-    def stop_conveyor_tracking(self, a=15, aRot ='a', wait=True):
+    def stop_conveyor_tracking(self, a=15, aRot='a', wait=True):
         '''
         Stop tracking the conveyor, started by track conveyor linear() or
         track conveyor circular(), and decellerate tool speed to zero.
@@ -604,14 +603,13 @@ end
         aRot: tool acceleration [rad/s^2] (optional), if not defined a, position acceleration, is used
         '''
         prg = 'stop_conveyor_tracking({a}, {aRot})\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
-        
-        
+
     def track_conveyor_circular(self, center, ticks_per_revolution, rotate_tool, wait=True):
         '''
         Makes robot movement (movej() etc.) track a circular conveyor.
@@ -630,14 +628,12 @@ end
                               specified by the trajectory (movel() etc.).
         '''
         prg = 'track_conveyor_circular({center}, {ticks_per_revolution}, {rotate_tool})\n'
-        
-        programString = prg.format(**locals())
-        
-        self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
-            self.waitRobotIdleOrStopFlag()
-        
 
+        programString = prg.format(**locals())
+
+        self.robotConnector.RealTimeClient.Send(programString)
+        if (wait):
+            self.waitRobotIdleOrStopFlag()
 
     def track_conveyor_linear(self, direction, ticks_per_meter, wait=True):
         '''
@@ -654,14 +650,14 @@ end
         ticks per meter: How many tichs the encoder sees when the conveyor moves one meter
         '''
         prg = 'track_conveyor_linear({direction}, {ticks_per_meter})\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
-    def position_deviation_warning(self, enabled, threshold =0.8, wait=True):
+    def position_deviation_warning(self, enabled, threshold=0.8, wait=True):
         '''
         Write a message to the log when the robot position deviates from the target position.
         Parameters:
@@ -670,13 +666,13 @@ end
                    position deviation that causes a protective stop (Float).
         '''
         prg = 'position_deviation_warning({enabled}, {threshold})\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
-        
+
     def reset_revolution_counter(self, qNear=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], wait=True):
         '''
         Reset the revolution counter, if no offset is specified. This is applied on
@@ -688,15 +684,15 @@ end
         Parameters:
         qNear: Optional parameter, reset the revolution counter to one close to the given qNear joint vector. 
                If not defined, the joint's actual number of revolutions are used.
-        ''' 
+        '''
         prg = 'reset_revolution_counter(qNear)\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
-        
+
     def set_pos(self, q, wait=True):
         '''
         Set joint positions of simulated robot
@@ -704,11 +700,11 @@ end
         q: joint positions
         '''
         prg = 'set_pos({q})\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
     def force_mode_set_damping(self, damping=0, wait=True):
@@ -760,9 +756,8 @@ end
         if (wait):
             self.waitRobotIdleOrStopFlag()
 
+    ####################   Module internals    ####################
 
-####################   Module internals    ####################
-    
     def force(self, wait=True):
         '''
         Returns the force exerted at the TCP
@@ -774,7 +769,6 @@ end
         '''
         raise NotImplementedError('Function Not yet implemented')
 
-        
     def get_actual_joint_positions(self, wait=True):
         '''
         Returns the actual angular positions of all joints
@@ -788,11 +782,11 @@ end
         The current actual joint angular position vector in rad : [Base,
         Shoulder, Elbow, Wrist1, Wrist2, Wrist3]
         '''
-        if(wait):
+        if (wait):
             self.sync()
-        return self.robotConnector.RobotModel.ActualQ() 
+        return self.robotConnector.RobotModel.ActualQ()
         c_pose = self.robotConnector.RobotModel.ActualQ
-        
+
         pose = []
         pose.append(ctypes.c_double(c_pose[0]).value)
         pose.append(ctypes.c_double(c_pose[1]).value)
@@ -802,8 +796,6 @@ end
         pose.append(ctypes.c_double(c_pose[5]).value)
         return pose
 
-
-        
     def get_actual_joint_speeds(self, wait=True):
         '''
         Returns the actual angular velocities of all joints
@@ -817,11 +809,10 @@ end
         The current actual joint angular velocity vector in rad/s:
         [Base, Shoulder, Elbow, Wrist1, Wrist2, Wrist3]
         '''
-        if(wait):
+        if (wait):
             self.sync()
         return self.robotConnector.RobotModel.ActualQD
 
-        
     def get_actual_tcp_pose(self, wait=True):
         '''
         Returns the current measured tool pose
@@ -833,11 +824,11 @@ end
         Return Value
         The current actual TCP vector : ([X, Y, Z, Rx, Ry, Rz])
         '''
-        if(wait):
+        if (wait):
             self.sync()
         return self.robotConnector.RobotModel.ActualTCPPose()
         c_pose = self.robotConnector.RobotModel.ActualTCPPose
-        
+
         pose = []
         pose.append(ctypes.c_double(c_pose[0]).value)
         pose.append(ctypes.c_double(c_pose[1]).value)
@@ -846,9 +837,8 @@ end
         pose.append(ctypes.c_double(c_pose[4]).value)
         pose.append(ctypes.c_double(c_pose[5]).value)
         return pose
-       
-        
-    def get_actual_tcp_speed(self,wait=True):
+
+    def get_actual_tcp_speed(self, wait=True):
         '''
         Returns the current measured TCP speed
         
@@ -859,10 +849,10 @@ end
         Return Value
         The current actual TCP velocity vector; ([X, Y, Z, Rx, Ry, Rz])
         '''
-        if(wait):
+        if (wait):
             self.sync()
         return self.robotConnector.RobotModel.ActualTCPSpeed
-        
+
     def get_actual_tool_flange_pose(self):
         '''
         Returns the current measured tool flange pose
@@ -878,7 +868,7 @@ end
         Note: See get actual tcp pose for the actual 6d pose including TCP offset.
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def get_controller_temp(self):
         '''
         Returns the temperature of the control box
@@ -889,8 +879,9 @@ end
         A temperature in degrees Celcius (float)
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
-    def get_inverse_kin(self, x, qnear =[-1.6, -1.7, -2.2, -0.8, 1.6, 0.0], maxPositionError =0.0001, maxOrientationError =0.0001):
+
+    def get_inverse_kin(self, x, qnear=[-1.6, -1.7, -2.2, -0.8, 1.6, 0.0], maxPositionError=0.0001,
+                        maxOrientationError=0.0001):
         '''
         Inverse kinematic transformation (tool space -> joint space). 
         Solution closest to current joint positions is returned, unless qnear defines one.
@@ -909,7 +900,7 @@ end
         '''
         raise NotImplementedError('Function Not yet implemented')
 
-    def get_joint_temp(self,j):
+    def get_joint_temp(self, j):
         '''
         Returns the temperature of joint j
         
@@ -923,7 +914,7 @@ end
         A temperature in degrees Celcius (float)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def get_joint_torques(self):
         '''
         Returns the torques of all joints
@@ -935,7 +926,7 @@ end
         The joint torque vector in ; ([float])
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def get_target_joint_positions(self):
         '''
         Returns the desired angular position of all joints
@@ -950,7 +941,7 @@ end
         Shoulder, Elbow, Wrist1, Wrist2, Wrist3]
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def get_target_joint_speeds(self):
         '''
         Returns the desired angular velocities of all joints
@@ -965,7 +956,7 @@ end
         [Base, Shoulder, Elbow, Wrist1, Wrist2, Wrist3]
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def get_target_tcp_pose(self):
         '''
         Returns the current target tool pose
@@ -978,7 +969,7 @@ end
         The current target TCP vector; ([X, Y, Z, Rx, Ry, Rz])
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def get_target_tcp_speed(self):
         '''
         Returns the current target TCP speed
@@ -992,7 +983,7 @@ end
         The TCP speed; (pose)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def get_tcp_force(self):
         '''
         Returns the wrench (Force/Torque vector) at the TCP
@@ -1008,7 +999,7 @@ end
         the wrench (pose)
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def get_tool_accelerometer_reading(self):
         '''
         Returns the current reading of the tool accelerometer as a
@@ -1022,7 +1013,7 @@ end
         SI-units (m/s^2).
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def get_tool_current(self):
         '''
         Returns the tool current
@@ -1033,7 +1024,7 @@ end
         The tool current in ampere.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def is_steady(self):
         '''
         Checks if robot is fully at rest.
@@ -1051,7 +1042,7 @@ end
         (bool)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def is_within_safety_limits(self, pose):
         '''
         Checks if the given pose is reachable and within the current safety
@@ -1070,8 +1061,8 @@ end
         True if within limits, false otherwise (bool)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
-    def popup(self, s, title='Popup', warning=False, error =False):
+
+    def popup(self, s, title='Popup', warning=False, error=False):
         '''
         Display popup on GUI
         
@@ -1084,13 +1075,13 @@ end
         error:   error message?
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def powerdown(self):
         '''
         Shutdown the robot, and power off the robot and controller.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_gravity(self, d, wait=True):
         '''
         Set the direction of the acceleration experienced by the robot. When
@@ -1108,14 +1099,14 @@ end
         Exampel:
         set_gravity([0,0,9.82])  #Robot mounted at flore
         '''
-    
+
         prg = 'set_gravity({d})\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
-            self.waitRobotIdleOrStopFlag()    
+        if (wait):
+            self.waitRobotIdleOrStopFlag()
 
     def set_payload(self, m, CoG):
         '''
@@ -1142,7 +1133,7 @@ end
              Optional.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_payload_cog(self, CoG, wait=True):
         '''
         Set center of gravity
@@ -1160,17 +1151,15 @@ end
         Parameters:
         CoG: Center of Gravity: [CoGx, CoGy, CoGz] in meters.
         '''
-        
+
         prg = 'set_payload_cog({CoG})\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
-        
-                    
     def set_payload_mass(self, m, wait=True):
         '''
         Set payload mass
@@ -1186,11 +1175,11 @@ end
         m: mass in kilograms
         '''
         prg = 'set_payload_mass({m})\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
 
     def set_tcp(self, pose, wait=True):
@@ -1203,15 +1192,15 @@ end
         Parameters:
         pose: A pose describing the transformation.
         '''
-        
+
         if type(pose).__module__ == np.__name__:
             pose = pose.tolist()
         prg = 'set_tcp(p{pose})\n'
-        
+
         programString = prg.format(**locals())
-        
+
         self.robotConnector.RealTimeClient.Send(programString)
-        if(wait):
+        if (wait):
             self.waitRobotIdleOrStopFlag()
         time.sleep(0.05)
 
@@ -1223,17 +1212,16 @@ end
         t: time [s]
         '''
         time.sleep(t)
-    
+
     def sync(self):
         '''
         Uses up the remaining "physical" time a thread has in the current
         frame/sample.
         '''
         initialRobotTime = self.robotConnector.RobotModel.RobotTimestamp()
-        while(self.robotConnector.RobotModel.RobotTimestamp() == initialRobotTime):
+        while (self.robotConnector.RobotModel.RobotTimestamp() == initialRobotTime):
             time.sleep(0.001)
 
-    
     def textmsg(self, s1, s2=''):
         '''
         Send text message to log
@@ -1247,8 +1235,8 @@ end
         etc.) can also be sent
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
-############    Module urmath    #################        
+
+    ############    Module urmath    #################
     @staticmethod
     def pose_add(p_1, p_2):
         '''
@@ -1273,13 +1261,9 @@ end
         Trans_3 = np.matmul(Trans_1, Trans_2)
         p_3 = URBasic.kinematic.Tran_Mat2Pose(Trans_3)
         return p_3
-        
-        
-        
-        
 
-############    Module interfaces  #################
-        
+    ############    Module interfaces  #################
+
     def get_configurable_digital_in(self, n):
         '''
         Get configurable digital input signal level
@@ -1293,7 +1277,7 @@ end
         boolean, The signal level. 
         '''
         return self.robotConnector.RobotModel.ConfigurableInputBits(n)
-        
+
     def get_configurable_digital_out(self, n):
         '''
         Get configurable digital output signal level
@@ -1306,9 +1290,9 @@ end
         Return Value:
         boolean, The signal level.
         '''
-        
+
         return self.robotConnector.RobotModel.ConfigurableOutputBits(n)
-    
+
     def get_euromap_input(self, port_number):
         '''
         Reads the current value of a specific Euromap67 input signal. See
@@ -1324,7 +1308,7 @@ end
         A boolean, either True or False
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def get_euromap_output(self, port_number):
         '''
         Reads the current value of a specific Euromap67 output signal. This
@@ -1342,7 +1326,7 @@ end
         A boolean, either True or False
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def get_flag(self, n):
         '''
         Flags behave like internal digital outputs. The keep information
@@ -1353,7 +1337,7 @@ end
         Boolean, The stored bit.
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def get_standard_analog_in(self, n, wait=True):
         '''
         Get standard analog input signal level
@@ -1367,11 +1351,11 @@ end
         Return Value:
         boolean, The signal level.
         '''
-        
-        if(wait):
+
+        if (wait):
             self.sync()
         return self.robotConnector.RobotModel.StandardAnalogInput(n)
-    
+
     def get_standard_analog_out(self, n, wait=True):
         '''
         Get standard analog output level
@@ -1384,16 +1368,16 @@ end
         float, The signal level [0;1]
         '''
         if n == 0:
-            if(wait):
+            if (wait):
                 self.sync()
             return self.robotConnector.RobotModel.StandardAnalogOutput0
         elif n == 1:
-            if(wait):
+            if (wait):
                 self.sync()
                 return self.robotConnector.RobotModel.StandardAnalogOutput1
         else:
             raise KeyError('Index out of range')
-        
+
     def get_standard_digital_in(self, n, wait=True):
         '''
         Get standard digital input signal level
@@ -1408,7 +1392,7 @@ end
         boolean, The signal level.
         '''
         return self.robotConnector.RobotModel.DigitalInputBits(n)
-        
+
     def get_standard_digital_out(self, n):
         '''
         Get standard digital output signal level
@@ -1421,10 +1405,9 @@ end
         Return Value:
         boolean, The signal level.
         '''
-        
+
         return self.robotConnector.RobotModel.DigitalOutputBits(n)
-        
-    
+
     def get_tool_analog_in(self, n):
         '''
         Get tool analog input level
@@ -1438,7 +1421,7 @@ end
         float, The signal level [0,1]
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def get_tool_digital_in(self, n):
         '''
         Get tool digital input signal level
@@ -1453,7 +1436,7 @@ end
         boolean, The signal level.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def get_tool_digital_out(self, n):
         '''
         Get tool digital output signal level
@@ -1468,7 +1451,7 @@ end
         boolean, The signal level.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def modbus_add_signal(self, IP, slave_number, signal_address, signal_type, signal_name):
         '''
         Adds a new modbus signal for the controller to supervise. Expects no
@@ -1495,7 +1478,7 @@ end
                         the new signal will replace the old one.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def modbus_delete_signal(self, signal_name):
         '''
         Deletes the signal identified by the supplied signal name.
@@ -1506,7 +1489,7 @@ end
         signal_name: A string equal to the name of the signal that should be deleted.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def modbus_get_signal_status(self, signal_name, is_secondary_program):
         '''
         Reads the current value of a specific signal.
@@ -1526,7 +1509,7 @@ end
         integer.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def modbus_send_custom_command(self, IP, slave_number, function_code, data):
         '''
         Sends a command specified by the user to the modbus unit located
@@ -1555,7 +1538,7 @@ end
         data:          An array of integers in which each entry must be a valid byte (0-255) value.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def modbus_set_output_register(self, signal_name, register_value, is_secondary_program):
         '''
         Sets the output register signal identified by the given name to the given
@@ -1569,7 +1552,7 @@ end
         is_secondary_program: A boolean for interal use only. Must be set to False.
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def modbus_set_output_signal(self, signal_name, digital_value, is_secondary_program):
         '''
         Sets the output digital signal identified by the given name to the given
@@ -1583,7 +1566,7 @@ end
         is_secondary_program: A boolean for interal use only. Must be set to False.
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def modbus_set_runstate_dependent_choice(self, signal_name, runstate_choice):
         '''
         Sets whether an output signal must preserve its state from a program,
@@ -1596,7 +1579,7 @@ end
         runstate_choice: An integer: 0 = preserve program state, 1 = set low when a program is not running, 2 = set high when a program is not running.
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def modbus_set_signal_update_frequency(self, signal_name, update_frequency):
         '''
         Sets the frequency with which the robot will send requests to the
@@ -1609,7 +1592,7 @@ end
         update_frequency: An integer in the range 0-125 specifying the update frequency in Hz.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def read_input_boolean_register(self, address):
         '''
         Reads the boolean from one of the input registers, which can also be
@@ -1624,7 +1607,7 @@ end
         The boolean value held by the register (True, False)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def read_input_float_register(self, address):
         '''
         Reads the float from one of the input registers, which can also be
@@ -1639,7 +1622,7 @@ end
         The value held by the register (float)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def read_input_integer_register(self, address):
         '''
         Reads the integer from one of the input registers, which can also be
@@ -1654,7 +1637,7 @@ end
         The value held by the register [-2,147,483,648 : 2,147,483,647]
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def read_output_boolean_register(self, address):
         '''
         Reads the boolean from one of the output registers, which can also be
@@ -1669,7 +1652,7 @@ end
         The boolean value held by the register (True, False)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def read_output_float_register(self, address):
         '''
         Reads the float from one of the output registers, which can also be
@@ -1684,7 +1667,7 @@ end
         The value held by the register (float)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def read_output_integer_register(self, address):
         '''
         Reads the integer from one of the output registers, which can also be
@@ -1700,7 +1683,7 @@ end
         2,147,483,647]
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def read_port_bit(self, address):
         '''
         Reads one of the ports, which can also be accessed by Modbus clients
@@ -1715,7 +1698,7 @@ end
         The value held by the port (True, False)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def read_port_register(self, address):
         '''
         Reads one of the ports, which can also be accessed by Modbus clients
@@ -1730,8 +1713,8 @@ end
         The signed integer value held by the port (-32768 : 32767)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
-    def rpc_factory(self, rpcType, url ):
+
+    def rpc_factory(self, rpcType, url):
         '''
         Creates a new Remote Procedure Call (RPC) handle. Please read the
         subsection ef{Remote Procedure Call (RPC)} for a more detailed
@@ -1766,7 +1749,7 @@ end
         more readable (i.e. "proxy" is not a very good name).
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def rtde_set_watchdog(self, variable_name, min_frequency, action='pause'):
         '''
         This function will activate a watchdog for a particular input variable to
@@ -1793,7 +1776,7 @@ end
         guarantee the specified action on missing updates.
         '''
         raise NotImplementedError('Function Not yet implemented')
-        
+
     def set_analog_inputrange(self, port, inputRange):
         '''
         Deprecated: Set range of analog inputs
@@ -1815,7 +1798,7 @@ end
         supported and will show an exception in the GUI.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_analog_outputdomain(self, port, domain):
         '''
         Set domain of analog outputs
@@ -1825,7 +1808,7 @@ end
         domain: analog output domain: 0: 4-20mA, 1: 0-10V
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_configurable_digital_out(self, n, b):
         '''
         Set configurable digital output signal level
@@ -1836,17 +1819,17 @@ end
         n: The number (id) of the output, integer: [0:7]
         b: The signal level. (boolean)
         '''
-        #self.robotConnector.RTDE.SetConfigurableDigitalOutput(n, b)
+        # self.robotConnector.RTDE.SetConfigurableDigitalOutput(n, b)
         if b:
-            self.robotConnector.RTDE.setData('configurable_digital_output_mask', 2**n)
-            self.robotConnector.RTDE.setData('configurable_digital_output', 2**n)
+            self.robotConnector.RTDE.setData('configurable_digital_output_mask', 2 ** n)
+            self.robotConnector.RTDE.setData('configurable_digital_output', 2 ** n)
         else:
-            self.robotConnector.RTDE.setData('configurable_digital_output_mask', 2**n)
+            self.robotConnector.RTDE.setData('configurable_digital_output_mask', 2 ** n)
             self.robotConnector.RTDE.setData('configurable_digital_output', 0)
         self.robotConnector.RTDE.sendData()
         self.robotConnector.RTDE.setData('configurable_digital_output_mask', 0)
         self.robotConnector.RTDE.setData('configurable_digital_output', 0)
-            
+
     def set_euromap_output(self, port_number, signal_value):
         '''
         Sets the value of a specific Euromap67 output signal. This means the
@@ -1861,7 +1844,7 @@ end
         signal value: A boolean, either True or False
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_euromap_runstate_dependent_choice(self, port_number, runstate_choice):
         '''
         Sets whether an Euromap67 output signal must preserve its state from a
@@ -1880,7 +1863,7 @@ end
         not running.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_flag(self, n, b):
         '''
         Flags behave like internal digital outputs. The keep information
@@ -1891,7 +1874,7 @@ end
         b: The stored bit. (boolean)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_runstate_configurable_digital_output_to_value(self, outputId, state):
         '''
         Sets the output signal levels depending on the state of the program
@@ -1911,7 +1894,7 @@ end
         stopped.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_runstate_standard_analog_output_to_value(self, outputId, state):
         '''
         Sets the output signal levels depending on the state of the program
@@ -1930,7 +1913,7 @@ end
         program is running and Min when it is stopped.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_runstate_standard_digital_output_to_value(self, outputId, state):
         '''
         Sets the output signal levels depending on the state of the program
@@ -1949,7 +1932,7 @@ end
         stopped.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_runstate_tool_digital_output_to_value(self, outputId, state):
         '''
         Sets the output signal levels depending on the state of the program
@@ -1968,7 +1951,7 @@ end
         stopped.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_standard_analog_input_domain(self, port, domain):
         '''
         Set domain of standard analog inputs in the controller box
@@ -1980,7 +1963,7 @@ end
         domain: analog input domains: 0: 4-20mA, 1: 0-10V
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_standard_analog_out(self, n, f):
         '''
         Set standard analog output level
@@ -1989,7 +1972,7 @@ end
         f: The relative signal level [0;1] (float)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_standard_digital_out(self, n, b):
         '''
         Set standard digital output signal level
@@ -2000,19 +1983,17 @@ end
         n: The number (id) of the input, integer: [0:7]
         b: The signal level. (boolean)
         '''
-        #self.robotConnector.RTDE.SetStandardDigitalOutput(n, b)
+        # self.robotConnector.RTDE.SetStandardDigitalOutput(n, b)
         if b:
-            self.robotConnector.RTDE.setData('standard_digital_output_mask', 2**n)
-            self.robotConnector.RTDE.setData('standard_digital_output', 2**n)
+            self.robotConnector.RTDE.setData('standard_digital_output_mask', 2 ** n)
+            self.robotConnector.RTDE.setData('standard_digital_output', 2 ** n)
         else:
-            self.robotConnector.RTDE.setData('standard_digital_output_mask', 2**n)
+            self.robotConnector.RTDE.setData('standard_digital_output_mask', 2 ** n)
             self.robotConnector.RTDE.setData('standard_digital_output', 0)
         self.robotConnector.RTDE.sendData()
         self.robotConnector.RTDE.setData('standard_digital_output_mask', 0)
         self.robotConnector.RTDE.setData('standard_digital_output', 0)
 
-        
-    
     def set_tool_analog_input_domain(self, port, domain):
         '''
         Set domain of analog inputs in the tool
@@ -2024,7 +2005,7 @@ end
         domain: analog input domains: 0: 4-20mA, 1: 0-10V
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_tool_digital_out(self, n, b):
         '''
         Set tool digital output signal level
@@ -2037,7 +2018,7 @@ end
         b: The signal level. (boolean)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def set_tool_voltage(self, voltage):
         '''
         Sets the voltage level for the power supply that delivers power to the
@@ -2049,7 +2030,7 @@ end
         integer: 0, 12 or 24.
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def write_output_boolean_register(self, address, value):
         '''
         Writes the boolean value into one of the output registers, which can
@@ -2061,7 +2042,7 @@ end
         address: Address of the register (0:63)
         value: Value to set in the register (True, False)
         '''
-        
+
     def write_output_float_register(self, address, value):
         '''
         Writes the float value into one of the output registers, which can also
@@ -2074,7 +2055,7 @@ end
         value: Value to set in the register (float)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def write_output_integer_register(self, address, value):
         '''
         Writes the integer value into one of the output registers, which can also
@@ -2088,7 +2069,7 @@ end
         2,147,483,647]
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def write_port_bit(self, address, value):
         '''
         Writes one of the ports, which can also be accessed by Modbus clients
@@ -2101,7 +2082,7 @@ end
         value: Value to be set in the register (True, False)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
     def write_port_register(self, address, value):
         '''
         Writes one of the ports, which can also be accessed by Modbus clients
@@ -2115,4 +2096,15 @@ end
         32767)
         '''
         raise NotImplementedError('Function Not yet implemented')
-    
+
+    def get_elapsed_time(self):
+        return self.robotConnector.RobotModel.RobotTimestamp()
+
+    def get_robot_mode(self):
+        return self.robotConnector.RobotModel.RobotMode()
+
+    def get_robot_status(self):
+        return self.robotConnector.RobotModel.RobotStatus()
+
+    def get_robot_safety_status(self):
+        return self.robotConnector.RobotModel.SafetyStatus()

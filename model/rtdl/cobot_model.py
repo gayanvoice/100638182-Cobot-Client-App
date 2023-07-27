@@ -15,3 +15,9 @@ class CobotModel(object):
         cobot_model = CobotModel()
         cobot_model.elapsed_time = rtdl_model.data_row[rtdl_model.header_row.index("timestamp")]
         return cobot_model
+
+    @staticmethod
+    def get_from_parsed_data(parsed_data):
+        cobot_model = CobotModel()
+        cobot_model.elapsed_time = parsed_data["cobot_model"]["_elapsed_time"]
+        return cobot_model

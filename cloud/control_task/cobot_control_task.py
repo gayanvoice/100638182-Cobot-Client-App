@@ -1,6 +1,6 @@
 import logging
 
-from model.joint_position_model import JointPositionModel
+from model.request.joint_position_model import JointPositionModel
 
 
 class CobotControlTask:

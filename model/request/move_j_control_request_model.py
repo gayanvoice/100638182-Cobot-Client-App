@@ -1,8 +1,8 @@
 import json
-from model.joint_position_model import JointPositionModel
+from model.request.joint_position_model import JointPositionModel
 
 
-class MoveJControlModel:
+class MoveJControlRequestModel:
     def __init__(self):
         self._acceleration = None
         self._velocity = None
@@ -51,15 +51,15 @@ class MoveJControlModel:
         self._joint_position_model_array.append(value)
 
     @staticmethod
-    def get_move_j_model_from_values(values):
+    def get_move_j_control_request_model_from_values(values):
         data = json.loads(values)
-        move_j_control_model = MoveJControlModel()
-        move_j_control_model.acceleration = data["acceleration"]
-        move_j_control_model.velocity = data["velocity"]
-        move_j_control_model.time_s = data["time_s"]
-        move_j_control_model.blend_radius = data["blend_radius"]
+        move_j_control_request_model = MoveJControlRequestModel()
+        move_j_control_request_model.acceleration = data["acceleration"]
+        move_j_control_request_model.velocity = data["velocity"]
+        move_j_control_request_model.time_s = data["time_s"]
+        move_j_control_request_model.blend_radius = data["blend_radius"]
         for joint_position_model_array_object in data["joint_position_model_array"]:
             joint_position_model = JointPositionModel.get_joint_position_model_from_joint_position_model_object(
                 joint_position_model_array_object["joint_position_model"])
-            move_j_control_model.joint_position_model_array = joint_position_model
-        return move_j_control_model
+            move_j_control_request_model.joint_position_model_array = joint_position_model
+        return move_j_control_request_model

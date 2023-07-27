@@ -2,8 +2,8 @@ import logging
 import sys
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
-from model.rtdl_dt_model import RtdlDtModel
-from model.rtdl_model import RtdlModel
+from model.rtdl.rtdl_dt_model import RtdlDtModel
+from model.rtdl.rtdl_model import RtdlModel
 from twin_writer import TwinWriter
 from PySide6.QtCore import (QCoreApplication, QMetaObject, QRect, QSize, Qt, QThreadPool, QRunnable)
 from PySide6.QtGui import (QFont, QIcon)

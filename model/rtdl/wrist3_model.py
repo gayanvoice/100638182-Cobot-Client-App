@@ -35,3 +35,11 @@ class Wrist3Model:
         wrist3_model.temperature = rtdl_model.data_row[rtdl_model.header_row.index("joint_temperatures_5")]
         wrist3_model.voltage = rtdl_model.data_row[rtdl_model.header_row.index("actual_current_5")]
         return wrist3_model
+
+    @staticmethod
+    def get_from_parsed_data(parsed_data):
+        wrist3_model = Wrist3Model()
+        wrist3_model.position = parsed_data["wrist3_model"]["_position"]
+        wrist3_model.temperature = parsed_data["wrist3_model"]["_temperature"]
+        wrist3_model.voltage = parsed_data["wrist3_model"]["_voltage"]
+        return wrist3_model

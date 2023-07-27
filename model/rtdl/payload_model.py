@@ -45,3 +45,12 @@ class PayloadModel(object):
         payload_model.cogy = rtdl_model.data_row[rtdl_model.header_row.index("payload_cog_1")]
         payload_model.cogz = rtdl_model.data_row[rtdl_model.header_row.index("payload_cog_2")]
         return payload_model
+
+    @staticmethod
+    def get_from_parsed_data(parsed_data):
+        payload_model = PayloadModel()
+        payload_model.mass = parsed_data["payload_model"]["_mass"]
+        payload_model.cogx = parsed_data["payload_model"]["_cogx"]
+        payload_model.cogy = parsed_data["payload_model"]["_cogy"]
+        payload_model.cogz = parsed_data["payload_model"]["_cogz"]
+        return payload_model

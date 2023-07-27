@@ -10,10 +10,10 @@ class Status:
     AZURE_IOT_EXECUTED = "AZURE_IOT_EXECUTED"
 
 
-class CommandResponseModel:
+class ResponseModel:
     def __init__(self):
         self._status = None
-        self._message = None
+        self._log_text = None
         self._duration = None
         self._start_perf_counter = time.perf_counter()
         self._end_perf_counter = None
@@ -23,27 +23,27 @@ class CommandResponseModel:
         return self._status
 
     @property
-    def message(self):
-        return self._message
+    def log_text(self):
+        return self._log_text
+
+    @property
+    def duration(self):
+        return self._duration
 
     @status.setter
     def status(self, value):
         self._status = value
 
-    @message.setter
-    def message(self, value):
-        self._message = value
+    @log_text.setter
+    def log_text(self, value):
+        self._log_text = value
 
-    def set_response(self, status, message):
+    def set_response(self, status, log_text):
         self._status = status
-        self._message = message
+        self._log_text = log_text
         return self
 
     def get(self):
         self._end_perf_counter = time.perf_counter()
         self._duration = self._end_perf_counter - self._start_perf_counter
-        return {
-            "_status": self._status,
-            "_message": self._message,
-            "_duration": self._duration
-        }
+        return self

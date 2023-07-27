@@ -35,3 +35,11 @@ class ShoulderModel:
         shoulder_model.temperature = rtdl_model.data_row[rtdl_model.header_row.index("joint_temperatures_1")]
         shoulder_model.voltage = rtdl_model.data_row[rtdl_model.header_row.index("actual_current_1")]
         return shoulder_model
+
+    @staticmethod
+    def get_from_parsed_data(parsed_data):
+        shoulder_model = ShoulderModel()
+        shoulder_model.position = parsed_data["shoulder_model"]["_position"]
+        shoulder_model.temperature = parsed_data["shoulder_model"]["_temperature"]
+        shoulder_model.voltage = parsed_data["shoulder_model"]["_voltage"]
+        return shoulder_model

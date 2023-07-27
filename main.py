@@ -2,6 +2,7 @@ __author__ = "100638182"
 __copyright__ = "University of Derby"
 
 import asyncio
+import json
 import logging
 import os
 import sys
@@ -26,6 +27,7 @@ from cloud.wrist3 import Wrist3
 cobot_iot_configuration_path = "cobot_iot_configuration.xml"
 cobot_client_configuration_path = "cobot_client_configuration.xml"
 cobot_log_path = "cobot_log.log"
+cache_json_path = "cache.json"
 
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
@@ -58,6 +60,7 @@ async def cobot(queue):
     rtde_host = rtde_configuration.find('connection/host').text
     rtde_port = int(rtde_configuration.find('connection/port').text)
     control_configuration_path = rtde_configuration.find('settings/control_configuration_path').text
+    cache_json_path = rtde_configuration.find('settings/cache_json_path').text
 
     model_id = cobot_configuration.find('model_id').text
     provisioning_host = cobot_configuration.find('provisioning_host').text
@@ -73,7 +76,8 @@ async def cobot(queue):
                          provisioning_host=provisioning_host,
                          id_scope=id_scope,
                          registration_id=registration_id,
-                         symmetric_key=symmetric_key)
+                         symmetric_key=symmetric_key,
+                         cache_json_path=cache_json_path)
     await cobot_device.connect_azure_iot(queue)
 
 

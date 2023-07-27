@@ -1,5 +1,3 @@
-import json
-
 from model.rtdl.base_model import BaseModel
 from model.rtdl.cobot_model import CobotModel
 from model.rtdl.control_box_model import ControlBoxModel
@@ -122,6 +120,21 @@ class RtdlDtModel(object):
         rtdl_dt_model._wrist2_model = Wrist2Model.get_from_rtdl_model(rtdl_model)
         rtdl_dt_model._wrist3_model = Wrist3Model.get_from_rtdl_model(rtdl_model)
         rtdl_dt_model._tool_model = ToolModel.get_from_rtdl_model(rtdl_model)
+        return rtdl_dt_model
+
+    @staticmethod
+    def get_from_parsed_data(parsed_data):
+        rtdl_dt_model = RtdlDtModel()
+        rtdl_dt_model._cobot_model = CobotModel.get_from_parsed_data(parsed_data)
+        rtdl_dt_model._control_box_model = ControlBoxModel.get_from_parsed_data(parsed_data)
+        rtdl_dt_model._payload_model = PayloadModel.get_from_parsed_data(parsed_data)
+        rtdl_dt_model._base_model = BaseModel.get_from_parsed_data(parsed_data)
+        rtdl_dt_model._shoulder_model = ShoulderModel.get_from_parsed_data(parsed_data)
+        rtdl_dt_model._elbow_model = ElbowModel.get_from_parsed_data(parsed_data)
+        rtdl_dt_model._wrist1_model = Wrist1Model.get_from_parsed_data(parsed_data)
+        rtdl_dt_model._wrist2_model = Wrist2Model.get_from_parsed_data(parsed_data)
+        rtdl_dt_model._wrist3_model = Wrist3Model.get_from_parsed_data(parsed_data)
+        rtdl_dt_model._tool_model = ToolModel.get_from_parsed_data(parsed_data)
         return rtdl_dt_model
 
     def get_json(self):

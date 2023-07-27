@@ -16,5 +16,5 @@ class LogTextHelper:
             class_name=self.__class_name,
             command_name=command_name)
         for key, value in input_dictionary.items():
-            log_text += f"{key}={value}"
+            log_text += f"{key}={value} "
         return log_text

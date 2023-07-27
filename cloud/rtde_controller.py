@@ -2,14 +2,13 @@ import asyncio
 import json
 import logging
 import sys
-import time
 from jsondiff import diff
 
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
 
-from model.rtdl_dt_model import RtdlDtModel
-from model.rtdl_model import RtdlModel
+from model.rtdl.rtdl_dt_model import RtdlDtModel
+from model.rtdl.rtdl_model import RtdlModel
 from twin_writer import TwinWriter
 import xml.etree.ElementTree as ET
 

@@ -65,3 +65,14 @@ class ElbowModel:
         elbow_model.y = rtdl_model.data_row[rtdl_model.header_row.index("elbow_position_1")]
         elbow_model.z = rtdl_model.data_row[rtdl_model.header_row.index("elbow_position_2")]
         return elbow_model
+
+    @staticmethod
+    def get_from_parsed_data(parsed_data):
+        elbow_model = ElbowModel()
+        elbow_model.position = parsed_data["elbow_model"]["_position"]
+        elbow_model.temperature = parsed_data["elbow_model"]["_temperature"]
+        elbow_model.voltage = parsed_data["elbow_model"]["_voltage"]
+        elbow_model.x = parsed_data["elbow_model"]["_x"]
+        elbow_model.y = parsed_data["elbow_model"]["_y"]
+        elbow_model.z = parsed_data["elbow_model"]["_z"]
+        return elbow_model
