@@ -126,6 +126,7 @@ class Cobot(object):
 
             try:
                 loop.run_until_complete(self.__cobot_control_task.move_j(move_j_control_model=move_j_control_model))
+
                 log_text = self.__log_text_helper.get_log_text(
                     status=LogTextStatus.COMPLETED,
                     command_name=inspect.currentframe().f_code.co_name,
@@ -141,6 +142,7 @@ class Cobot(object):
                         "error": RuntimeError.__dict__
                     })
                 logging.error(log_text)
+
             loop.close()
             self.__cobot_control_lock = False
 
@@ -153,6 +155,7 @@ class Cobot(object):
             logging.info(log_text)
         else:
             self.__cobot_control_lock = True
+
             log_text = self.__log_text_helper.get_log_text(
                 status=LogTextStatus.ERROR,
                 command_name=inspect.currentframe().f_code.co_name,
@@ -242,13 +245,16 @@ class Cobot(object):
 
             try:
                 loop.run_until_complete(self.__cobot_control_task.move_p(move_p_control_model=move_p_control_model))
+
                 logging.info('cobot.move_p_control_task_callback:Thread completed')
             except RuntimeError:
                 logging.error('cobot.move_p_control_task_callback:Thread failed runtime_error={runtime_error}'
                               .format(runtime_error=RuntimeError.__dict__))
             logging.info('cobot.move_p_control_task_callback:Close')
+
             loop.close()
             self.__cobot_control_lock = False
+
         else:
             logging.error("cobot.move_p_control_task_callback:__cobot_control_lock={cobot_control_lock}"
                           .format(cobot_control_lock=self.__cobot_control_lock))
