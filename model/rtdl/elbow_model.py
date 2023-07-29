@@ -1,3 +1,7 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
+
 class ElbowModel:
     def __init__(self):
         self._position = None

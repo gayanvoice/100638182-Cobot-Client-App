@@ -1,4 +1,5 @@
-import json
+__author__ = "100638182"
+__copyright__ = "University of Derby"
 
 
 class OpenPopupControlRequestModel:

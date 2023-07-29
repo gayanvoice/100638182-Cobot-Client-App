@@ -1,14 +1,14 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
 import asyncio
 import inspect
 import logging
 import json
 from threading import Thread
-from datetime import datetime
-
 from azure.iot.device.common.pipeline.pipeline_exceptions import PipelineNotRunning
-
 from cloud.device import Device
-from cloud.iot_task.payload_iot_task import PayloadIotTask
+from cloud.iot_task.elbow_iot_task import ElbowIotTask
 import xml.etree.ElementTree as ET
 import time
 from helper.log_text_helper import LogTextStatus, LogTextHelper
@@ -17,7 +17,7 @@ from model.response.iot.stop_iot_command_response_model import StopIotCommandRes
 from model.response.response_model import Status
 
 
-class Payload(object):
+class Elbow(object):
     def __init__(self,
                  model_id,
                  provisioning_host,
@@ -42,10 +42,10 @@ class Payload(object):
     def stdin_listener(self):
         while True:
             config_element_tree = ET.parse(self.__cobot_client_configuration_path)
-            payload_configuration = config_element_tree.find('payload')
-            process_continue = payload_configuration.find('status').text
+            elbow_configuration = config_element_tree.find('elbow')
+            process_continue = elbow_configuration.find('status').text
             if process_continue == "False":
-                logging.info("payload.stdin_listener:break process_continue={process_continue}"
+                logging.info("elbow.stdin_listener:break process_continue={process_continue}"
                              .format(process_continue=process_continue))
                 break
             else:
@@ -62,7 +62,7 @@ class Payload(object):
             logging.info(log_text)
 
             self.__iot_lock = False
-            self.__iot_task = PayloadIotTask(self.__device)
+            self.__iot_task = ElbowIotTask(self.__device)
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             loop.run_until_complete(self.__iot_task.connect())
@@ -190,10 +190,10 @@ class Payload(object):
         await user_finished
 
         if not command_listeners.done():
-            command_listeners.set_result(["Payload done"])
+            command_listeners.set_result(["Elbow done"])
 
         command_listeners.cancel()
 
         await self.__device.iot_hub_device_client.shutdown()
-        logging.info("payload.connect_azure_iot:queue.put")
+        logging.info("elbow.connect_azure_iot:queue.put")
         await queue.put(None)

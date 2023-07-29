@@ -1,12 +1,13 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
 import asyncio
 import json
 import logging
 import sys
 from jsondiff import diff
-
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
-
 from model.rtdl.rtdl_dt_model import RtdlDtModel
 from model.rtdl.rtdl_model import RtdlModel
 from twin_writer import TwinWriter

@@ -1,3 +1,7 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
+
 from model.rtdl.base_model import BaseModel
 from model.rtdl.cobot_model import CobotModel
 from model.rtdl.control_box_model import ControlBoxModel

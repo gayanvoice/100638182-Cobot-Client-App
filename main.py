@@ -1,28 +1,28 @@
 __author__ = "100638182"
 __copyright__ = "University of Derby"
 
+
 import asyncio
 import logging
 import os
 import xml.etree.ElementTree as ET
 from os.path import exists
 import pyfiglet
-from cloud.device.cobot import Cobot
-from cloud.device.control_box import ControlBox
-from cloud.device.elbow import Elbow
-from cloud.device.payload import Payload
+from cloud.iot_device.cobot import Cobot
+from cloud.iot_device.control_box import ControlBox
+from cloud.iot_device.elbow import Elbow
+from cloud.iot_device.payload import Payload
 from cloud.rtde_controller import RtdeController
-from cloud.device.base import Base
-from cloud.device.shoulder import Shoulder
-from cloud.device.tool import Tool
-from cloud.device.wrist1 import Wrist1
-from cloud.device.wrist2 import Wrist2
-from cloud.device.wrist3 import Wrist3
+from cloud.iot_device.base import Base
+from cloud.iot_device.shoulder import Shoulder
+from cloud.iot_device.tool import Tool
+from cloud.iot_device.wrist1 import Wrist1
+from cloud.iot_device.wrist2 import Wrist2
+from cloud.iot_device.wrist3 import Wrist3
 
 cobot_iot_configuration_path = "cobot_iot_configuration.xml"
 cobot_client_configuration_path = "cobot_client_configuration.xml"
 cobot_log_path = "cobot_log.log"
-cache_json_path = "cache.json"
 
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)

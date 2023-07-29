@@ -1,24 +1,23 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
 import asyncio
 import inspect
 import logging
 import json
 from threading import Thread
-from datetime import datetime
-
 from azure.iot.device.common.pipeline.pipeline_exceptions import PipelineNotRunning
-
-from cloud.iot_task.control_box_iot_task import ControlBoxIotTask
 from cloud.device import Device
+from cloud.iot_task.wrist1_iot_task import Wrist1IotTask
 import xml.etree.ElementTree as ET
 import time
-
-from helper.log_text_helper import LogTextHelper, LogTextStatus
+from helper.log_text_helper import LogTextStatus, LogTextHelper
 from model.response.iot.start_iot_command_response_model import StartIotCommandRespondModel
 from model.response.iot.stop_iot_command_response_model import StopIotCommandRespondModel
 from model.response.response_model import Status
 
 
-class ControlBox(object):
+class Wrist1(object):
     def __init__(self,
                  model_id,
                  provisioning_host,
@@ -43,10 +42,10 @@ class ControlBox(object):
     def stdin_listener(self):
         while True:
             config_element_tree = ET.parse(self.__cobot_client_configuration_path)
-            control_box_configuration = config_element_tree.find('control_box')
-            process_continue = control_box_configuration.find('status').text
+            wrist1_configuration = config_element_tree.find('wrist1')
+            process_continue = wrist1_configuration.find('status').text
             if process_continue == "False":
-                logging.info("control_box.stdin_listener:break process_continue={process_continue}"
+                logging.info("wrist1.stdin_listener:break process_continue={process_continue}"
                              .format(process_continue=process_continue))
                 break
             else:
@@ -63,7 +62,7 @@ class ControlBox(object):
             logging.info(log_text)
 
             self.__iot_lock = False
-            self.__iot_task = ControlBoxIotTask(self.__device)
+            self.__iot_task = Wrist1IotTask(self.__device)
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             loop.run_until_complete(self.__iot_task.connect())
@@ -79,7 +78,6 @@ class ControlBox(object):
                 })
             logging.error(log_text)
             self.__start_iot_command_response_model.set_response(status=Status.COBOT_CLIENT_ERROR,
-
                                                                  log_text=log_text)
 
     async def start_iot_command_handler(self, values):
@@ -95,8 +93,7 @@ class ControlBox(object):
             logging.info(log_text)
             self.__start_iot_command_response_model \
                 .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
-            logging.info("control_box.start_iot_command_handler:values={values} type={type}"
-                         .format(values=values, type=str(type(values))))
+
             self.__iot_thread = Thread(target=self.iot_task_callback, args=(values,))
             self.__iot_thread.start()
         else:
@@ -194,10 +191,10 @@ class ControlBox(object):
         await user_finished
 
         if not command_listeners.done():
-            command_listeners.set_result(["Control Box done"])
+            command_listeners.set_result(["Wrist1 done"])
 
         command_listeners.cancel()
 
         await self.__device.iot_hub_device_client.shutdown()
-        logging.info("control_box.connect_azure_iot:queue.put")
+        logging.info("wrist1.connect_azure_iot:queue.put")
         await queue.put(None)

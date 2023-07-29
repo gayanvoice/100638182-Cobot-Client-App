@@ -1,14 +1,14 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
 import asyncio
 import inspect
 import logging
 import json
 from threading import Thread
-from datetime import datetime
-
 from azure.iot.device.common.pipeline.pipeline_exceptions import PipelineNotRunning
-
 from cloud.device import Device
-from cloud.iot_task.wrist1_iot_task import Wrist1IotTask
+from cloud.iot_task.wrist3_iot_task import Wrist3IotTask
 import xml.etree.ElementTree as ET
 import time
 from helper.log_text_helper import LogTextStatus, LogTextHelper
@@ -17,7 +17,7 @@ from model.response.iot.stop_iot_command_response_model import StopIotCommandRes
 from model.response.response_model import Status
 
 
-class Wrist1(object):
+class Wrist3(object):
     def __init__(self,
                  model_id,
                  provisioning_host,
@@ -42,10 +42,10 @@ class Wrist1(object):
     def stdin_listener(self):
         while True:
             config_element_tree = ET.parse(self.__cobot_client_configuration_path)
-            wrist1_configuration = config_element_tree.find('wrist1')
-            process_continue = wrist1_configuration.find('status').text
+            wrist3_configuration = config_element_tree.find('wrist3')
+            process_continue = wrist3_configuration.find('status').text
             if process_continue == "False":
-                logging.info("wrist1.stdin_listener:break process_continue={process_continue}"
+                logging.info("wrist3.stdin_listener:break process_continue={process_continue}"
                              .format(process_continue=process_continue))
                 break
             else:
@@ -62,12 +62,11 @@ class Wrist1(object):
             logging.info(log_text)
 
             self.__iot_lock = False
-            self.__iot_task = Wrist1IotTask(self.__device)
+            self.__iot_task = Wrist3IotTask(self.__device)
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             loop.run_until_complete(self.__iot_task.connect())
             loop.close()
-
         except PipelineNotRunning:
             log_text = self.__log_text_helper.get_log_text(
                 status=LogTextStatus.ERROR,
@@ -191,10 +190,10 @@ class Wrist1(object):
         await user_finished
 
         if not command_listeners.done():
-            command_listeners.set_result(["Wrist1 done"])
+            command_listeners.set_result(["Wrist3 done"])
 
         command_listeners.cancel()
 
         await self.__device.iot_hub_device_client.shutdown()
-        logging.info("wrist1.connect_azure_iot:queue.put")
+        logging.info("wrist3.connect_azure_iot:queue.put")
         await queue.put(None)

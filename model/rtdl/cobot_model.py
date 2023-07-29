@@ -1,3 +1,7 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
+
 class CobotModel(object):
     def __init__(self):
         self._elapsed_time = None

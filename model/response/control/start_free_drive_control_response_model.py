@@ -1,3 +1,6 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
 from model.response.response_model import ResponseModel
 
 

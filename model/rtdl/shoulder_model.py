@@ -1,3 +1,8 @@
+
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
+
 class ShoulderModel:
     def __init__(self):
         self._position = None

@@ -1,3 +1,6 @@
+__author__ = "100638182"
+__copyright__ = "University of Derby"
+
 import json
 from azure.iot.device import Message, MethodResponse
 from azure.iot.device.aio import IoTHubDeviceClient

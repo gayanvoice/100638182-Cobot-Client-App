@@ -1,5 +1,7 @@
-import logging
+__author__ = "100638182"
+__copyright__ = "University of Derby"
 
+import logging
 from model.request.joint_position_model import JointPositionModel
 from model.request.tcp_position_model import TcpPositionModel
 
