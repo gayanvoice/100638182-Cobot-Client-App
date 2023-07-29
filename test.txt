@@ -7,7 +7,7 @@ python test.py --device_id Cobot --method_name MoveJControlCommand --payload "{\
 python test.py --device_id Cobot --method_name MoveJControlCommand --payload "{\"acceleration\":1.4,\"velocity\":1.05,\"time_s\":0,\"blend_radius\":0,\"joint_position_model_array\":[{\"joint_position_model\":{\"_base\":-180,\"_shoulder\":-90,\"_elbow\":0,\"_wrist1\":0,\"_wrist2\":0,\"_wrist3\":0}},{\"joint_position_model\":{\"_base\":90,\"_shoulder\":-45,\"_elbow\":90,\"_wrist1\":45,\"_wrist2\":0,\"_wrist3\":-45}},{\"joint_position_model\":{\"_base\":-90,\"_shoulder\":-45,\"_elbow\":-90,\"_wrist1\":-45,\"_wrist2\":-50,\"_wrist3\":45}}]}"
 
 
-python test.py --device_id Cobot --method_name MoveLControlCommand --payload "{\"acceleration\":0.5,\"velocity\":0.25,\"time_s\":0,\"blend_radius\":0,\"joint_position_model_array\":[{\"joint_position_model\":{\"_base\":-90,\"_shoulder\":-45,\"_elbow\":-90,\"_wrist1\":-45,\"_wrist2\":-45,\"_wrist3\":45}}]}"
+python test.py --device_id Cobot --method_name MovePControlCommand --payload "{\"Acceleration\":0.5,\"Velocity\":0.25,"BlendRadius\":0,\"TcpPositionModelArray\":[{\"TcpPositionModel\":{\"X\":0.3,\"Y\":-0.3,\"Z\":0.3,\"Rx\":0,\"Ry\":3.14,\"Rz\":0}}]}"
 
 
 python test.py --device_id Cobot --method_name EnableControlCommand --payload "payload"
@@ -28,6 +28,7 @@ python test.py --device_id Cobot --method_name PowerOffControlCommand --payload 
 python test.py --device_id Cobot --method_name StartFreeDriveControlCommand --payload "payload"
 python test.py --device_id Cobot --method_name StopFreeDriveControlCommand --payload "payload"
 
-
+python test.py --device_id Base --method_name StartIotCommand --payload "payload"
+python test.py --device_id Base --method_name StopIotCommand --payload "payload"
 
 

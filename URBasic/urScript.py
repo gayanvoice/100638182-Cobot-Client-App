@@ -152,6 +152,7 @@ end
         pose: list of target pose (pose can also be specified as joint
               positions, then forward kinematics is used to calculate the corresponding pose)
         a:    tool acceleration [m/s^2]
+
         v:    tool speed [m/s]
         r:    blend radius [m]
         wait: function return when movement is finished

@@ -61,12 +61,12 @@ class JointPositionModel:
     @staticmethod
     def get_joint_position_model_from_joint_position_model_object(joint_position_model_object):
         joint_position_model = JointPositionModel()
-        joint_position_model.base = joint_position_model_object["_base"]
-        joint_position_model.shoulder = joint_position_model_object["_shoulder"]
-        joint_position_model.elbow = joint_position_model_object["_elbow"]
-        joint_position_model.wrist1 = joint_position_model_object["_wrist1"]
-        joint_position_model.wrist2 = joint_position_model_object["_wrist2"]
-        joint_position_model.wrist3 = joint_position_model_object["_wrist3"]
+        joint_position_model.base = joint_position_model_object["Base"]
+        joint_position_model.shoulder = joint_position_model_object["Shoulder"]
+        joint_position_model.elbow = joint_position_model_object["Elbow"]
+        joint_position_model.wrist1 = joint_position_model_object["Wrist1"]
+        joint_position_model.wrist2 = joint_position_model_object["Wrist2"]
+        joint_position_model.wrist3 = joint_position_model_object["Wrist3"]
         return joint_position_model
 
     @staticmethod

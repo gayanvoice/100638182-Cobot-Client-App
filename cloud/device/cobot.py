@@ -234,9 +234,9 @@ class Cobot(object):
             logging.info("cobot.move_p_control_task_callback:Robot initialised")
 
             self.__cobot_control_task = CobotControlTask(robot=self.__ur_script_ext)
-
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
+
             try:
                 loop.run_until_complete(self.__cobot_control_task.move_p(move_p_control_model=move_p_control_model))
                 logging.info('cobot.move_p_control_task_callback:Thread completed')
@@ -482,6 +482,7 @@ class Cobot(object):
                     "is_ur_basic_running": self.__is_ur_basic_running
                 })
             logging.info(log_text)
+            self.__enable_control_response_model.elapsed_time = self.__ur_script_ext.get_elapsed_time()
             self.__enable_control_response_model \
                 .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
 
@@ -778,6 +779,7 @@ class Cobot(object):
 
             open_popup_control_request_model = OpenPopupControlRequestModel\
                 .get_open_popup_control_request_model_from_values(values)
+            logging.info(open_popup_control_request_model.popup_text)
             self.__ur_script_ext.open_popup(popup_text=open_popup_control_request_model.popup_text)
 
             log_text = self.__log_text_helper.get_log_text(

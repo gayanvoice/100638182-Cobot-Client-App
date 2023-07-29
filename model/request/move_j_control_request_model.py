@@ -52,14 +52,13 @@ class MoveJControlRequestModel:
 
     @staticmethod
     def get_move_j_control_request_model_from_values(values):
-        data = json.loads(values)
         move_j_control_request_model = MoveJControlRequestModel()
-        move_j_control_request_model.acceleration = data["acceleration"]
-        move_j_control_request_model.velocity = data["velocity"]
-        move_j_control_request_model.time_s = data["time_s"]
-        move_j_control_request_model.blend_radius = data["blend_radius"]
-        for joint_position_model_array_object in data["joint_position_model_array"]:
+        move_j_control_request_model.acceleration = values["Acceleration"]
+        move_j_control_request_model.velocity = values["Velocity"]
+        move_j_control_request_model.time_s = values["TimeS"]
+        move_j_control_request_model.blend_radius = values["BlendRadius"]
+        for joint_position_model_array_object in values["JointPositionModelArray"]:
             joint_position_model = JointPositionModel.get_joint_position_model_from_joint_position_model_object(
-                joint_position_model_array_object["joint_position_model"])
+                joint_position_model_array_object["JointPositionModel"])
             move_j_control_request_model.joint_position_model_array = joint_position_model
         return move_j_control_request_model

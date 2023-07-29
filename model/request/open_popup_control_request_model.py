@@ -15,7 +15,6 @@ class OpenPopupControlRequestModel:
 
     @staticmethod
     def get_open_popup_control_request_model_from_values(values):
-        data = json.loads(values)
         open_popup_control_request_model = OpenPopupControlRequestModel()
-        open_popup_control_request_model.popup_text = data["popup_text"]
+        open_popup_control_request_model.popup_text = values['PopupText']
         return open_popup_control_request_model

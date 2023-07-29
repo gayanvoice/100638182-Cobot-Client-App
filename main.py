@@ -2,27 +2,22 @@ __author__ = "100638182"
 __copyright__ = "University of Derby"
 
 import asyncio
-import json
 import logging
 import os
-import sys
-import threading
-import time
 import xml.etree.ElementTree as ET
 from os.path import exists
 import pyfiglet
-import URBasic
-from cloud.cobot import Cobot
-from cloud.control_box import ControlBox
-from cloud.elbow import Elbow
-from cloud.payload import Payload
+from cloud.device.cobot import Cobot
+from cloud.device.control_box import ControlBox
+from cloud.device.elbow import Elbow
+from cloud.device.payload import Payload
 from cloud.rtde_controller import RtdeController
-from cloud.base import Base
-from cloud.shoulder import Shoulder
-from cloud.tool import Tool
-from cloud.wrist1 import Wrist1
-from cloud.wrist2 import Wrist2
-from cloud.wrist3 import Wrist3
+from cloud.device.base import Base
+from cloud.device.shoulder import Shoulder
+from cloud.device.tool import Tool
+from cloud.device.wrist1 import Wrist1
+from cloud.device.wrist2 import Wrist2
+from cloud.device.wrist3 import Wrist3
 
 cobot_iot_configuration_path = "cobot_iot_configuration.xml"
 cobot_client_configuration_path = "cobot_client_configuration.xml"
@@ -309,17 +304,16 @@ async def main():
         try:
             queue = asyncio.Queue()
             await asyncio.gather(rtde_controller(queue),
-                                 cobot(queue))
-
-            # control_box(queue),
-            # elbow(queue),
-            # payload(queue),
-            # base(queue),
-            # shoulder(queue),
-            # tool(queue),
-            # wrist1(queue),
-            # wrist2(queue),
-            # wrist3(queue))
+                                 cobot(queue),
+                                 control_box(queue),
+                                 elbow(queue),
+                                 payload(queue),
+                                 base(queue),
+                                 shoulder(queue),
+                                 tool(queue),
+                                 wrist1(queue),
+                                 wrist2(queue),
+                                 wrist3(queue))
         except asyncio.exceptions.CancelledError:
             logging.error("main:The execution of the thread was manually stopped due to a KeyboardInterrupt signal.")
         except SystemExit:
@@ -347,43 +341,3 @@ if __name__ == '__main__':
     logging.info("main: current_working_directory={current_working_directory}"
                  .format(current_working_directory=current_working_directory))
     asyncio.run(main())
-    # host = '127.0.0.1'
-    # acc = 0.5
-    # vel = 0.5
-    # robotModel = URBasic.robotModel.RobotModel()
-    # robot = URBasic.urScriptExt.UrScriptExt(host=host, robotModel=robotModel)
-    # robot.reset_error()
-
-    # way point 1 = 619.82, -703.87, -70.99
-    # way point 2 = 547.65, -519.12, 308.44
-    # way point 3 = 796.26, 35.60, 308.44
-    # way point 4 = 780.93, -551.28, 212.19
-    # home_position = robot.get_actual_tcp_pose()
-    # print(home_position)
-    # print('movej with joint specification')
-    # robot.movej(q=[-3.14, -1., 0.5, -1., -1.5, 0], a=acc, v=vel)
-    # print(robot.get_actual_tcp_pose())
-    # print('movej with joint specification')
-    # robot.movej(q=home_position, a=acc, v=vel)
-    # print(robot.get_actual_tcp_pose())
-    # print('movej with pose specification')
-    # robot.movej(pose=[0.3, 0.3, 0.3, 0, 3.14, 0], a=1.2, v=vel)
-    #
-    # print('movel with pose specification')
-    # robot.movel(pose=[0.3, -0.3, 0.3, 0, 3.14, 0], a=1.2, v=vel)
-    #
-    # print('forcs_mode')
-    # robot.force_mode(task_frame=[0., 0., 0., 0., 0., 0.], selection_vector=[0, 0, 1, 0, 0, 0],
-    #                  wrench=[0., 0., -20., 0., 0., 0.], f_type=2, limits=[2, 2, 1.5, 1, 1, 1])
-    # time.sleep(1)
-
-    # robot.movep(pose=[0.3, -0.3, 0.3, 0, 3.14, 0], a=1.2, v=vel, r=2)
-
-    # print('movel with pose specification')
-    # robot.movel(pose=[0.3, -0.3, 0.3, 0, 3.14, 0], a=1.2, v=vel)
-    # print('forcs_mode')
-    # time.sleep(1)
-    # robot.end_force_mode()
-    # robot.close()
-
-    # robot.close()
