@@ -207,7 +207,7 @@ class Cobot(object):
                     })
                 logging.info(log_text)
                 self.__move_j_control_response_model \
-                    .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                    .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
         else:
             log_text = self.__log_text_helper.get_log_text(
                 status=LogTextStatus.ERROR,
@@ -218,7 +218,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__move_j_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def move_j_control_response_handler(self, values):
         response_payload = json.dumps(self.__move_j_control_response_model.get(),
@@ -302,7 +302,7 @@ class Cobot(object):
                     })
                 logging.info(log_text)
                 self.__move_p_control_response_model \
-                    .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                    .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
         else:
             log_text = self.__log_text_helper.get_log_text(
                 status=LogTextStatus.ERROR,
@@ -313,7 +313,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__move_p_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def move_p_control_response_handler(self, values):
         response_payload = json.dumps(self.__move_p_control_response_model.get(),
@@ -422,7 +422,7 @@ class Cobot(object):
                     })
                 logging.info(log_text)
                 self.__move_l_control_response_model \
-                    .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                    .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
         else:
             log_text = self.__log_text_helper.get_log_text(
                 status=LogTextStatus.ERROR,
@@ -433,7 +433,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__move_l_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def move_l_control_response_handler(self, values):
         response_payload = json.dumps(self.__move_l_control_response_model.get(),
@@ -493,7 +493,7 @@ class Cobot(object):
             logging.info(log_text)
             self.__enable_control_response_model.elapsed_time = self.__ur_script_ext.get_elapsed_time()
             self.__enable_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def enable_control_response_handler(self, values):
         response_payload = json.dumps(self.__enable_control_response_model.get(),
@@ -544,7 +544,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__disable_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def disable_control_response_handler(self, values):
         response_payload = json.dumps(self.__disable_control_response_model.get(),
@@ -597,7 +597,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__pause_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def pause_control_response_handler(self, values):
         response_payload = json.dumps(self.__pause_control_response_model.get(),
@@ -649,7 +649,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__play_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def play_control_response_handler(self, values):
         response_payload = json.dumps(self.__play_control_response_model.get(),
@@ -703,7 +703,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__unlock_protective_stop_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def unlock_protective_stop_control_response_handler(self, values):
         response_payload = json.dumps(self.__unlock_protective_stop_control_response_model.get(),
@@ -759,7 +759,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__close_safety_popup_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def close_safety_popup_control_response_handler(self, values):
         response_payload = json.dumps(self.__close_safety_popup_control_response_model.get(),
@@ -811,7 +811,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__open_popup_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def open_popup_control_response_handler(self, values):
         response_payload = json.dumps(self.__open_popup_control_response_model.get(),
@@ -860,7 +860,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__close_popup_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def close_popup_control_response_handler(self, values):
         response_payload = json.dumps(self.__close_popup_control_response_model.get(),
@@ -912,7 +912,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__power_on_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def power_on_control_response_handler(self, values):
         response_payload = json.dumps(self.__power_on_control_response_model.get(),
@@ -963,7 +963,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__power_off_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def power_off_control_response_handler(self, values):
         response_payload = json.dumps(self.__power_off_control_response_model.get(),
@@ -1008,7 +1008,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__start_free_drive_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def start_free_drive_control_response_handler(self, values):
         response_payload = json.dumps(self.__start_free_drive_control_response_model.get(),
@@ -1062,7 +1062,7 @@ class Cobot(object):
                 })
             logging.info(log_text)
             self.__stop_free_drive_control_response_model \
-                .set_response(status=Status.COBOT_CLIENT_EXECUTED, log_text=log_text)
+                .set_response(status=Status.COBOT_CLIENT_ERROR, log_text=log_text)
 
     def stop_free_drive_control_response_handler(self, values):
         response_payload = json.dumps(self.__stop_free_drive_control_response_model.get(),
